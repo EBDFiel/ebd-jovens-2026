@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBD 2026 - Quizzes Jovens</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5D3FD3 0%, #FF7A5A 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .trimestre {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .trimestre h2 {
+            color: #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #5D3FD3;
+        }
+        .licoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .licao-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .licao-card:hover {
+            transform: translateY(-5px);
+            border-color: #5D3FD3;
+            box-shadow: 0 15px 30px rgba(93, 63, 211, 0.2);
+        }
+        .licao-card .numero {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f1f8ff;
+            color: #5D3FD3;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .licao-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            padding-right: 50px;
+        }
+        .btn-quiz {
+            display: inline-block;
+            background: linear-gradient(135deg, #5D3FD3, #FF7A5A);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+            margin-top: 15px;
+            border: none;
+        }
+        .btn-quiz:hover {
+            background: linear-gradient(135deg, #4A2FAB, #E56A50);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(93, 63, 211, 0.3);
+        }
+        .btn-quiz.disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .licoes-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Escola Bíblica Dominical - Jovens</h1>
+            <p class="subtitle">Quizzes Independentes - Ano 2026</p>
+            <p style="color: #666; margin-top: 20px;">
+                Cada lição tem seu próprio quiz completo e independente
+            </p>
+        </header>
+        
+        <main>
+            <div class="trimestre">
+                <h2>1º Trimestre 2026 - As Bem-Aventuranças</h2>
+                
+                <div class="licoes-grid">
+                    <!-- Lição 01 -->
+                    <div class="licao-card">
+                        <div class="numero">01</div>
+                        <h3>As Beatitudes do Reino de Deus</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 04/01/2026
+                        </p>
+                        <a href="quiz-licao-01.html" class="btn-quiz">
+                            ▶️ Iniciar Quiz
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 02 -->
+                    <div class="licao-card">
+                        <div class="numero">02</div>
+                        <h3>Bem-Aventurados em Cristo</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 11/01/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 03 -->
+                    <div class="licao-card">
+                        <div class="numero">03</div>
+                        <h3>Bem-Aventurados os pobres de espírito</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 18/01/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 04 -->
+                    <div class="licao-card">
+                        <div class="numero">04</div>
+                        <h3>Bem-Aventurados os que choram por seus pecados</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 25/01/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 05 -->
+                    <div class="licao-card">
+                        <div class="numero">05</div>
+                        <h3>Bem-Aventurados os mansos</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 01/02/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 06 -->
+                    <div class="licao-card">
+                        <div class="numero">06</div>
+                        <h3>Bem-Aventurados os que têm fome e sede de justiça</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 08/02/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 07 -->
+                    <div class="licao-card">
+                        <div class="numero">07</div>
+                        <h3>Bem-Aventurados os misericordiosos</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 15/02/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 08 -->
+                    <div class="licao-card">
+                        <div class="numero">08</div>
+                        <h3>Bem-Aventurados os limpos de coração</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 22/02/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em breve
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 09 -->
+                    <div class="licao-card">
+                        <div class="numero">09</div>
+                        <h3>Bem-Aventurados os pacificadores</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 01/03/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em preparação
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 10 -->
+                    <div class="licao-card">
+                        <div class="numero">10</div>
+                        <h3>Bem-Aventurados os perseguidos por causa da justiça</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 08/03/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em preparação
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 11 -->
+                    <div class="licao-card">
+                        <div class="numero">11</div>
+                        <h3>O sal da terra e a luz do mundo</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 15/03/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em preparação
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 12 -->
+                    <div class="licao-card">
+                        <div class="numero">12</div>
+                        <h3>Esmola, oração e jejum são práticas espirituais</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 22/03/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em preparação
+                        </a>
+                    </div>
+                    
+                    <!-- Lição 13 -->
+                    <div class="licao-card">
+                        <div class="numero">13</div>
+                        <h3>Não andeis ansiosos</h3>
+                        <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 15px;">
+                            <span>📅</span> 29/03/2026
+                        </p>
+                        <a href="#" class="btn-quiz disabled" onclick="return false;">
+                            ⏳ Em preparação
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 - EBD Jovens - Quizzes Independentes</p>
+        </footer>
+    </div>
+</body>
+</html>
