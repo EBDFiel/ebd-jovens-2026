@@ -398,107 +398,14 @@
             padding: 25px 20px;
         }
 
-        /* MODIFICAÇÃO: Progresso movido para abaixo das perguntas */
-        .quiz-container {
-            margin-bottom: 20px;
-        }
+        /* REMOVIDO: .quiz-container { margin-bottom: 20px; } */
 
-        .progress-container {
-            background: var(--light);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(93, 63, 211, 0.1);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .progress-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
-
-        .progress-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .progress-label {
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .progress-value {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .progress-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            background: rgba(93, 63, 211, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        .progress-bar {
-            height: 12px;
-            background: #E2E8F0;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 10px;
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-            position: relative;
-        }
-
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(
-                -45deg,
-                rgba(255, 255, 255, 0.3) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.3) 50%,
-                rgba(255, 255, 255, 0.3) 75%,
-                transparent 75%,
-                transparent
-            );
-            background-size: 30px 30px;
-            animation: move 1s linear infinite;
-        }
-
-        @keyframes move {
-            0% { background-position: 0 0; }
-            100% { background-position: 30px 0; }
+        /* NOVO: Contêiner para a pergunta atual */
+        .question-container {
+            margin-bottom: 30px;
         }
 
         .question {
-            margin-bottom: 25px;
             padding: 25px;
             border-radius: 20px;
             background: white;
@@ -646,12 +553,100 @@
             border-color: transparent;
         }
 
+        /* ===== SEÇÃO DE PROGRESSO (AGORA ENTRE PERGUNTA E BOTÕES) ===== */
+        .progress-section {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(93, 63, 211, 0.1);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .progress-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E2E8F0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.3) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0.3) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 30px 30px;
+            animation: move 1s linear infinite;
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 0; }
+        }
+
         /* ===== NAVEGAÇÃO ===== */
         .navigation {
             display: flex;
             justify-content: space-between;
             gap: 15px;
-            flex-direction: row-reverse;
         }
 
         button {
@@ -1037,6 +1032,14 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .progress-item {
+                min-width: 100%;
+            }
+            
+            .progress-value {
+                font-size: 1.3rem;
+            }
         }
 
         @media (min-width: 768px) {
@@ -1080,6 +1083,10 @@
             .progress-info {
                 flex-direction: row;
                 justify-content: space-between;
+            }
+            
+            .progress-item {
+                min-width: auto;
             }
         }
 
@@ -1184,12 +1191,13 @@
 
         <!-- QUIZ -->
         <div class="quiz-section" id="quiz-section">
-            <div class="quiz-container" id="quiz-container">
-                <!-- Perguntas serão inseridas aqui -->
+            <!-- PERGUNTA ATUAL -->
+            <div class="question-container" id="question-container">
+                <!-- A pergunta será inserida aqui via JavaScript -->
             </div>
 
-            <!-- MODIFICAÇÃO: Progresso movido para abaixo das perguntas -->
-            <div class="progress-container" id="progress-container">
+            <!-- SEÇÃO DE PROGRESSO - AGORA ENTRE A PERGUNTA E OS BOTÕES -->
+            <div class="progress-section" id="progress-section">
                 <div class="progress-info">
                     <div class="progress-item">
                         <div class="progress-label">Questão Atual</div>
@@ -1204,11 +1212,14 @@
                         <div class="progress-value" id="progress-percentage">0%</div>
                     </div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" id="quiz-progress"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="quiz-progress"></div>
+                    </div>
                 </div>
             </div>
 
+            <!-- BOTÕES DE NAVEGAÇÃO -->
             <div class="navigation">
                 <button id="prev-btn" disabled>
                     <i class="fas fa-arrow-left"></i> Anterior
@@ -1544,9 +1555,9 @@
 
         function showQuestion(index) {
             const question = allQuestions[index];
-            const quizContainer = document.getElementById('quiz-container');
+            const questionContainer = document.getElementById('question-container');
             
-            // Atualizar barra de progresso e contadores
+            // Atualizar progresso
             updateProgress();
             
             let optionsHTML = '';
@@ -1576,7 +1587,7 @@
                 `;
             });
             
-            quizContainer.innerHTML = `
+            questionContainer.innerHTML = `
                 <div class="question fade-in">
                     <div class="question-header">
                         <span class="question-difficulty difficulty-${question.difficulty}">
@@ -1603,10 +1614,7 @@
         }
 
         function updateProgress() {
-            // Atualizar contadores
             const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
-            
-            // Contar questões respondidas
             const answeredCount = userAnswers.filter(answer => answer !== null).length;
             
             // Atualizar elementos
