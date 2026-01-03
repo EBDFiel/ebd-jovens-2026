@@ -17,31 +17,11 @@
             margin: 0 auto;
         }
         
-        .quiz-progress-container {
-            margin: 25px 0;
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .progress-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .question-counter {
-            font-weight: 600;
-            color: #4361ee;
-            font-size: 1.1rem;
-        }
-        
         .quiz-progress {
             height: 8px;
             background: #e0e0e0;
             border-radius: 4px;
+            margin: 30px 0;
             overflow: hidden;
         }
         
@@ -58,7 +38,7 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 0;
+            margin-bottom: 30px;
             border: 3px solid transparent;
             transition: all 0.3s ease;
         }
@@ -146,7 +126,7 @@
         .quiz-navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
+            margin-top: 40px;
         }
         
         .btn-quiz {
@@ -278,16 +258,6 @@
             .btn-quiz {
                 width: 100%;
             }
-            
-            .progress-stats {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .quiz-progress-container {
-                padding: 15px;
-            }
         }
     </style>
 </head>
@@ -329,23 +299,12 @@
             </div>
             
             <div class="quiz-container">
-                <div id="quizContent">
-                    <!-- O quiz será gerado por JavaScript -->
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="progressBar"></div>
                 </div>
                 
-                <!-- NOVA SEÇÃO: Progresso e contador abaixo das perguntas -->
-                <div class="quiz-progress-container" id="progressContainer">
-                    <div class="progress-stats">
-                        <div class="question-counter" id="questionCounter">
-                            Questão <span id="currentQuestionNumber">1</span> de <span id="totalQuestions">12</span>
-                        </div>
-                        <div class="answered-counter" id="answeredCounter">
-                            Respondidas: <span id="answeredCount">0</span>/<span id="totalQuestions2">12</span>
-                        </div>
-                    </div>
-                    <div class="quiz-progress">
-                        <div class="quiz-progress-bar" id="progressBar"></div>
-                    </div>
+                <div id="quizContent">
+                    <!-- O quiz será gerado por JavaScript -->
                 </div>
                 
                 <div class="quiz-navigation" id="quizNavigation">
@@ -593,11 +552,6 @@
             updateProgress();
             updateNavigation();
             
-            // Inicializar contadores
-            document.getElementById('totalQuestions').textContent = quizData.questions.length;
-            document.getElementById('totalQuestions2').textContent = quizData.questions.length;
-            document.getElementById('currentQuestionNumber').textContent = currentQuestion + 1;
-            
             // Salvar início do quiz
             localStorage.setItem('quiz_1_start', startTime.getTime());
         }
@@ -643,9 +597,6 @@
             
             quizContent.innerHTML = questionHTML;
             
-            // Atualizar contador de questão atual
-            document.getElementById('currentQuestionNumber').textContent = currentQuestion + 1;
-            
             // Adicionar eventos às opções
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
@@ -670,9 +621,6 @@
             // Salvar resposta
             userAnswers[questionId] = optionId;
             
-            // Atualizar contador de questões respondidas
-            updateAnsweredCounter();
-            
             // Mostrar explicação
             setTimeout(() => {
                 const explanation = document.querySelector(`#question-${questionId} .explanation`);
@@ -691,19 +639,10 @@
             updateNavigation();
         }
 
-        // Atualizar contador de questões respondidas
-        function updateAnsweredCounter() {
-            const answeredCount = Object.keys(userAnswers).length;
-            document.getElementById('answeredCount').textContent = answeredCount;
-        }
-
         // Atualizar barra de progresso
         function updateProgress() {
             const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
             document.getElementById('progressBar').style.width = `${progress}%`;
-            
-            // Atualizar contador de questões respondidas
-            updateAnsweredCounter();
         }
 
         // Atualizar navegação
