@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Jovem | As Bem-Aventuranças do Reino de Deus</title>
+    <title>Quiz Jovem | Lição 1 - As Beatitudes do Reino de Deus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -212,6 +211,103 @@
             backdrop-filter: blur(5px);
         }
 
+        /* ===== SEÇÃO DA LIÇÃO ===== */
+        .lesson-info-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .lesson-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lesson-number {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .lesson-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .verse-of-day {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            text-align: center;
+            font-style: italic;
+            border-left: 4px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .verse-text {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .verse-reference {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+
+        .lesson-objectives {
+            margin: 20px 0;
+        }
+
+        .objectives-title {
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .objectives-list {
+            list-style: none;
+        }
+
+        .objective-item {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .objective-item:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
         .welcome-card {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
@@ -399,72 +495,11 @@
             padding: 25px 20px;
         }
 
-        .progress-container {
-            padding: 0 20px;
-            margin-bottom: 25px;
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .progress-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            background: rgba(93, 63, 211, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        .progress-bar {
-            height: 10px;
-            background: #E2E8F0;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-            position: relative;
-        }
-
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(
-                -45deg,
-                rgba(255, 255, 255, 0.3) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.3) 50%,
-                rgba(255, 255, 255, 0.3) 75%,
-                transparent 75%,
-                transparent
-            );
-            background-size: 30px 30px;
-            animation: move 1s linear infinite;
-        }
-
-        @keyframes move {
-            0% { background-position: 0 0; }
-            100% { background-position: 30px 0; }
+        .question-container {
+            margin-bottom: 30px;
         }
 
         .question {
-            margin-bottom: 30px;
             padding: 25px;
             border-radius: 20px;
             background: white;
@@ -612,13 +647,100 @@
             border-color: transparent;
         }
 
+        /* ===== SEÇÃO DE PROGRESSO ===== */
+        .progress-section {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(93, 63, 211, 0.1);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .progress-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E2E8F0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.3) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0.3) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 30px 30px;
+            animation: move 1s linear infinite;
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 0; }
+        }
+
         /* ===== NAVEGAÇÃO ===== */
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
             gap: 15px;
-            flex-direction: row-reverse;
         }
 
         button {
@@ -793,7 +915,7 @@
             animation: starPulse 1.5s infinite;
         }
 
-        /* ===== INFORMAÇÕES DA IGREJA E INSTAGRAM ===== */
+        /* ===== INFORMAÇÕES DA EBD FIEL ===== */
         .church-info {
             text-align: center;
             padding: 25px 20px;
@@ -999,6 +1121,19 @@
                 width: 80px;
                 height: 80px;
             }
+            
+            .progress-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .progress-item {
+                min-width: 100%;
+            }
+            
+            .progress-value {
+                font-size: 1.3rem;
+            }
         }
 
         @media (min-width: 768px) {
@@ -1038,6 +1173,15 @@
             .options {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .progress-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .progress-item {
+                min-width: auto;
+            }
         }
 
         @media (min-width: 992px) {
@@ -1063,7 +1207,7 @@
             <i class="fas fa-mountain"></i>
         </div>
         <div class="animation-text">Quiz Jovem</div>
-        <div class="animation-subtext">As Bem-Aventuranças do Reino de Deus</div>
+        <div class="animation-subtext">Lição 1: As Beatitudes do Reino de Deus</div>
         <div class="countdown" id="countdown">3</div>
     </div>
 
@@ -1081,23 +1225,49 @@
                     </div>
                     <div class="logo-text">
                         <h1>QUIZ JOVEM</h1>
-                        <div class="subtitle">As Bem-Aventuranças do Reino de Deus</div>
+                        <div class="subtitle">Lição 1 - As Beatitudes do Reino de Deus</div>
+                    </div>
+                </div>
+
+                <!-- INFORMAÇÕES DA LIÇÃO -->
+                <div class="lesson-info-section">
+                    <div class="lesson-header">
+                        <div class="lesson-number">
+                            <i class="fas fa-book-open"></i> Lição 1
+                        </div>
+                        <div class="lesson-title">AS BEATITUDES DO REINO DE DEUS</div>
+                    </div>
+                    
+                    <div class="verse-of-day">
+                        <div class="verse-text">"E Jesus, vendo a multidão, subiu a um monte e, assentando-se, aproximaram-se dele os seus discípulos"</div>
+                        <div class="verse-reference">Mateus 5:1</div>
+                    </div>
+                    
+                    <div class="lesson-objectives">
+                        <div class="objectives-title">
+                            <i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO
+                        </div>
+                        <ul class="objectives-list">
+                            <li class="objective-item">Conhecer os primeiros ensinamentos de Jesus sobre o Reino de Deus</li>
+                            <li class="objective-item">Identificar a estrutura do Sermão da Montanha</li>
+                            <li class="objective-item">Ressaltar a importância do primeiro discurso do Ministério público de Jesus</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="welcome-card">
-                    <h2><i class="fas fa-fire"></i> Desafie seu conhecimento bíblico!</h2>
-                    <p>Teste o que você aprendeu sobre o Sermão da Montanha, o discurso mais emblemático de Jesus, que revela os princípios do Reino de Deus para todos que desejam segui-Lo.</p>
+                    <h2><i class="fas fa-fire"></i> Teste seu conhecimento bíblico!</h2>
+                    <p>Revise os ensinamentos do Sermão da Montanha, o discurso inaugural do ministério público de Jesus, onde Ele revelou os princípios fundamentais do Reino de Deus.</p>
                 </div>
 
                 <div class="features">
                     <div class="feature">
                         <i class="fas fa-star" style="color: #5D3FD3;"></i>
-                        <span>15 Perguntas</span>
+                        <span>12 Perguntas</span>
                     </div>
                     <div class="feature">
                         <i class="fas fa-bolt" style="color: #FF7A5A;"></i>
-                        <span>Feedback Instantâneo</span>
+                        <span>Baseado na Lição 1</span>
                     </div>
                     <div class="feature">
                         <i class="fas fa-heart" style="color: #00C9B7;"></i>
@@ -1110,24 +1280,28 @@
         <!-- CONTEÚDO -->
         <section class="content-section">
             <div class="about-card">
-                <h2 class="card-title"><i class="fas fa-mountain-sun"></i> Sobre o Sermão da Montanha</h2>
+                <h2 class="card-title"><i class="fas fa-mountain-sun"></i> VERDADE APLICADA</h2>
                 <div class="card-content">
-                    <p>O Sermão da Montanha (Mateus 5-7) é considerado o discurso inaugural do ministério público de Jesus, onde Ele revelou os princípios fundamentais do Reino de Deus.</p>
-                    <p>Do alto de um monte, Jesus ensinou sobre humildade, misericórdia, pureza de coração e outros valores que norteiam a vida cristã autêntica até os dias de hoje.</p>
-                    <p><span class="highlight">"Bem-aventurados os humildes de espírito, porque deles é o Reino dos Céus"</span> - esta é a primeira das bem-aventuranças que abrem este sermão revolucionário.</p>
+                    <p><strong>Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus.</strong></p>
+                    <p>O Sermão da Montanha (Mateus 5–7) nos traz ensinamentos importantes. Do alto de um monte, sentado em uma posição típica dos mestres da época, Jesus ensinou os princípios do Reino de Deus não apenas aos Seus discípulos, mas também à multidão que O seguia.</p>
+                    <p class="highlight">"O Sermão da Montanha é o discurso inaugural do Ministério público de Jesus Cristo, no qual Ele revela os princípios do Seu Reino Messiânico."</p>
                 </div>
             </div>
 
             <div class="details-card">
-                <h2 class="card-title"><i class="fas fa-graduation-cap"></i> O Que Você Vai Aprender</h2>
+                <h2 class="card-title"><i class="fas fa-graduation-cap"></i> O QUE VOCÊ VAI REVISAR</h2>
                 <div class="card-content">
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Os princípios do Reino de Deus revelados por Jesus</li>
-                        <li><i class="fas fa-check-circle"></i> A estrutura e importância do Sermão da Montanha</li>
-                        <li><i class="fas fa-check-circle"></i> Como Jesus ensinava com autoridade</li>
-                        <li><i class="fas fa-check-circle"></i> Os valores inegociáveis da vida cristã</li>
+                        <li><i class="fas fa-check-circle"></i> Jesus como Mestre que ensina com autoridade</li>
+                        <li><i class="fas fa-check-circle"></i> O Sermão Inaugural e sua localização histórica</li>
+                        <li><i class="fas fa-check-circle"></i> A pedagogia e valores do Reino de Deus</li>
                         <li><i class="fas fa-check-circle"></i> A aplicação prática dos ensinamentos de Jesus</li>
+                        <li><i class="fas fa-check-circle"></i> A importância do discurso para a vida cristã atual</li>
                     </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(93, 63, 211, 0.05); border-radius: 10px; border-left: 4px solid var(--primary);">
+                        <strong><i class="fas fa-pray"></i> MOMENTO DE ORAÇÃO:</strong><br>
+                        Ore para que possamos praticar os princípios do Reino em nossa vida diária.
+                    </div>
                 </div>
             </div>
             
@@ -1141,19 +1315,35 @@
 
         <!-- QUIZ -->
         <div class="quiz-section" id="quiz-section">
-            <div class="progress-container">
-                <div class="progress-header">
-                    <div class="progress-text" id="progress-text">Pergunta 1 de 15</div>
+            <!-- PERGUNTA ATUAL -->
+            <div class="question-container" id="question-container">
+                <!-- A pergunta será inserida aqui via JavaScript -->
+            </div>
+
+            <!-- SEÇÃO DE PROGRESSO -->
+            <div class="progress-section" id="progress-section">
+                <div class="progress-info">
+                    <div class="progress-item">
+                        <div class="progress-label">Questão Atual</div>
+                        <div class="progress-value" id="current-question">1/12</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">Respondidas</div>
+                        <div class="progress-value" id="answered-count">0/12</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">Progresso</div>
+                        <div class="progress-value" id="progress-percentage">0%</div>
+                    </div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" id="quiz-progress"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="quiz-progress"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="quiz-container" id="quiz-container">
-                <!-- Perguntas serão inseridas aqui -->
-            </div>
-
+            <!-- BOTÕES DE NAVEGAÇÃO -->
             <div class="navigation">
                 <button id="prev-btn" disabled>
                     <i class="fas fa-arrow-left"></i> Anterior
@@ -1210,192 +1400,192 @@
 
     <script>
         // =============================================
-        // BANCO DE PERGUNTAS - SERMÃO DA MONTANHA
+        // BANCO DE PERGUNTAS - LIÇÃO 1: AS BEATITUDES DO REINO DE DEUS
         // =============================================
         const allQuestions = [
-            // PERGUNTAS FÁCEIS - Respostas corretas variadas
+            // PERGUNTAS FÁCEIS
             {
-                question: "Onde encontramos na Bíblia o relato completo do Sermão da Montanha?",
+                question: "Qual é o versículo do dia citado na lição?",
                 options: [
-                    "Mateus 5-7",
-                    "Lucas 10-12", 
-                    "Marcos 4-6",
-                    "João 14-16"
+                    "Mateus 5:1 - 'E Jesus, vendo a multidão, subiu a um monte e, assentando-se, aproximaram-se dele os seus discípulos'",
+                    "Mateus 5:11 - 'Bem-aventurados sois vós quando vos injuriarem...'", 
+                    "Mateus 7:28 - 'E aconteceu que, concluindo Jesus este discurso...'",
+                    "Mateus 4:23 - 'E percorria Jesus toda a Galileia...'"
                 ],
                 correct: 0,
-                explanation: "O Sermão da Montanha é encontrado nos capítulos 5 a 7 do Evangelho de Mateus.",
+                explanation: "O versículo do dia é Mateus 5:1, que descreve Jesus subindo ao monte para ensinar.",
                 difficulty: "easy"
             },
             {
-                question: "Qual foi a posição de Jesus quando começou a ensinar o Sermão da Montanha?",
+                question: "Qual é a VERDADE APLICADA desta lição?",
                 options: [
-                    "Em pé, no meio da multidão",
-                    "Sentado, no alto de um monte", 
-                    "De joelhos, orando",
-                    "Andando entre as pessoas"
+                    "Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus",
+                    "Devemos praticar todas as beatitudes diariamente", 
+                    "O Sermão da Montanha é apenas para os discípulos",
+                    "Jesus ensinou apenas sobre amor ao próximo"
                 ],
-                correct: 1,
-                explanation: "Mateus 5:1 diz que Jesus 'subiu a um monte e, assentando-se, aproximaram-se dele os seus discípulos'.",
+                correct: 0,
+                explanation: "A verdade aplicada é: 'Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus'.",
                 difficulty: "easy"
             },
             {
-                question: "Qual destes NÃO é um ensinamento do Sermão da Montanha?",
+                question: "Qual dos seguintes NÃO é um objetivo da lição?",
                 options: [
-                    "Amar os inimigos",
-                    "Não julgar os outros", 
-                    "A parábola do filho pródigo",
-                    "Oração do Pai Nosso"
+                    "Memorizar todas as beatitudes",
+                    "Conhecer os primeiros ensinamentos de Jesus sobre o Reino de Deus", 
+                    "Identificar a estrutura do Sermão da Montanha",
+                    "Ressaltar a importância do primeiro discurso do Ministério público de Jesus"
                 ],
-                correct: 3,
-                explanation: "A parábola do filho pródigo está em Lucas 15, não no Sermão da Montanha.",
+                correct: 0,
+                explanation: "Os objetivos são: 1) Conhecer os primeiros ensinamentos de Jesus sobre o Reino de Deus; 2) Identificar a estrutura do Sermão da Montanha; 3) Ressaltar a importância do primeiro discurso do Ministério público de Jesus.",
                 difficulty: "easy"
             },
             {
-                question: "Segundo o texto da lição, como Jesus ensinava?",
+                question: "Como Jesus começou o Sermão da Montanha segundo Mateus 5:1?",
                 options: [
-                    "Com autoridade, diferente dos escribas",
-                    "De forma confusa e complexa", 
-                    "Somente para os líderes religiosos",
-                    "Usando apenas parábolas"
+                    "Subiu a um monte e assentou-se",
+                    "Ficou em pé no meio da multidão", 
+                    "Começou a andar entre as pessoas",
+                    "Chamou apenas os doze discípulos"
                 ],
-                correct: 2,
-                explanation: "Mateus 7:29 diz que 'Jesus ensinava com autoridade e não como os escribas'.",
+                correct: 0,
+                explanation: "Mateus 5:1 diz: 'E Jesus, vendo a multidão, subiu a um monte e, assentando-se, aproximaram-se dele os seus discípulos'.",
                 difficulty: "easy"
             },
             {
-                question: "Qual é o primeiro versículo das Bem-Aventuranças?",
+                question: "Qual é o PONTO-CHAVE destacado na introdução da lição?",
                 options: [
-                    "Bem-aventurados os humildes de espírito",
-                    "Bem-aventurados os que choram", 
-                    "Bem-aventurados os mansos",
-                    "Bem-aventurados os misericordiosos"
+                    "O Sermão da Montanha é o discurso inaugural do Ministério público de Jesus Cristo",
+                    "Jesus ensinou apenas sobre ética e moral", 
+                    "As beatitudes são para uma vida próspera na terra",
+                    "O sermão foi dirigido apenas aos líderes religiosos"
                 ],
-                correct: 1,
-                explanation: "Mateus 5:3 começa com 'Bem-aventurados os humildes de espírito, porque deles é o Reino dos Céus'.",
+                correct: 0,
+                explanation: "O ponto-chave é: 'O Sermão da Montanha é o discurso inaugural do Ministério público de Jesus Cristo, no qual Ele revela os princípios do Seu Reino Messiânico.'",
                 difficulty: "easy"
             },
             
-            // PERGUNTAS MÉDIAS - Respostas corretas variadas
+            // PERGUNTAS MÉDIAS
             {
-                question: "O que a lição afirma sobre a localização do Monte das Bem-Aventuranças?",
+                question: "Segundo a lição, como Jesus ensinava?",
+                options: [
+                    "Com autoridade, diferente dos escribas",
+                    "De forma complexa e difícil", 
+                    "Usando apenas parábolas",
+                    "Apenas nas sinagogas"
+                ],
+                correct: 0,
+                explanation: "A lição destaca que Jesus ensinava com autoridade e não como os escribas (Mateus 7:28).",
+                difficulty: "medium"
+            },
+            {
+                question: "Qual é a localização do Monte das Bem-Aventuranças segundo a lição?",
                 options: [
                     "Estava situado a 6,5Km a Oeste do Mar da Galileia",
                     "Ficava próximo a Jerusalém", 
                     "Estava no deserto da Judeia",
-                    "Não há informações sobre sua localização"
-                ],
-                correct: 3,
-                explanation: "A lição menciona que 'o Monte das Bem-Aventuranças estava situado a 6,5Km a Oeste do Mar da Galileia'.",
-                difficulty: "medium"
-            },
-            {
-                question: "Como a lição descreve o conteúdo do Sermão da Montanha?",
-                options: [
-                    "Tem caráter prático e aponta para o estilo de vida dos seguidores de Cristo",
-                    "É apenas um discurso teórico sobre teologia", 
-                    "Foi dirigido apenas aos discípulos mais próximos",
-                    "É irrelevante para a vida cristã moderna"
+                    "Localizava-se em Samaria"
                 ],
                 correct: 0,
-                explanation: "A lição afirma que 'o conteúdo do discurso tem um caráter prático, que aponta para o estilo de vida esperado dos seguidores de Cristo'.",
+                explanation: "Alguns estudiosos afirmam que o Monte das Bem-Aventuranças estava situado a 6,5Km a Oeste do Mar da Galileia e a 13Km de Cafarnaum.",
                 difficulty: "medium"
             },
             {
-                question: "Segundo o Bispo Abner Ferreira citado na lição, o que Jesus faz no Sermão da Montanha?",
+                question: "O que o Bispo Abner Ferreira ressalta sobre o Sermão da Montanha?",
                 options: [
-                    "Esclarece e revela pontos das Escrituras não notados pelos judeus",
-                    "Critica duramente os fariseus", 
-                    "Anuncia o fim da Lei",
-                    "Ensina apenas sobre o fim dos tempos"
+                    "Jesus tanto esclarece quanto revela pontos das Escrituras não notados pelos judeus",
+                    "Jesus criticou duramente os fariseus", 
+                    "O sermão é apenas para estudiosos da Bíblia",
+                    "As beatitudes são metáforas sem aplicação prática"
                 ],
-                correct: 2,
-                explanation: "O Bispo Abner Ferreira ressalta que 'Jesus tanto esclarece quanto revela pontos das Escrituras para os quais os judeus ainda não tinham atentado'.",
+                correct: 0,
+                explanation: "O Bispo Abner Ferreira ressalta que 'no Sermão da Montanha, Jesus tanto esclarece quanto revela pontos das Escrituras para os quais os judeus ainda não tinham atentado'.",
                 difficulty: "medium"
             },
             {
-                question: "Qual destes é um exemplo de ensinamento prático do Sermão da Montanha mencionado na lição?",
-                options: [
-                    "A prática da oração e do jejum",
-                    "A organização da igreja local", 
-                    "O dízimo e as ofertas",
-                    "Os dons espirituais"
-                ],
-                correct: 1,
-                explanation: "A lição menciona que 'O Sermão da Montanha contém ensinamentos importantes acerca do amor ao próximo, da oração e do jejum'.",
-                difficulty: "medium"
-            },
-            {
-                question: "Como John Stott, citado na lição, descreve o Sermão da Montanha?",
+                question: "Como John Stott descreve o Sermão da Montanha?",
                 options: [
                     "Exerce um fascínio sem par e encerra a essência do ensino de Jesus",
-                    "É um discurso difícil de entender", 
-                    "É apenas para cristãos maduros",
-                    "Perdeu relevância para os dias atuais"
+                    "É um discurso ultrapassado para os dias atuais", 
+                    "É muito difícil de entender",
+                    "Apenas teólogos podem compreendê-lo"
                 ],
-                correct: 3,
-                explanation: "John Stott disse: 'O Sermão da Montanha exerce um fascínio sem par. Ele parece encerrar a essência do ensino de Jesus'.",
+                correct: 0,
+                explanation: "John Stott disse: 'O Sermão da Montanha exerce um fascínio sem par. Ele parece encerrar a essência do ensino de Jesus.'",
+                difficulty: "medium"
+            },
+            {
+                question: "Qual é a característica do conteúdo do Sermão segundo a lição?",
+                options: [
+                    "Tem caráter prático, apontando para o estilo de vida dos seguidores de Cristo",
+                    "É apenas teórico e filosófico", 
+                    "Foca apenas na vida após a morte",
+                    "É dirigido exclusivamente aos apóstolos"
+                ],
+                correct: 0,
+                explanation: "O conteúdo do discurso tem um caráter prático, que aponta para o estilo de vida esperado dos seguidores de Cristo.",
                 difficulty: "medium"
             },
             
-            // PERGUNTAS DIFÍCEIS - Respostas corretas variadas
+            // PERGUNTAS DIFÍCEIS
             {
-                question: "Segundo o subsídio para o educador na lição, o que Jesus privilegia no desfecho do Sermão da Montanha?",
+                question: "Segundo a lição, o que os ensinos do Sermão da Montanha NÃO são?",
                 options: [
-                    "A prática dos Seus ensinos",
-                    "A teoria teológica", 
-                    "A discussão intelectual",
-                    "A tradição religiosa"
+                    "Apenas uma instrução de ética ou moral",
+                    "Uma exposição prática do modo de vida cristão", 
+                    "Princípios para o Reino de Deus",
+                    "Ensinamentos com autoridade divina"
                 ],
-                explanation: "O subsídio observa que 'O desfecho do Sermão é onde Jesus privilegia a prática (Mt 7.24-27)'.",
-                correct: 2,
-                difficulty: "hard"
-            },
-            {
-                question: "Qual é a relação entre o Sermão da Montanha e a prática das curas, segundo o subsídio da lição?",
-                options: [
-                    "Com a prática das curas, Jesus devolve a dignidade aos pobres e marginalizados",
-                    "As curas eram apenas para demonstrar poder", 
-                    "Não há relação entre o Sermão e as curas",
-                    "As curas eram apenas para os discípulos"
-                ],
-                explanation: "O subsídio afirma: 'Com a prática das curas, Jesus devolve a dignidade aos pobres e marginalizados'.",
-                correct: 1,
-                difficulty: "hard"
-            },
-            {
-                question: "Qual é a importância da presença da multidão ouvindo Jesus, segundo a conclusão da lição?",
-                options: [
-                    "Mostra que ninguém está excluído da mensagem de Jesus",
-                    "Demonstra que Jesus era um orador popular", 
-                    "Indica que as pessoas estavam curiosas",
-                    "Mostra que Jesus preferia multidões a pequenos grupos"
-                ],
-                explanation: "A conclusão afirma: 'A presença da multidão que O ouvia sugere que ninguém está excluído da mensagem de Jesus'.",
+                explanation: "Os ensinos contidos no Sermão da Montanha não são uma instrução de ética ou moral apenas; antes, são uma exposição prática do modo de vida que o discípulo de Cristo deve adotar.",
                 correct: 0,
                 difficulty: "hard"
             },
             {
-                question: "O que o Sermão da Montanha nos desafia a viver, segundo a seção 'Complementando'?",
+                question: "O que a presença da multidão ouvindo Jesus sugere segundo a CONCLUSÃO da lição?",
                 options: [
-                    "Com humildade, misericórdia e integridade em um mundo que valoriza o oposto",
-                    "De forma isolada do mundo", 
-                    "Seguindo rigorosamente a lei mosaica",
-                    "Buscando riqueza material e espiritual"
+                    "Que ninguém está excluído da mensagem de Jesus",
+                    "Que apenas os curiosos ouviam Jesus", 
+                    "Que Jesus preferia multidões a discípulos",
+                    "Que o sermão era apenas um evento público"
                 ],
-                explanation: "A seção 'Complementando' diz: 'O Sermão da Montanha nos desafia a viver com humildade, misericórdia e integridade em um mundo que muitas vezes valoriza o oposto'.",
-                correct: 3,
+                explanation: "A presença da multidão que O ouvia sugere que ninguém está excluído da mensagem de Jesus.",
+                correct: 0,
                 difficulty: "hard"
             },
             {
-                question: "Segundo a lição, qual é a diferença fundamental entre os ensinos do Sermão da Montanha e uma mera instrução ética?",
+                question: "Segundo a seção 'Complementando', com o que o Sermão da Montanha nos desafia a viver?",
                 options: [
-                    "São uma exposição prática do modo de vida que o discípulo deve adotar",
-                    "São mais rigorosos que a ética secular", 
-                    "São apenas para judeus convertidos",
-                    "Não há diferença fundamental"
+                    "Com humildade, misericórdia e integridade em um mundo que valoriza o oposto",
+                    "Com riqueza e prosperidade material", 
+                    "Isolados do mundo em comunidades fechadas",
+                    "Seguindo rigorosamente a lei mosaica"
                 ],
-                explanation: "A lição cita que 'os ensinos contidos no Sermão da Montanha não são uma instrução de ética ou moral apenas; antes, são uma exposição prática do modo de vida que o discípulo de Cristo deve adotar'.",
-                correct: 1,
+                explanation: "O Sermão da Montanha nos desafia a viver com humildade, misericórdia e integridade em um mundo que muitas vezes valoriza o oposto.",
+                correct: 0,
+                difficulty: "hard"
+            },
+            {
+                question: "Qual termo era usado para Jesus que evidenciava Seu reconhecimento como Mestre?",
+                options: [
+                    "Rabi",
+                    "Profeta", 
+                    "Messias",
+                    "Senhor"
+                ],
+                explanation: "Jesus foi chamado de Rabi (João 1:38), um termo importante na tradição judaica que evidencia que o povo O reconhecia como Mestre.",
+                correct: 0,
+                difficulty: "hard"
+            },
+            {
+                question: "O que Jesus modela ao se assentar para ensinar, segundo a CONCLUSÃO da lição?",
+                options: [
+                    "Uma liderança fundamentada na verdade divina",
+                    "Que os mestres devem sempre estar sentados", 
+                    "Que o ensino deve ser apenas em lugares altos",
+                    "Que apenas os discípulos devem aprender"
+                ],
+                explanation: "Jesus, ao se assentar para ensinar, modela uma liderança fundamentada na verdade divina.",
+                correct: 0,
                 difficulty: "hard"
             }
         ];
@@ -1404,32 +1594,22 @@
         // FUNÇÃO PARA EMBARALHAR OPÇÕES DE RESPOSTA
         // =============================================
         function shuffleQuestions() {
-            // Para cada pergunta, criamos uma cópia embaralhada das opções
             allQuestions.forEach(question => {
-                // Guardamos a resposta correta original
                 const originalCorrect = question.options[question.correct];
-                
-                // Criamos uma array com índices
                 const indices = [0, 1, 2, 3];
                 
-                // Embaralhamos os índices
                 for (let i = indices.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
                     [indices[i], indices[j]] = [indices[j], indices[i]];
                 }
                 
-                // Reorganizamos as opções
                 const shuffledOptions = indices.map(i => question.options[i]);
-                
-                // Encontramos o novo índice da resposta correta
                 const newCorrectIndex = shuffledOptions.indexOf(originalCorrect);
                 
-                // Atualizamos a pergunta
                 question.options = shuffledOptions;
                 question.correct = newCorrectIndex;
             });
             
-            // Também embaralhamos a ordem das perguntas para maior variedade
             for (let i = allQuestions.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
@@ -1447,19 +1627,15 @@
         // INICIALIZAÇÃO
         // =============================================
         document.addEventListener('DOMContentLoaded', function() {
-            // Embaralhar as perguntas e opções
             shuffleQuestions();
             
-            // Configurar eventos dos botões
             document.getElementById('start-btn').addEventListener('click', startQuizWithAnimation);
             document.getElementById('prev-btn').addEventListener('click', showPreviousQuestion);
             document.getElementById('next-btn').addEventListener('click', showNextQuestion);
             document.getElementById('restart-btn').addEventListener('click', restartQuiz);
             
-            // Inicializar array de respostas
             userAnswers = new Array(allQuestions.length).fill(null);
             
-            // Configurar imagem da logo
             const logoImg = document.getElementById('logo-img');
             logoImg.onerror = function() {
                 logoImg.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L80,80 L50,60 L20,80 Z" fill="%235D3FD3"/><circle cx="50" cy="30" r="10" fill="%23FF7A5A"/></svg>';
@@ -1470,11 +1646,9 @@
         // FUNÇÕES DO QUIZ
         // =============================================
         function startQuizWithAnimation() {
-            // Mostrar animação inicial
             const startAnimation = document.getElementById('quiz-start-animation');
             startAnimation.classList.add('active');
             
-            // Contagem regressiva
             let count = 3;
             const countdownElement = document.getElementById('countdown');
             
@@ -1490,32 +1664,26 @@
         }
 
         function startQuiz() {
-            // Esconder animação inicial
             document.getElementById('quiz-start-animation').classList.remove('active');
-            
-            // Esconder elementos iniciais e mostrar quiz
             document.querySelector('.modern-header').style.display = 'none';
             document.querySelector('.content-section').style.display = 'none';
             document.getElementById('quiz-section').style.display = 'block';
             document.getElementById('results').style.display = 'none';
             
-            // Resetar variáveis
             quizStarted = true;
             currentQuestionIndex = 0;
             userAnswers = new Array(allQuestions.length).fill(null);
             
-            // Mostrar primeira pergunta
             showQuestion(currentQuestionIndex);
         }
 
         function showQuestion(index) {
             const question = allQuestions[index];
-            const quizContainer = document.getElementById('quiz-container');
+            const questionContainer = document.getElementById('question-container');
             
-            // Atualizar barra de progresso
-            updateProgressBar();
+            // Atualizar progresso
+            updateProgress();
             
-            // Criar HTML da pergunta
             let optionsHTML = '';
             const letters = ['A', 'B', 'C', 'D'];
             
@@ -1543,7 +1711,7 @@
                 `;
             });
             
-            quizContainer.innerHTML = `
+            questionContainer.innerHTML = `
                 <div class="question fade-in">
                     <div class="question-header">
                         <span class="question-difficulty difficulty-${question.difficulty}">
@@ -1557,7 +1725,6 @@
                 </div>
             `;
             
-            // Adicionar eventos às opções
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
                     if (!quizStarted) return;
@@ -1567,15 +1734,24 @@
                 });
             });
             
-            // Atualizar botões de navegação
             updateNavigationButtons();
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            
+            // Atualizar elementos
+            document.getElementById('current-question').textContent = `${currentQuestionIndex + 1}/${allQuestions.length}`;
+            document.getElementById('answered-count').textContent = `${answeredCount}/${allQuestions.length}`;
+            document.getElementById('progress-percentage').textContent = `${Math.round(progress)}%`;
+            document.getElementById('quiz-progress').style.width = `${progress}%`;
         }
 
         function selectOption(optionIndex) {
             userAnswers[currentQuestionIndex] = optionIndex;
             const question = allQuestions[currentQuestionIndex];
             
-            // Atualizar visual das opções
             const options = document.querySelectorAll('.option');
             options.forEach((option, i) => {
                 option.classList.remove('selected', 'correct', 'incorrect', 'correct-answer');
@@ -1589,13 +1765,13 @@
                     }
                 }
                 
-                // Mostrar resposta correta se o usuário errou
                 if (i === question.correct && optionIndex !== question.correct) {
                     option.classList.add('correct-answer');
                 }
             });
             
-            // Atualizar botões de navegação
+            // Atualizar progresso após resposta
+            updateProgress();
             updateNavigationButtons();
         }
 
@@ -1615,12 +1791,6 @@
             }
         }
 
-        function updateProgressBar() {
-            const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
-            document.getElementById('quiz-progress').style.width = `${progress}%`;
-            document.getElementById('progress-text').textContent = `Pergunta ${currentQuestionIndex + 1} de ${allQuestions.length}`;
-        }
-
         function updateNavigationButtons() {
             document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
             
@@ -1631,7 +1801,6 @@
                 nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
             }
             
-            // Habilitar próximo apenas se uma opção foi selecionada
             nextButton.disabled = userAnswers[currentQuestionIndex] === null;
         }
 
@@ -1650,7 +1819,6 @@
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 
-                // Configurações aleatórias
                 const left = Math.random() * 100;
                 const size = Math.random() * 12 + 8;
                 const color = colors[Math.floor(Math.random() * colors.length)];
@@ -1668,7 +1836,6 @@
                 container.appendChild(confetti);
             }
             
-            // Remover confetes após 5 segundos
             setTimeout(() => {
                 container.classList.remove('active');
                 container.innerHTML = '';
@@ -1679,18 +1846,15 @@
             document.getElementById('quiz-section').style.display = 'none';
             document.getElementById('results').style.display = 'block';
             
-            // Calcular pontuação
             let score = 0;
             let correctEasy = 0, correctMedium = 0, correctHard = 0;
             let totalEasy = 0, totalMedium = 0, totalHard = 0;
             
             allQuestions.forEach((question, index) => {
-                // Contar totais por dificuldade
                 if (question.difficulty === 'easy') totalEasy++;
                 if (question.difficulty === 'medium') totalMedium++;
                 if (question.difficulty === 'hard') totalHard++;
                 
-                // Verificar resposta correta
                 if (userAnswers[index] === question.correct) {
                     score++;
                     
@@ -1702,84 +1866,64 @@
             
             const scorePercentage = score / allQuestions.length;
             
-            // Atualizar resultados na tela
             document.getElementById('score').textContent = `${score}/${allQuestions.length}`;
             document.getElementById('correct-easy').textContent = `${correctEasy}/${totalEasy}`;
             document.getElementById('correct-medium').textContent = `${correctMedium}/${totalMedium}`;
             document.getElementById('correct-hard').textContent = `${correctHard}/${totalHard}`;
             
-            // Configurar mensagem e animações baseadas na pontuação
             const trophyIcon = document.getElementById('trophy-icon');
             const messageElement = document.getElementById('message');
             
             let message = '';
-            let animationType = '';
             
             if (score === allQuestions.length) {
-                // PERFEITO
-                message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você dominou completamente o Sermão da Montanha! Sua compreensão sobre os ensinamentos de Jesus é excepcional. Continue aprofundando seu conhecimento bíblico!';
+                message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você dominou completamente a Lição 1 sobre as Beatitudes do Reino! Continue estudando a Palavra para aprofundar seu conhecimento sobre os princípios do Reino de Deus!';
                 trophyIcon.className = 'fas fa-crown trophy-animation';
                 createConfetti(1);
-                animationType = 'perfect';
             } else if (scorePercentage >= 0.8) {
-                // EXCELENTE
-                message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você demonstrou um conhecimento profundo sobre o Sermão da Montanha e os princípios do Reino de Deus. Parabéns pelo seu desempenho!';
+                message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você demonstrou um ótimo entendimento da Lição 1. Continue praticando os princípios do Reino de Deus em sua vida diária!';
                 trophyIcon.className = 'fas fa-trophy trophy-animation';
                 createConfetti(scorePercentage);
-                animationType = 'excellent';
             } else if (scorePercentage >= 0.6) {
-                // MUITO BOM
-                message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você tem um bom entendimento do Sermão da Montanha. Continue estudando a Palavra de Deus para se aprofundar ainda mais nos ensinamentos de Jesus.';
+                message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você compreendeu bem os principais pontos da Lição 1. Revise os pontos em que teve dúvida para fortalecer seu conhecimento bíblico.';
                 trophyIcon.className = 'fas fa-award';
                 createConfetti(scorePercentage * 0.7);
-                animationType = 'good';
             } else if (scorePercentage >= 0.5) {
-                // BOM
-                message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você acertou a maioria das questões sobre o Sermão da Montanha. Reveja os pontos em que teve dificuldade para fortalecer seu conhecimento bíblico.';
+                message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você acertou a maioria das questões sobre a Lição 1. Reveja a lição para compreender melhor os ensinamentos do Sermão da Montanha.';
                 trophyIcon.className = 'fas fa-medal';
                 createConfetti(scorePercentage * 0.5);
-                animationType = 'average';
             } else {
-                // CONTINUE ESTUDANDO
-                message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> O Sermão da Montanha é fundamental para entender os princípios do Reino de Deus. Reveja a lição e os textos bíblicos para fortalecer seu conhecimento. Lembre-se: "Bem-aventurados os que têm fome e sede de justiça, porque serão fartos" (Mateus 5:6).';
+                message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> Revise a Lição 1 para compreender melhor as Beatitudes do Reino. Lembre-se: Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus.';
                 trophyIcon.className = 'fas fa-book';
-                animationType = 'study';
             }
             
             messageElement.innerHTML = message;
             
-            // Adicionar animação de entrada aos elementos
             const resultElements = document.querySelectorAll('#results > *');
             resultElements.forEach((element, index) => {
                 element.classList.add('fade-in');
                 element.style.animationDelay = `${index * 0.2}s`;
             });
             
-            // Rolagem suave para os resultados
             setTimeout(() => {
                 document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
             }, 500);
         }
 
         function restartQuiz() {
-            // Embaralhar novamente as perguntas
             shuffleQuestions();
             
-            // Resetar variáveis
             currentQuestionIndex = 0;
             userAnswers = new Array(allQuestions.length).fill(null);
             quizStarted = false;
             
-            // Esconder resultados e confetes
             document.getElementById('results').style.display = 'none';
             document.getElementById('confetti-container').classList.remove('active');
             document.getElementById('confetti-container').innerHTML = '';
             
-            // Mostrar página inicial
             document.querySelector('.modern-header').style.display = 'block';
             document.querySelector('.content-section').style.display = 'flex';
             
-            // Rolagem para o topo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
