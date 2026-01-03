@@ -1,22 +1,999 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Jovem | Lição 2 - Bem-Aventurados em Cristo</title>
+    <title>Quiz - Lição 1: As Beatitudes do Reino - Conectar+ Jovens</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="quiz-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* TODO: Copiar o CSS completo do quiz da lição 1 aqui */
-        /* Por enquanto, deixe vazio ou copie depois */
+        /* Estilos específicos para o quiz */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quiz-progress-section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin: 20px 0;
+            border-left: 5px solid #4361ee;
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .progress-text {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .progress-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .progress-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4361ee;
+        }
+        
+        .quiz-progress {
+            height: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .quiz-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4361ee, #3a0ca3);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .quiz-progress-bar:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.4), 
+                transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 0;
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .question-card.active {
+            border-color: #4361ee;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.15);
+        }
+        
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        
+        .question-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .question-text {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.6), 
+                transparent);
+            transition: left 0.7s;
+        }
+        
+        .option:hover:before {
+            left: 100%;
+        }
+        
+        .option:hover {
+            background: #f0f7ff;
+            border-color: #4361ee;
+            transform: translateX(5px);
+        }
+        
+        .option.selected {
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.08), rgba(67, 97, 238, 0.15));
+            border-color: #4361ee;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.1);
+        }
+        
+        .option.correct {
+            background: linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(76, 201, 240, 0.1));
+            border-color: #4cc9f0;
+        }
+        
+        .option.incorrect {
+            background: linear-gradient(135deg, rgba(247, 37, 133, 0.1), rgba(247, 37, 133, 0.05));
+            border-color: #f72585;
+        }
+        
+        .option-letter {
+            width: 40px;
+            height: 40px;
+            background: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .option.selected .option-letter {
+            background: #4361ee;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .btn-quiz {
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 150px;
+            justify-content: center;
+        }
+        
+        .btn-prev {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .btn-prev:hover {
+            background: #e9ecef;
+            color: #4361ee;
+            border-color: #4361ee;
+            transform: translateY(-3px);
+        }
+        
+        .btn-next {
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            color: white;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn-next:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-quiz:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #7209b7, #f72585);
+            color: white;
+            box-shadow: 0 5px 15px rgba(114, 9, 183, 0.3);
+        }
+        
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #f72585, #7209b7);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(114, 9, 183, 0.4);
+        }
+        
+        .result-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .result-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.5s ease;
+        }
+        
+        .result-overlay.active .result-card {
+            transform: scale(1);
+        }
+        
+        .result-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 30px auto;
+            position: relative;
+            background: conic-gradient(#4361ee var(--percentage), #e0e0e0 0);
+        }
+        
+        .score-inner {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .score-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .score-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .explanation {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(67, 97, 238, 0.02));
+            border-radius: 12px;
+            border-left: 4px solid #4361ee;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .question-card {
+                padding: 25px;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .question-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .question-text {
+                font-size: 1.2rem;
+            }
+            
+            .quiz-navigation {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .btn-quiz {
+                width: 100%;
+                padding: 18px 25px;
+            }
+            
+            .progress-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .progress-text {
+                gap: 15px;
+            }
+            
+            .quiz-progress-section {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Estrutura básica do quiz -->
-    <div class="container">
-        <h1>Quiz - Lição 2: Bem-Aventurados em Cristo</h1>
-        <p>Em construção...</p>
-        <a href="../../index.html">← Voltar para a página principal</a>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-cross"></i>
+                    <span>Conectar+ <strong>Jovens</strong></span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="index.html" class="nav-link">Quizzes</a>
+                    <a href="../index.html#about" class="nav-link">Sobre</a>
+                    <a href="../index.html#contact" class="nav-link">Contato</a>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="quiz-main">
+        <div class="container">
+            <div class="quiz-header">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Voltar para Quizzes
+                </a>
+                <h1>Lição 1: As Beatitudes do Reino de Deus</h1>
+                <p class="quiz-subtitle">Teste seu conhecimento sobre os primeiros ensinamentos de Jesus no Sermão da Montanha</p>
+                
+                <div class="quiz-info">
+                    <span class="info-item"><i class="far fa-clock"></i> 10-15 minutos</span>
+                    <span class="info-item"><i class="far fa-question-circle"></i> 12 perguntas</span>
+                    <span class="info-item difficulty easy"><i class="fas fa-signal"></i> Fácil</span>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div id="quizContent">
+                    <!-- O quiz será gerado por JavaScript -->
+                </div>
+                
+                <!-- Seção de Progresso - Agora abaixo das perguntas -->
+                <div class="quiz-progress-section" id="progressSection">
+                    <div class="progress-info">
+                        <div class="progress-text">
+                            <div class="progress-item">
+                                <div class="progress-label">Questão Atual</div>
+                                <div class="progress-value">
+                                    <span id="currentQuestionNumber">1</span>/<span id="totalQuestions">12</span>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">Respondidas</div>
+                                <div class="progress-value">
+                                    <span id="answeredCount">0</span>/<span id="totalQuestions2">12</span>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-label">Progresso</div>
+                                <div class="progress-value" id="progressPercentage">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+                
+                <!-- Navegação - Agora abaixo do progresso -->
+                <div class="quiz-navigation" id="quizNavigation">
+                    <button class="btn-quiz btn-prev" id="prevBtn" disabled>
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </button>
+                    <button class="btn-quiz btn-next" id="nextBtn">
+                        Próxima <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Overlay de Resultados -->
+    <div class="result-overlay" id="resultOverlay">
+        <div class="result-card">
+            <div class="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2>Quiz Concluído!</h2>
+            <p>Veja como você se saiu:</p>
+            
+            <div class="score-circle" id="scoreCircle">
+                <div class="score-inner">
+                    <div class="score-number" id="scoreNumber">0%</div>
+                    <div class="score-label">Pontuação</div>
+                </div>
+            </div>
+            
+            <div class="result-details">
+                <div class="detail-item">
+                    <span class="detail-label">Acertos:</span>
+                    <span class="detail-value" id="correctCount">0/12</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Tempo:</span>
+                    <span class="detail-value" id="timeSpent">0:00</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Nível:</span>
+                    <span class="detail-value" id="performanceLevel">Iniciante</span>
+                </div>
+            </div>
+            
+            <div class="result-actions">
+                <button class="btn-quiz btn-submit" id="restartBtn">
+                    <i class="fas fa-redo"></i> Refazer Quiz
+                </button>
+                <a href="index.html" class="btn-quiz" style="background: #f8f9fa; color: #333; margin-left: 10px;">
+                    <i class="fas fa-list"></i> Ver Todos
+                </a>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Conectar+ Jovens</h3>
+                    <p>Quizzes interativos para estudo bíblico de jovens.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="../index.html">Início</a>
+                    <a href="index.html">Quizzes</a>
+                    <a href="../index.html#about">Sobre</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Baseado em</h3>
+                    <p>Revista Conectar+ Jovens</p>
+                    <p>Editora Betel - 1º Trimestre 2026</p>
+                    <p>ISSN 2526-0723</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Conectar+ Jovens Quizzes. Todos os direitos reservados.</p>
+                <p>Desenvolvido com ❤️ para a nova geração.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dados do Quiz - Lição 1
+        const quizData = {
+            title: "Lição 1: As Beatitudes do Reino de Deus",
+            questions: [
+                {
+                    id: 1,
+                    text: "Onde Jesus proferiu o Sermão da Montanha?",
+                    options: [
+                        { id: 'a', text: "No Templo de Jerusalém", correct: false },
+                        { id: 'b', text: "Em uma sinagoga", correct: false },
+                        { id: 'c', text: "No alto de um monte", correct: true },
+                        { id: 'd', text: "À beira do Mar da Galileia", correct: false }
+                    ],
+                    explanation: "Mateus 5:1 diz: 'Vendo as multidões, Jesus subiu ao monte...'"
+                },
+                {
+                    id: 2,
+                    text: "Quem estava presente para ouvir o Sermão? (Mateus 5:1)",
+                    options: [
+                        { id: 'a', text: "Apenas os 12 discípulos", correct: false },
+                        { id: 'b', text: "Apenas os fariseus", correct: false },
+                        { id: 'c', text: "Os discípulos e a multidão", correct: true },
+                        { id: 'd', text: "Apenas os líderes religiosos", correct: false }
+                    ],
+                    explanation: "O versículo menciona que 'seus discípulos se aproximaram, e ele começou a ensiná-los' diante das multidões."
+                },
+                {
+                    id: 3,
+                    text: "Qual é a primeira Bem-Aventurança?",
+                    options: [
+                        { id: 'a', text: "Bem-aventurados os que choram", correct: false },
+                        { id: 'b', text: "Bem-aventurados os mansos", correct: false },
+                        { id: 'c', text: "Bem-aventurados os pobres de espírito", correct: true },
+                        { id: 'd', text: "Bem-aventurados os misericordiosos", correct: false }
+                    ],
+                    explanation: "Mateus 5:3: 'Bem-aventurados os pobres de espírito, porque deles é o Reino dos Céus'"
+                },
+                {
+                    id: 4,
+                    text: "O que é prometido aos 'pobres de espírito'? (Mateus 5:3)",
+                    options: [
+                        { id: 'a', text: "Serão consolados", correct: false },
+                        { id: 'b', text: "Herdarão a terra", correct: false },
+                        { id: 'c', text: "Verão a Deus", correct: false },
+                        { id: 'd', text: "Deles é o Reino dos Céus", correct: true }
+                    ],
+                    explanation: "A promessa específica para os pobres de espírito é o Reino dos Céus."
+                },
+                {
+                    id: 5,
+                    text: "Como Jesus ensinava, diferente dos escribas?",
+                    options: [
+                        { id: 'a', text: "Com muitas parábolas", correct: false },
+                        { id: 'b', text: "Com autoridade", correct: true },
+                        { id: 'c', text: "Com palavras complicadas", correct: false },
+                        { id: 'd', text: "Com exemplos históricos", correct: false }
+                    ],
+                    explanation: "Mateus 7:29: 'Porque ele as ensinava como quem tem autoridade, e não como os escribas'"
+                },
+                {
+                    id: 6,
+                    text: "Qual destes NÃO é um valor do Reino apresentado no Sermão?",
+                    options: [
+                        { id: 'a', text: "Humildade", correct: false },
+                        { id: 'b', text: "Misericórdia", correct: false },
+                        { id: 'c', text: "Riqueza material", correct: true },
+                        { id: 'd', text: "Pureza de coração", correct: false }
+                    ],
+                    explanation: "Jesus ensina valores espirituais, não materiais."
+                },
+                {
+                    id: 7,
+                    text: "O que significa 'Bem-aventurados' no contexto bíblico?",
+                    options: [
+                        { id: 'a', text: "Ricos financeiramente", correct: false },
+                        { id: 'b', text: "Felizes e abençoados por Deus", correct: true },
+                        { id: 'c', text: "Poderosos politicamente", correct: false },
+                        { id: 'd', text: "Inteligentes academicamente", correct: false }
+                    ],
+                    explanation: "O termo grego 'makarios' significa feliz, abençoado, privilegiado."
+                },
+                {
+                    id: 8,
+                    text: "Quantas Bem-Aventuranças são listadas em Mateus 5:3-11?",
+                    options: [
+                        { id: 'a', text: "7", correct: false },
+                        { id: 'b', text: "8", correct: false },
+                        { id: 'c', text: "9", correct: true },
+                        { id: 'd', text: "10", correct: false }
+                    ],
+                    explanation: "São 9 declarações de bem-aventurança nos versículos 3-11."
+                },
+                {
+                    id: 9,
+                    text: "Como a multidão reagia aos ensinamentos de Jesus? (Mateus 7:28-29)",
+                    options: [
+                        { id: 'a', text: "Com indiferença", correct: false },
+                        { id: 'b', text: "Com admiração, pois ensinava com autoridade", correct: true },
+                        { id: 'c', text: "Com raiva", correct: false },
+                        { id: 'd', text: "Com confusão", correct: false }
+                    ],
+                    explanation: "As multidões se admiravam porque Jesus ensinava como quem tem autoridade."
+                },
+                {
+                    id: 10,
+                    text: "O Sermão da Montanha é frequentemente chamado de:",
+                    options: [
+                        { id: 'a', text: "O Manual do Cristão", correct: false },
+                        { id: 'b', text: "A Constituição do Reino", correct: false },
+                        { id: 'c', text: "A Carta Magna do Reino", correct: true },
+                        { id: 'd', text: "O Guia dos Discípulos", correct: false }
+                    ],
+                    explanation: "É conhecido como 'A Carta Magna do Reino' por estabelecer os princípios fundamentais."
+                },
+                {
+                    id: 11,
+                    text: "Qual destes é um tema central do Sermão da Montanha?",
+                    options: [
+                        { id: 'a', text: "A humildade como valor do Reino", correct: true },
+                        { id: 'b', text: "A prosperidade financeira", correct: false },
+                        { id: 'c', text: "O poder político", correct: false },
+                        { id: 'd', text: "A vingança pessoal", correct: false }
+                    ],
+                    explanation: "A humildade aparece em várias Bem-Aventuranças."
+                },
+                {
+                    id: 12,
+                    text: "O que Jesus ensina sobre a justiça no Sermão?",
+                    options: [
+                        { id: 'a', text: "Que devemos buscar vingança", correct: false },
+                        { id: 'b', text: "Que devemos ter fome e sede de justiça", correct: true },
+                        { id: 'c', text: "Que a justiça não importa", correct: false },
+                        { id: 'd', text: "Que apenas os juízes devem ser justos", correct: false }
+                    ],
+                    explanation: "Mateus 5:6: 'Bem-aventurados os que têm fome e sede de justiça...'"
+                }
+            ]
+        };
+
+        // Variáveis do quiz
+        let currentQuestion = 0;
+        let userAnswers = {};
+        let startTime;
+        let timerInterval;
+
+        // Inicializar quiz
+        function initQuiz() {
+            startTime = new Date();
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+            renderQuestion();
+            updateProgress();
+            updateNavigation();
+            
+            // Inicializar contadores
+            document.getElementById('totalQuestions').textContent = quizData.questions.length;
+            document.getElementById('totalQuestions2').textContent = quizData.questions.length;
+            
+            // Salvar início do quiz
+            localStorage.setItem('quiz_1_start', startTime.getTime());
+        }
+
+        // Renderizar questão atual
+        function renderQuestion() {
+            const question = quizData.questions[currentQuestion];
+            const quizContent = document.getElementById('quizContent');
+            
+            // Criar HTML da questão
+            let optionsHTML = '';
+            question.options.forEach(option => {
+                const isSelected = userAnswers[question.id] === option.id;
+                const optionClass = isSelected ? 'option selected' : 'option';
+                
+                optionsHTML += `
+                    <div class="${optionClass}" data-option="${option.id}">
+                        <div class="option-letter">${option.id.toUpperCase()}</div>
+                        <div class="option-text">${option.text}</div>
+                    </div>
+                `;
+            });
+            
+            const questionHTML = `
+                <div class="question-card active">
+                    <div class="question-header">
+                        <div class="question-number">${question.id}</div>
+                        <h3 class="question-text">${question.text}</h3>
+                    </div>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    ${userAnswers[question.id] ? `
+                        <div class="explanation">
+                            <strong><i class="fas fa-info-circle"></i> Explicação:</strong><br>
+                            ${question.explanation}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            quizContent.innerHTML = questionHTML;
+            
+            // Atualizar contador de questão atual
+            document.getElementById('currentQuestionNumber').textContent = currentQuestion + 1;
+            
+            // Adicionar eventos às opções
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    selectOption(this);
+                });
+            });
+        }
+
+        // Selecionar uma opção
+        function selectOption(element) {
+            const questionId = quizData.questions[currentQuestion].id;
+            const optionId = element.getAttribute('data-option');
+            
+            // Remover seleção anterior
+            document.querySelectorAll('.question-card .option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Selecionar nova opção
+            element.classList.add('selected');
+            
+            // Salvar resposta
+            userAnswers[questionId] = optionId;
+            
+            // Atualizar contador de questões respondidas
+            updateAnsweredCounter();
+            
+            // Mostrar explicação
+            setTimeout(() => {
+                const explanation = document.querySelector('.explanation');
+                if (!explanation) {
+                    const questionCard = document.querySelector('.question-card');
+                    const explanationHTML = `
+                        <div class="explanation">
+                            <strong><i class="fas fa-info-circle"></i> Explicação:</strong><br>
+                            ${quizData.questions[currentQuestion].explanation}
+                        </div>
+                    `;
+                    questionCard.insertAdjacentHTML('beforeend', explanationHTML);
+                }
+            }, 300);
+            
+            // Atualizar navegação
+            updateNavigation();
+        }
+
+        // Atualizar contador de questões respondidas
+        function updateAnsweredCounter() {
+            const answeredCount = Object.keys(userAnswers).length;
+            document.getElementById('answeredCount').textContent = answeredCount;
+        }
+
+        // Atualizar barra de progresso
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressPercentage').textContent = `${Math.round(progress)}%`;
+            
+            // Atualizar contador de questões respondidas
+            updateAnsweredCounter();
+        }
+
+        // Atualizar navegação
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Botão anterior
+            prevBtn.disabled = currentQuestion === 0;
+            
+            // Botão próximo/submit
+            if (currentQuestion === quizData.questions.length - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-check"></i> Concluir';
+                nextBtn.classList.add('btn-submit');
+                nextBtn.classList.remove('btn-next');
+            } else {
+                nextBtn.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
+                nextBtn.classList.remove('btn-submit');
+                nextBtn.classList.add('btn-next');
+            }
+            
+            // Habilitar próximo apenas se resposta foi selecionada
+            const questionId = quizData.questions[currentQuestion].id;
+            nextBtn.disabled = !userAnswers[questionId];
+        }
+
+        // Atualizar timer
+        function updateTimer() {
+            const now = new Date();
+            const diff = Math.floor((now - startTime) / 1000);
+            const minutes = Math.floor(diff / 60);
+            const seconds = diff % 60;
+            document.getElementById('timeSpent').textContent = 
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Navegação
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            
+            // Botão anterior
+            document.getElementById('prevBtn').addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    renderQuestion();
+                    updateProgress();
+                    updateNavigation();
+                }
+            });
+            
+            // Botão próximo
+            document.getElementById('nextBtn').addEventListener('click', function() {
+                if (currentQuestion < quizData.questions.length - 1) {
+                    currentQuestion++;
+                    renderQuestion();
+                    updateProgress();
+                    updateNavigation();
+                } else {
+                    submitQuiz();
+                }
+            });
+            
+            // Botão refazer
+            document.getElementById('restartBtn')?.addEventListener('click', function() {
+                restartQuiz();
+            });
+        });
+
+        // Submeter quiz
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            
+            // Calcular pontuação
+            let correctCount = 0;
+            quizData.questions.forEach(question => {
+                const userAnswer = userAnswers[question.id];
+                if (userAnswer) {
+                    const selectedOption = question.options.find(opt => opt.id === userAnswer);
+                    if (selectedOption && selectedOption.correct) {
+                        correctCount++;
+                    }
+                }
+            });
+            
+            const score = Math.round((correctCount / quizData.questions.length) * 100);
+            
+            // Atualizar resultado
+            document.getElementById('scoreNumber').textContent = `${score}%`;
+            document.getElementById('correctCount').textContent = `${correctCount}/${quizData.questions.length}`;
+            
+            // Atualizar nível de desempenho
+            let performanceLevel = '';
+            if (score >= 90) performanceLevel = 'Excelente! 🎉';
+            else if (score >= 70) performanceLevel = 'Bom! 👍';
+            else if (score >= 50) performanceLevel = 'Regular 🤔';
+            else performanceLevel = 'Precisa estudar mais 📚';
+            
+            document.getElementById('performanceLevel').textContent = performanceLevel;
+            
+            // Atualizar círculo de pontuação
+            const scoreCircle = document.getElementById('scoreCircle');
+            scoreCircle.style.setProperty('--percentage', `${score}%`);
+            
+            // Mostrar overlay
+            document.getElementById('resultOverlay').classList.add('active');
+            
+            // Salvar no localStorage
+            const quizResult = {
+                score: score,
+                correctCount: correctCount,
+                totalQuestions: quizData.questions.length,
+                timeSpent: document.getElementById('timeSpent').textContent,
+                completed: true,
+                timestamp: new Date().getTime()
+            };
+            
+            localStorage.setItem('quiz_1_result', JSON.stringify(quizResult));
+            updateQuizzesList();
+        }
+
+        // Reiniciar quiz
+        function restartQuiz() {
+            currentQuestion = 0;
+            userAnswers = {};
+            document.getElementById('resultOverlay').classList.remove('active');
+            clearInterval(timerInterval);
+            initQuiz();
+        }
+
+        // Atualizar lista de quizzes (para a página de lista)
+        function updateQuizzesList() {
+            // Esta função seria usada na página de lista de quizzes
+            console.log('Quiz completado!');
+        }
+    </script>
+    <script src="../script.js"></script>
 </body>
 </html>
