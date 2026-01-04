@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Jovem | 1º Trimestre 2026</title>
+    <title>Quiz da EBD Jovem | Lição 1 - As Beatitudes do Reino de Deus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -191,7 +191,7 @@
         }
 
         .logo-text h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin: 0;
             line-height: 1.2;
@@ -211,101 +211,122 @@
             backdrop-filter: blur(5px);
         }
 
-        /* ===== SEÇÃO DA LIÇÃO ===== */
-        .lesson-info-section {
+        /* ===== NOVA SEÇÃO: INFORMAÇÕES DA LIÇÃO ===== */
+        .lesson-header-section {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             margin: 20px 0 30px 0;
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        .lesson-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .lesson-title-container {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         .lesson-number {
+            display: inline-block;
             background: rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 30px;
             font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .lesson-title {
-            font-size: 1.4rem;
+        .lesson-name {
+            font-size: 1.8rem;
             font-weight: 700;
             color: white;
-            text-align: center;
             line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .verse-of-day {
             background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
+            padding: 20px;
             border-radius: 15px;
-            margin: 15px 0;
+            margin: 20px 0;
             text-align: center;
-            font-style: italic;
             border-left: 4px solid rgba(255, 255, 255, 0.4);
         }
 
         .verse-text {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: white;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-style: italic;
+            line-height: 1.5;
         }
 
         .verse-reference {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
         }
 
         .lesson-objectives {
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .objectives-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            justify-content: center;
         }
 
         .objectives-list {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .objective-item {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 8px;
-            padding-left: 24px;
-            position: relative;
+            color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.3s ease;
         }
 
-        .objective-item:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+        .objective-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .objective-item i {
             color: var(--success);
-            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .objective-text {
+            flex: 1;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .welcome-card {
@@ -435,6 +456,53 @@
             color: transparent;
             font-weight: 700;
             padding: 2px 5px;
+        }
+
+        .truth-applied {
+            background: linear-gradient(135deg, rgba(93, 63, 211, 0.1), rgba(255, 122, 90, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .truth-applied .label {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .truth-applied .text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .prayer-moment {
+            background: linear-gradient(135deg, rgba(0, 201, 183, 0.1), rgba(93, 63, 211, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .prayer-moment .label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prayer-moment .text {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.5;
         }
 
         /* ===== BOTÃO INICIAR ===== */
@@ -1056,12 +1124,20 @@
             }
             
             .logo-text h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .logo {
                 width: 120px;
                 height: 120px;
+            }
+            
+            .lesson-name {
+                font-size: 1.4rem;
+            }
+            
+            .verse-text {
+                font-size: 1rem;
             }
             
             .welcome-card {
@@ -1134,6 +1210,10 @@
             .progress-value {
                 font-size: 1.3rem;
             }
+            
+            .objective-item {
+                padding: 12px;
+            }
         }
 
         @media (min-width: 768px) {
@@ -1182,6 +1262,10 @@
             .progress-item {
                 min-width: auto;
             }
+            
+            .objective-item {
+                padding: 15px 20px;
+            }
         }
 
         @media (min-width: 992px) {
@@ -1195,7 +1279,11 @@
             }
             
             .logo-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            
+            .lesson-name {
+                font-size: 2rem;
             }
         }
     </style>
@@ -1206,8 +1294,8 @@
         <div class="animation-icon">
             <i class="fas fa-mountain"></i>
         </div>
-        <div class="animation-text">Quiz Jovem</div>
-        <div class="animation-subtext">Lição 1: As Beatitudes do Reino de Deus</div>
+        <div class="animation-text">Quiz da EBD Jovem</div>
+        <div class="animation-subtext">1º Trimestre 2026 - Lição 1</div>
         <div class="countdown" id="countdown">3</div>
     </div>
 
@@ -1230,12 +1318,12 @@
                 </div>
 
                 <!-- INFORMAÇÕES DA LIÇÃO -->
-                <div class="lesson-info-section">
-                    <div class="lesson-header">
+                <div class="lesson-header-section">
+                    <div class="lesson-title-container">
                         <div class="lesson-number">
                             <i class="fas fa-book-open"></i> Lição 1
                         </div>
-                        <div class="lesson-title">AS BEATITUDES DO REINO DE DEUS</div>
+                        <div class="lesson-name">AS BEATITUDES DO REINO DE DEUS</div>
                     </div>
                     
                     <div class="verse-of-day">
@@ -1248,9 +1336,18 @@
                             <i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO
                         </div>
                         <ul class="objectives-list">
-                            <li class="objective-item">Conhecer os primeiros ensinamentos de Jesus sobre o Reino de Deus</li>
-                            <li class="objective-item">Identificar a estrutura do Sermão da Montanha</li>
-                            <li class="objective-item">Ressaltar a importância do primeiro discurso do Ministério público de Jesus</li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Conhecer os primeiros ensinamentos de Jesus sobre o Reino de Deus</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Identificar a estrutura do Sermão da Montanha</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Ressaltar a importância do primeiro discurso do Ministério público de Jesus</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1280,11 +1377,19 @@
         <!-- CONTEÚDO -->
         <section class="content-section">
             <div class="about-card">
-                <h2 class="card-title"><i class="fas fa-mountain-sun"></i> VERDADE APLICADA</h2>
+                <h2 class="card-title"><i class="fas fa-lightbulb"></i> VERDADE APLICADA</h2>
                 <div class="card-content">
-                    <p><strong>Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus.</strong></p>
-                    <p>O Sermão da Montanha (Mateus 5–7) nos traz ensinamentos importantes. Do alto de um monte, sentado em uma posição típica dos mestres da época, Jesus ensinou os princípios do Reino de Deus não apenas aos Seus discípulos, mas também à multidão que O seguia.</p>
-                    <p class="highlight">"O Sermão da Montanha é o discurso inaugural do Ministério público de Jesus Cristo, no qual Ele revela os princípios do Seu Reino Messiânico."</p>
+                    <div class="truth-applied">
+                        <div class="label">Verdade Aplicada</div>
+                        <div class="text">Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus.</div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">O Sermão da Montanha (Mateus 5–7) nos traz ensinamentos importantes. Do alto de um monte, sentado em uma posição típica dos mestres da época, Jesus ensinou os princípios do Reino de Deus não apenas aos Seus discípulos, mas também à multidão que O seguia.</p>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(255, 122, 90, 0.1), rgba(93, 63, 211, 0.1)); border-radius: 12px; border-left: 4px solid var(--secondary);">
+                        <strong><i class="fas fa-quote-left"></i> Ponto-Chave:</strong><br>
+                        "O Sermão da Montanha é o discurso inaugural do Ministério público de Jesus Cristo, no qual Ele revela os princípios do Seu Reino Messiânico."
+                    </div>
                 </div>
             </div>
 
@@ -1298,9 +1403,10 @@
                         <li><i class="fas fa-check-circle"></i> A aplicação prática dos ensinamentos de Jesus</li>
                         <li><i class="fas fa-check-circle"></i> A importância do discurso para a vida cristã atual</li>
                     </ul>
-                    <div style="margin-top: 20px; padding: 15px; background: rgba(93, 63, 211, 0.05); border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <strong><i class="fas fa-pray"></i> MOMENTO DE ORAÇÃO:</strong><br>
-                        Ore para que possamos praticar os princípios do Reino em nossa vida diária.
+                    
+                    <div class="prayer-moment" style="margin-top: 25px;">
+                        <div class="label">Momento de Oração</div>
+                        <div class="text">Ore para que possamos praticar os princípios do Reino em nossa vida diária.</div>
                     </div>
                 </div>
             </div>
@@ -1549,42 +1655,6 @@
                     "Que o sermão era apenas um evento público"
                 ],
                 explanation: "A presença da multidão que O ouvia sugere que ninguém está excluído da mensagem de Jesus.",
-                correct: 0,
-                difficulty: "hard"
-            },
-            {
-                question: "Segundo a seção 'Complementando', com o que o Sermão da Montanha nos desafia a viver?",
-                options: [
-                    "Com humildade, misericórdia e integridade em um mundo que valoriza o oposto",
-                    "Com riqueza e prosperidade material", 
-                    "Isolados do mundo em comunidades fechadas",
-                    "Seguindo rigorosamente a lei mosaica"
-                ],
-                explanation: "O Sermão da Montanha nos desafia a viver com humildade, misericórdia e integridade em um mundo que muitas vezes valoriza o oposto.",
-                correct: 0,
-                difficulty: "hard"
-            },
-            {
-                question: "Qual termo era usado para Jesus que evidenciava Seu reconhecimento como Mestre?",
-                options: [
-                    "Rabi",
-                    "Profeta", 
-                    "Messias",
-                    "Senhor"
-                ],
-                explanation: "Jesus foi chamado de Rabi (João 1:38), um termo importante na tradição judaica que evidencia que o povo O reconhecia como Mestre.",
-                correct: 0,
-                difficulty: "hard"
-            },
-            {
-                question: "O que Jesus modela ao se assentar para ensinar, segundo a CONCLUSÃO da lição?",
-                options: [
-                    "Uma liderança fundamentada na verdade divina",
-                    "Que os mestres devem sempre estar sentados", 
-                    "Que o ensino deve ser apenas em lugares altos",
-                    "Que apenas os discípulos devem aprender"
-                ],
-                explanation: "Jesus, ao se assentar para ensinar, modela uma liderança fundamentada na verdade divina.",
                 correct: 0,
                 difficulty: "hard"
             }
