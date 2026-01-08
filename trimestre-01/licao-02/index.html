@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ DA EBD Fiel | Lição 9: Os Discípulos de Cristo e o Processo da Santificação</title>
+    <title>Quiz da EBD Jovem | Lição 2 - Bem-Aventurados em Cristo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== VARIÁVEIS E RESET ===== */
         :root {
-            --primary: #4361ee;
-            --primary-dark: #3a56d4;
-            --secondary: #7209b7;
-            --accent: #f72585;
-            --success: #4cc9f0;
-            --warning: #f8961e;
-            --danger: #f94144;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --text: #343a40;
-            --gray: #6c757d;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --shadow-lg: 0 15px 50px rgba(0,0,0,0.15);
-            --gradient: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
-            --gradient-light: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+            --primary: #5D3FD3;
+            --primary-dark: #4A2FAB;
+            --secondary: #FF7A5A;
+            --accent: #00C9B7;
+            --success: #2ECC71;
+            --warning: #FF9F43;
+            --danger: #FF6B6B;
+            --light: #F8FAFF;
+            --dark: #1E1B4B;
+            --text: #2D3748;
+            --gray: #718096;
+            --shadow: 0 10px 30px rgba(93, 63, 211, 0.1);
+            --shadow-lg: 0 15px 50px rgba(93, 63, 211, 0.15);
+            --gradient: linear-gradient(135deg, #5D3FD3 0%, #FF7A5A 100%);
+            --gradient-secondary: linear-gradient(135deg, #FF7A5A 0%, #FFC145 100%);
             --instagram: #E1306C;
+            --youth-bg: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
         }
 
         * {
@@ -39,7 +40,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--youth-bg);
             color: var(--text);
             min-height: 100vh;
             padding: 15px;
@@ -48,6 +49,8 @@
             align-items: center;
             justify-content: center;
             line-height: 1.6;
+            background-image: radial-gradient(circle at 10% 20%, rgba(93, 63, 211, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 122, 90, 0.05) 0%, transparent 20%);
         }
 
         /* ===== CONTAINER PRINCIPAL ===== */
@@ -55,11 +58,12 @@
             max-width: 100%;
             width: 100%;
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             box-shadow: var(--shadow-lg);
             overflow: hidden;
             margin: 10px 0;
             position: relative;
+            border: 1px solid rgba(93, 63, 211, 0.1);
         }
 
         /* ===== ANIMAÇÃO INICIAL ===== */
@@ -91,31 +95,42 @@
         }
 
         .animation-text {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.2rem;
+            font-weight: 800;
             margin-bottom: 10px;
             animation: slideInLeft 1s ease forwards;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .animation-subtext {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
             animation: slideInRight 1s ease forwards;
             animation-delay: 0.3s;
+            max-width: 80%;
         }
 
         .countdown {
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-top: 30px;
             animation: pulse 1s infinite;
+            background: rgba(255,255,255,0.2);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border: 3px solid rgba(255,255,255,0.3);
         }
 
-        /* ===== HEADER MODERNO ===== */
+        /* ===== HEADER MODERNO - ESTILO JOVEM ===== */
         .modern-header {
             background: var(--gradient);
             color: white;
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -128,8 +143,10 @@
             width: 100%;
             height: 100%;
             opacity: 0.1;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTIxLDMwIEMyMSwzMCA0MCwzMCA1MCw0MCBDNjAsMzAgNzksMzAgNzksMzAgQzc5LDMwIDg1LDM1IDg1LDQwIEM4NSw0NSA3OSw1MCA3OSw1MCBDNzksNTAgNjAsNTAgNTAsNjAgQzQwLDUwIDIxLDUwIDIxLDUwIEMyMSw1MCAxNSw0NSAxNSw0MCBDMTUsMzUgMjEsMzAgMjEsMzAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');
-            background-size: 150px;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3) 2px, transparent 2px);
+            background-size: 50px 50px;
         }
 
         .header-content {
@@ -145,26 +162,28 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-radius: 50%;
-            background: white;
-            padding: 10px;
+            border-radius: 0;
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+            border: none;
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 50%;
+            border-radius: 0;
         }
 
         .logo-text {
@@ -172,51 +191,178 @@
         }
 
         .logo-text h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             margin: 0;
             line-height: 1.2;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logo-text .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             font-weight: 400;
-            margin-top: 5px;
+            margin-top: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+        }
+
+        /* ===== NOVA SEÇÃO: INFORMAÇÕES DA LIÇÃO ===== */
+        .lesson-header-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .lesson-title-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .lesson-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .verse-of-day {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border-left: 4px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .verse-text {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 10px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .verse-reference {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .lesson-objectives {
+            margin: 25px 0;
+        }
+
+        .objectives-title {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .objectives-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .objective-item {
+            color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .objective-item i {
+            color: var(--success);
+            font-size: 1.3rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .objective-text {
+            flex: 1;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .welcome-card {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 16px;
-            margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.2);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(255,255,255,0.3);
             text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .welcome-card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .welcome-card p {
-            font-size: 1rem;
-            opacity: 0.9;
-            line-height: 1.5;
+            font-size: 1.05rem;
+            opacity: 0.95;
+            line-height: 1.6;
         }
 
         .features {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            margin-top: 20px;
+            margin-top: 25px;
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -225,68 +371,138 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255,255,255,0.1);
-            padding: 12px 15px;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 18px;
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             backdrop-filter: blur(5px);
-            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
         }
 
         /* ===== SEÇÃO DE CONTEÚDO ===== */
         .content-section {
-            padding: 30px 20px;
+            padding: 35px 25px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
         }
 
         .about-card, .details-card {
             background: var(--light);
-            border-radius: 16px;
-            padding: 25px 20px;
+            border-radius: 20px;
+            padding: 30px 25px;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(93, 63, 211, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover, .details-card:hover {
+            transform: translateY(-5px);
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .card-content {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .card-content ul {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .card-content li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .card-content li:hover {
+            background: rgba(93, 63, 211, 0.05);
         }
 
         .card-content li i {
             color: var(--primary);
             margin-top: 3px;
             flex-shrink: 0;
+            font-size: 1.2rem;
         }
 
         .highlight {
-            background: var(--gradient-light);
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            font-weight: 700;
+            padding: 2px 5px;
+        }
+
+        .truth-applied {
+            background: linear-gradient(135deg, rgba(93, 63, 211, 0.1), rgba(255, 122, 90, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .truth-applied .label {
+            font-size: 0.9rem;
+            color: var(--primary);
             font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .truth-applied .text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .prayer-moment {
+            background: linear-gradient(135deg, rgba(0, 201, 183, 0.1), rgba(93, 63, 211, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .prayer-moment .label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prayer-moment .text {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.5;
         }
 
         /* ===== BOTÃO INICIAR ===== */
@@ -294,124 +510,100 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             margin-top: 30px;
         }
 
         .start-btn {
-            padding: 16px 35px;
+            padding: 18px 40px;
             border: none;
             border-radius: 50px;
-            background: var(--accent);
+            background: var(--secondary);
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 8px 20px rgba(248, 37, 133, 0.4);
+            gap: 12px;
+            box-shadow: 0 10px 25px rgba(255, 122, 90, 0.4);
             width: 100%;
-            max-width: 280px;
+            max-width: 300px;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .start-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
         }
 
         .start-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 25px rgba(248, 37, 133, 0.5);
-            background: #ff2d95;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 122, 90, 0.5);
+        }
+
+        .start-btn:hover::before {
+            left: 100%;
         }
 
         /* ===== SEÇÃO DO QUIZ ===== */
         .quiz-section {
             display: none;
-            padding: 20px 15px;
+            padding: 25px 20px;
         }
 
-        .progress-container {
-            padding: 0 15px;
-            margin-bottom: 20px;
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .progress-text {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .progress-bar {
-            height: 8px;
-            background: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-            position: relative;
-        }
-
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(
-                -45deg,
-                rgba(255, 255, 255, 0.2) 25%,
-                transparent 25%,
-                transparent 50%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0.2) 75%,
-                transparent 75%,
-                transparent
-            );
-            background-size: 20px 20px;
-            animation: move 1s linear infinite;
-        }
-
-        @keyframes move {
-            0% { background-position: 0 0; }
-            100% { background-position: 20px 0; }
+        .question-container {
+            margin-bottom: 30px;
         }
 
         .question {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 16px;
+            padding: 25px;
+            border-radius: 20px;
             background: white;
             box-shadow: var(--shadow);
-            border-left: 5px solid var(--primary);
+            border-left: 6px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            opacity: 0.05;
+            border-radius: 0 0 0 100%;
         }
 
         .question-header {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 18px;
+            margin-bottom: 25px;
         }
 
         .question-difficulty {
-            padding: 8px 15px;
+            padding: 10px 18px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: white;
             align-self: flex-start;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .difficulty-easy { background: var(--success); }
@@ -419,33 +611,35 @@
         .difficulty-hard { background: var(--danger); }
 
         .question-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
             line-height: 1.4;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .options {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px;
+            gap: 15px;
         }
 
         .option {
-            padding: 16px 15px;
+            padding: 18px 20px;
             background: var(--light);
-            border-radius: 12px;
+            border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             border: 2px solid transparent;
             position: relative;
+            overflow: hidden;
         }
 
         .option:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(93, 63, 211, 0.15);
             border-color: var(--primary);
         }
 
@@ -454,6 +648,7 @@
             color: white;
             border-color: var(--success);
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
         }
 
         .option.selected.incorrect {
@@ -461,6 +656,7 @@
             color: white;
             border-color: var(--danger);
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
         }
 
         .option.correct-answer {
@@ -468,29 +664,33 @@
             color: white;
             border-color: var(--success);
             animation: pulse 0.6s ease;
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
         }
 
         .option-letter {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: rgba(255,255,255,0.3);
+            width: 36px;
+            height: 36px;
+            background: rgba(93, 63, 211, 0.1);
             border-radius: 50%;
-            margin-right: 12px;
-            font-weight: bold;
+            margin-right: 15px;
+            font-weight: 800;
             flex-shrink: 0;
+            color: var(--primary);
+            transition: all 0.3s ease;
         }
 
         .option.selected .option-letter,
         .option.correct-answer .option-letter {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.3);
+            color: white;
         }
 
         .feedback-icon {
             margin-left: auto;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0;
             transition: opacity 0.3s ease;
             flex-shrink: 0;
@@ -515,88 +715,223 @@
             border-color: transparent;
         }
 
+        /* ===== SEÇÃO DE PROGRESSO ===== */
+        .progress-section {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(93, 63, 211, 0.1);
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .progress-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .progress-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E2E8F0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.3) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0.3) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 30px 30px;
+            animation: move 1s linear infinite;
+        }
+
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 0; }
+        }
+
         /* ===== NAVEGAÇÃO ===== */
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px;
-            gap: 10px;
-            flex-direction: row-reverse;
+            gap: 15px;
         }
 
         button {
-            padding: 14px 20px;
+            padding: 16px 25px;
             border: none;
             border-radius: 50px;
             background: var(--primary);
             color: white;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
+            gap: 10px;
+            font-size: 1rem;
             flex: 1;
             justify-content: center;
+            box-shadow: 0 8px 20px rgba(93, 63, 211, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
         }
 
         button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 25px rgba(93, 63, 211, 0.4);
+        }
+
+        button:hover::before {
+            left: 100%;
         }
 
         button:disabled {
-            background: #bdc3c7;
+            background: #CBD5E0;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        button:disabled::before {
+            display: none;
+        }
+
+        button:disabled:hover {
             transform: none;
             box-shadow: none;
         }
 
         .btn-next {
             background: var(--secondary);
+            box-shadow: 0 8px 20px rgba(255, 122, 90, 0.3);
+        }
+
+        .btn-next:hover {
+            box-shadow: 0 12px 25px rgba(255, 122, 90, 0.4);
         }
 
         /* ===== RESULTADOS ===== */
         .results {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 25px;
             display: none;
         }
 
         .results-header {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .results-header h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .score {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 4rem;
+            font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin: 15px 0;
+            margin: 20px 0;
+            text-shadow: 0 5px 15px rgba(93, 63, 211, 0.2);
         }
 
         .performance {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
+            gap: 20px;
+            margin: 35px 0;
         }
 
         .performance-item {
             text-align: center;
-            padding: 20px;
-            border-radius: 16px;
+            padding: 25px 20px;
+            border-radius: 20px;
             background: var(--light);
             box-shadow: var(--shadow);
+            border: 1px solid rgba(93, 63, 211, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .performance-item:hover {
+            transform: translateY(-5px);
         }
 
         .performance-value {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             margin: 10px 0;
         }
 
@@ -605,13 +940,14 @@
         .performance-hard { color: var(--danger); }
 
         .message {
-            font-size: 1.1rem;
-            margin: 25px 0;
-            padding: 20px;
-            border-radius: 16px;
+            font-size: 1.2rem;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 20px;
             background: var(--light);
             box-shadow: var(--shadow);
-            line-height: 1.5;
+            line-height: 1.6;
+            border: 1px solid rgba(93, 63, 211, 0.1);
         }
 
         /* ===== ANIMAÇÕES FINAIS ===== */
@@ -633,8 +969,8 @@
 
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             opacity: 0;
             animation: confettiRain 2s ease forwards;
         }
@@ -647,63 +983,83 @@
             animation: starPulse 1.5s infinite;
         }
 
-        /* ===== INFORMAÇÕES DA IGREJA E INSTAGRAM ===== */
+        /* ===== INFORMAÇÕES DA EBD FIEL ===== */
         .church-info {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             background: var(--light);
-            border-top: 1px solid #dee2e6;
+            border-top: 1px solid rgba(93, 63, 211, 0.1);
         }
 
         .church-name {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .church-location {
             color: var(--text);
             opacity: 0.8;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .instagram-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
 
         .instagram-text {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text);
+            font-weight: 500;
         }
 
         .instagram-link {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
+            gap: 10px;
+            padding: 12px 25px;
             background: var(--instagram);
             color: white;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+            box-shadow: 0 8px 20px rgba(225, 48, 108, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .instagram-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
         }
 
         .instagram-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(225, 48, 108, 0.4);
-            background: #C13584;
+            box-shadow: 0 12px 25px rgba(225, 48, 108, 0.4);
+        }
+
+        .instagram-link:hover::before {
+            left: 100%;
         }
 
         .instagram-icon {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         /* ===== ANIMAÇÕES ===== */
@@ -720,8 +1076,8 @@
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
         }
 
         @keyframes slideInLeft {
@@ -741,12 +1097,12 @@
 
         @keyframes starPulse {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 0.8; }
         }
 
         @keyframes trophyGlow {
-            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7)); }
-            50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9)); }
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); }
+            50% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9)); }
         }
 
         .fade-in {
@@ -760,48 +1116,56 @@
             }
             
             .container {
-                border-radius: 16px;
+                border-radius: 20px;
             }
             
             .modern-header {
-                padding: 20px 15px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.6rem;
-            }
-            
-            .logo {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .welcome-card {
-                padding: 15px;
-            }
-            
-            .content-section {
                 padding: 25px 15px;
             }
             
+            .logo-text h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .lesson-name {
+                font-size: 1.4rem;
+            }
+            
+            .verse-text {
+                font-size: 1rem;
+            }
+            
+            .welcome-card {
+                padding: 20px;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+            
             .about-card, .details-card {
-                padding: 20px 15px;
+                padding: 25px 20px;
             }
             
             .quiz-section {
-                padding: 15px 10px;
+                padding: 20px 15px;
             }
             
             .question {
-                padding: 15px;
+                padding: 20px;
             }
             
             .question-text {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .option {
-                padding: 14px 12px;
+                padding: 16px 15px;
             }
             
             .navigation {
@@ -813,15 +1177,15 @@
             }
             
             .results {
-                padding: 25px 15px;
+                padding: 30px 20px;
             }
             
             .score {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             
             .animation-text {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
             
             .animation-icon {
@@ -829,18 +1193,38 @@
             }
             
             .countdown {
-                font-size: 2.5rem;
+                font-size: 3rem;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .progress-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .progress-item {
+                min-width: 100%;
+            }
+            
+            .progress-value {
+                font-size: 1.3rem;
+            }
+            
+            .objective-item {
+                padding: 12px;
             }
         }
 
         @media (min-width: 768px) {
             .container {
-                max-width: 700px;
+                max-width: 750px;
             }
             
             .logo-container {
                 flex-direction: row;
                 text-align: left;
+                gap: 25px;
             }
             
             .logo-text {
@@ -850,6 +1234,7 @@
             .features {
                 flex-direction: row;
                 max-width: 100%;
+                flex-wrap: nowrap;
             }
             
             .performance {
@@ -864,6 +1249,23 @@
                 flex-direction: row;
                 justify-content: center;
             }
+            
+            .options {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .progress-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .progress-item {
+                min-width: auto;
+            }
+            
+            .objective-item {
+                padding: 15px 20px;
+            }
         }
 
         @media (min-width: 992px) {
@@ -875,6 +1277,14 @@
                 grid-template-columns: 1fr 1fr;
                 display: grid;
             }
+            
+            .logo-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .lesson-name {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -882,10 +1292,10 @@
     <!-- ANIMAÇÃO INICIAL -->
     <div class="quiz-start-animation" id="quiz-start-animation">
         <div class="animation-icon">
-            <i class="fas fa-book-bible"></i>
+            <i class="fas fa-bible"></i>
         </div>
-        <div class="animation-text">Quiz da EBD Fiel</div>
-        <div class="animation-subtext">Lição 09: Os Discípulos de Cristo e o Processo da Santificação</div>
+        <div class="animation-text">Quiz da EBD Jovem</div>
+        <div class="animation-subtext">1º Trimestre 2026 - Lição 2</div>
         <div class="countdown" id="countdown">3</div>
     </div>
 
@@ -899,31 +1309,66 @@
             <div class="header-content">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="https://i.ibb.co/9mLXgx7k/logo.png" alt="Logo EBD Fiel" class="logo-img" id="logo-img">
+                        <img src="https://i.imgur.com/vsNu5IC.png" alt="Logo Sermão da Montanha" class="logo-img" id="logo-img">
                     </div>
                     <div class="logo-text">
-                        <h1>QUIZ DA EBD Fiel</h1>
-                        <div class="subtitle">Lição 09: Os Discípulos de Cristo e o Processo da Santificação</div>
+                        <h1>Quiz da EBD Jovem</h1>
+                        <div class="subtitle">1º Trimestre 2026 - Lição 2</div>
+                    </div>
+                </div>
+
+                <!-- INFORMAÇÕES DA LIÇÃO -->
+                <div class="lesson-header-section">
+                    <div class="lesson-title-container">
+                        <div class="lesson-number">
+                            <i class="fas fa-book-open"></i> Lição 2
+                        </div>
+                        <div class="lesson-name">BEM-AVENTURADOS EM CRISTO</div>
+                    </div>
+                    
+                    <div class="verse-of-day">
+                        <div class="verse-text">"Bem-aventurado aquele que tem o Deus de Jacó por seu auxílio e cuja esperança está posta no Senhor, seu Deus"</div>
+                        <div class="verse-reference">Salmos 146:5</div>
+                    </div>
+                    
+                    <div class="lesson-objectives">
+                        <div class="objectives-title">
+                            <i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO
+                        </div>
+                        <ul class="objectives-list">
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Reconhecer que a felicidade do cristão não está em princípios humanos</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Identificar a natureza das bem-aventuranças segundo o ensino de Jesus</span>
+                            </li>
+                            <li class="objective-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="objective-text">Ressaltar os aspectos que definem a felicidade à luz do Reino de Deus</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="welcome-card">
-                    <h2><i class="fas fa-hands"></i> Bem-vindo ao Quiz da Lição 9!</h2>
-                    <p>Explore o ensino bíblico sobre o processo da santificação na vida dos discípulos de Cristo. Aprenda como viver em santidade através do poder do Espírito Santo e da Palavra de Deus.</p>
+                    <h2><i class="fas fa-fire"></i> Teste seu conhecimento bíblico!</h2>
+                    <p>Revise os ensinamentos sobre as Bem-Aventuranças, onde Jesus revela a verdadeira felicidade segundo os princípios do Reino de Deus.</p>
                 </div>
 
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-star" style="color: #4cc9f0;"></i>
-                        <span>15 Perguntas</span>
+                        <i class="fas fa-star" style="color: #5D3FD3;"></i>
+                        <span>12 Perguntas</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-check-circle" style="color: #f8961e;"></i>
-                        <span>Feedback Imediato</span>
+                        <i class="fas fa-bolt" style="color: #FF7A5A;"></i>
+                        <span>Baseado na Lição 2</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-graduation-cap" style="color: #f94144;"></i>
-                        <span>Aprenda com a Bíblia</span>
+                        <i class="fas fa-heart" style="color: #00C9B7;"></i>
+                        <span>Design Jovem</span>
                     </div>
                 </div>
             </div>
@@ -932,50 +1377,79 @@
         <!-- CONTEÚDO -->
         <section class="content-section">
             <div class="about-card">
-                <h2 class="card-title"><i class="fas fa-info-circle"></i> Sobre Esta Lição</h2>
+                <h2 class="card-title"><i class="fas fa-lightbulb"></i> VERDADE APLICADA</h2>
                 <div class="card-content">
-                    <p>Nesta lição, estudamos o processo da santificação na vida dos discípulos de Cristo. A santificação é um chamado de Deus para vivermos em separação do pecado e dedicação a Ele, sendo capacitados pelo Espírito Santo e pela Palavra de Deus.</p>
-                    <p>A lição aborda a santidade de Deus como fundamento, a nova maneira de viver em santificação e a importância de uma busca constante por santidade em todas as áreas da vida.</p>
-                    <p><span class="highlight">"Sem santificação ninguém verá a Deus" (Hebreus 12:14)</span> - este é o chamado central para todo discípulo de Cristo.</p>
+                    <div class="truth-applied">
+                        <div class="label">Verdade Aplicada</div>
+                        <div class="text">A verdadeira felicidade, ou bem-aventurança, não depende de recompensas terrenas, mas de vivermos segundo os princípios do Reino de Deus.</div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">As Bem-Aventuranças apresentadas por Jesus confrontam o conceito de felicidade propagado pelo mundo. Elas redefinem o que significa ser verdadeiramente feliz à luz dos valores do Reino de Deus, que são diferentes dos valores humanos.</p>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(255, 122, 90, 0.1), rgba(93, 63, 211, 0.1)); border-radius: 12px; border-left: 4px solid var(--secondary);">
+                        <strong><i class="fas fa-quote-left"></i> Ponto-Chave:</strong><br>
+                        "Todos somos pecadores e incapazes de nos justificar perante Deus, mas a justiça divina é oferecida gratuitamente pela fé em Jesus Cristo."
+                    </div>
                 </div>
             </div>
 
             <div class="details-card">
-                <h2 class="card-title"><i class="fas fa-book-open"></i> O Que Você Vai Aprender</h2>
+                <h2 class="card-title"><i class="fas fa-graduation-cap"></i> O QUE VOCÊ VAI REVISAR</h2>
                 <div class="card-content">
                     <ul>
-                        <li><i class="fas fa-check"></i> O conceito bíblico de santificação</li>
-                        <li><i class="fas fa-check"></i> A importância da santificação para o discípulo</li>
-                        <li><i class="fas fa-check"></i> Como andar em constante santificação</li>
-                        <li><i class="fas fa-check"></i> O papel da Trindade no processo de santificação</li>
-                        <li><i class="fas fa-check"></i> Os meios que Deus provê para nossa santificação</li>
+                        <li><i class="fas fa-check-circle"></i> O significado das Bem-Aventuranças no Sermão da Montanha</li>
+                        <li><i class="fas fa-check-circle"></i> A natureza transformadora das Bem-Aventuranças</li>
+                        <li><i class="fas fa-check-circle"></i> A didática de Jesus no ensino sobre o Reino</li>
+                        <li><i class="fas fa-check-circle"></i> A verdadeira felicidade segundo os princípios divinos</li>
+                        <li><i class="fas fa-check-circle"></i> A aplicação prática das Bem-Aventuranças hoje</li>
                     </ul>
+                    
+                    <div class="prayer-moment" style="margin-top: 25px;">
+                        <div class="label">Momento de Oração</div>
+                        <div class="text">Ore para que possamos ser bem-aventurados todos os dias da nossa vida.</div>
+                    </div>
                 </div>
             </div>
             
             <!-- BOTÃO INICIAR NO FINAL -->
             <div class="cta-section">
                 <button class="start-btn" id="start-btn">
-                    <i class="fas fa-play"></i> Iniciar Quiz
+                    <i class="fas fa-play-circle"></i> Iniciar Quiz
                 </button>
             </div>
         </section>
 
         <!-- QUIZ -->
         <div class="quiz-section" id="quiz-section">
-            <div class="progress-container">
-                <div class="progress-header">
-                    <div class="progress-text" id="progress-text">Pergunta 1 de 15</div>
+            <!-- PERGUNTA ATUAL -->
+            <div class="question-container" id="question-container">
+                <!-- A pergunta será inserida aqui via JavaScript -->
+            </div>
+
+            <!-- SEÇÃO DE PROGRESSO -->
+            <div class="progress-section" id="progress-section">
+                <div class="progress-info">
+                    <div class="progress-item">
+                        <div class="progress-label">Questão Atual</div>
+                        <div class="progress-value" id="current-question">1/12</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">Respondidas</div>
+                        <div class="progress-value" id="answered-count">0/12</div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-label">Progresso</div>
+                        <div class="progress-value" id="progress-percentage">0%</div>
+                    </div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" id="quiz-progress"></div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="quiz-progress"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="quiz-container" id="quiz-container">
-                <!-- Perguntas serão inseridas aqui -->
-            </div>
-
+            <!-- BOTÕES DE NAVEGAÇÃO -->
             <div class="navigation">
                 <button id="prev-btn" disabled>
                     <i class="fas fa-arrow-left"></i> Anterior
@@ -1010,19 +1484,19 @@
 
             <div class="message" id="message"></div>
 
-            <button id="restart-btn" style="background: var(--success);">
-                <i class="fas fa-redo"></i> Fazer Quiz Novamente
+            <button id="restart-btn" style="background: var(--accent);">
+                <i class="fas fa-redo"></i> Refazer Quiz
             </button>
         </div>
 
-        <!-- INFORMAÇÕES DA IGREJA -->
+        <!-- INFORMAÇÕES DA EBD FIEL -->
         <div class="church-info">
-            <div class="church-name">EBD FIEL</div>
-            <div class="church-location">FIEL A PALAVRA</div>
+            <div class="church-name">EBD Fiel</div>
+            <div class="church-location">Fiel à Palavra!</div>
 
             <div class="instagram-section">
-                <div class="instagram-text">Curta nossa página no Instagram:</div>
-                <a href="https://www.instagram.com/ebdfiel" target="_blank" class="instagram-link">
+                <div class="instagram-text">Siga-nos no Instagram:</div>
+                <a href="https://www.instagram.com/ebdfiel/" target="_blank" class="instagram-link">
                     <i class="fab fa-instagram instagram-icon"></i>
                     @ebdfiel
                 </a>
@@ -1032,195 +1506,185 @@
 
     <script>
         // =============================================
-        // BANCO DE PERGUNTAS - LIÇÃO 9
+        // BANCO DE PERGUNTAS - LIÇÃO 2: BEM-AVENTURADOS EM CRISTO
         // =============================================
         const allQuestions = [
-            // PERGUNTAS FÁCEIS (1-5)
+            // PERGUNTAS FÁCEIS
             {
-                question: "Qual é o texto áureo da lição 9?",
+                question: "Qual é o versículo do dia da lição 2?",
                 options: [
-                    "1 Tessalonicenses 4:3",
-                    "1 Tessalonicenses 4:7", 
-                    "1 Tessalonicenses 4:5",
-                    "Hebreus 12:14"
-                ],
-                correct: 1,
-                explanation: "O texto áureo da lição é 1 Tessalonicenses 4:7: 'Porque não nos chamou Deus para a imundícia, mas para a santificação'.",
-                difficulty: "easy"
-            },
-            {
-                question: "Segundo a Verdade Aplicada, como o discípulo de Cristo busca um viver santo?",
-                options: [
-                    "Por seus próprios esforços",
-                    "Através de rituais religiosos",
-                    "No poder do Espírito Santo e pela ação da Palavra de Deus", 
-                    "Apenas pela frequência à igreja"
-                ],
-                correct: 2,
-                explanation: "A Verdade Aplicada afirma: 'No poder do Espírito Santo e pela ação da Palavra de Deus, o discípulo de Cristo busca um viver santo em todas as áreas da vida'.",
-                difficulty: "easy"
-            },
-            {
-                question: "Qual é um dos objetivos da lição 9?",
-                options: [
-                    "Compreender o conceito de santificação", 
-                    "Estudar a história da igreja primitiva",
-                    "Conhecer os milagres de Jesus",
-                    "Aprender sobre a criação do mundo"
+                    "\"Bem-aventurado aquele que tem o Deus de Jacó por seu auxílio e cuja esperança está posta no Senhor, seu Deus\", Sl 146.5",
+                    "\"Bem-aventurados os pobres de espírito, porque deles é o reino dos céus\", Mt 5.3",
+                    "\"Bem-aventurados os que choram, porque eles serão consolados\", Mt 5.4",
+                    "\"Bem-aventurados os mansos, porque eles herdarão a terra\", Mt 5.5"
                 ],
                 correct: 0,
-                explanation: "Entre os objetivos da lição está: 'Compreender o conceito de santificação'.",
+                explanation: "O versículo do dia é Salmo 146.5, conforme citado na página 1 do material da lição.",
                 difficulty: "easy"
             },
             {
-                question: "Segundo 1 Tessalonicenses 4:3, qual é a vontade de Deus?",
+                question: "Qual é a VERDADE APLICADA desta lição?",
                 options: [
-                    "Que tenhamos prosperidade material",
-                    "Que sejamos famosos",
-                    "Que ajudemos os pobres",
-                    "A vossa santificação" 
+                    "A verdadeira felicidade, ou bem-aventurança, não depende de recompensas terrenas, mas de vivermos segundo os princípios do Reino de Deus",
+                    "Jesus nos convida a nos aproximarmos dEle com humildade para aprender os princípios do Reino dos Céus",
+                    "Devemos praticar todas as bem-aventuranças diariamente",
+                    "O Sermão da Montanha é apenas para os discípulos"
                 ],
-                correct: 3,
-                explanation: "1 Tessalonicenses 4:3 afirma: 'Porque esta é a vontade de Deus, a vossa santificação'.",
+                correct: 0,
+                explanation: "A verdade aplicada é: 'A verdadeira felicidade, ou bem-aventurança, não depende de recompensas terrenas, mas de vivermos segundo os princípios do Reino de Deus' (página 1).",
                 difficulty: "easy"
             },
             {
-                question: "O que Hebreus 12:14 afirma sobre a santificação?",
+                question: "Qual dos seguintes NÃO é um objetivo da lição 2?",
                 options: [
-                    "É uma opção para o crente",
-                    "É apenas para os pastores",
-                    "Sem santificação ninguém verá a Deus", 
-                    "Não é mais necessária na Nova Aliança"
+                    "Memorizar todas as bem-aventuranças",
+                    "Reconhecer que a felicidade do cristão não está em princípios humanos",
+                    "Identificar a natureza das bem-aventuranças segundo o ensino de Jesus",
+                    "Ressaltar os aspectos que definem a felicidade à luz do Reino de Deus"
                 ],
-                correct: 2,
-                explanation: "Hebreus 12:14 declara: 'Sem santificação ninguém verá a Deus'.",
+                correct: 0,
+                explanation: "Os objetivos são: 1) Reconhecer que a felicidade do cristão não está em princípios humanos; 2) Identificar a natureza das bem-aventuranças segundo o ensino de Jesus; 3) Ressaltar os aspectos que definem a felicidade à luz do Reino de Deus (página 1).",
+                difficulty: "easy"
+            },
+            {
+                question: "Qual é o texto de referência da lição 2?",
+                options: [
+                    "Mateus 5.3-12",
+                    "Lucas 6.20-22",
+                    "Mateus 5.1-12",
+                    "Lucas 6.17-49"
+                ],
+                correct: 1,
+                explanation: "O texto de referência é Lucas 6.20-22 (página 1).",
+                difficulty: "easy"
+            },
+            {
+                question: "O que as Bem-Aventuranças apresentadas por Jesus confrontam?",
+                options: [
+                    "O conceito de felicidade propagado pelo mundo",
+                    "A lei mosaica",
+                    "Os fariseus e saduceus",
+                    "A idolatria"
+                ],
+                correct: 0,
+                explanation: "As Bem-Aventuranças apresentadas por Jesus confrontam o conceito de felicidade propagado pelo mundo (página 2).",
                 difficulty: "easy"
             },
             
-            // PERGUNTAS MÉDIAS (6-10)
+            // PERGUNTAS MÉDIAS
             {
-                question: "Quem está envolvido no processo da santificação do crente?",
+                question: "Segundo a lição, qual é a natureza das Bem-Aventuranças?",
                 options: [
-                    "Apenas o Espírito Santo",
-                    "A Trindade (Pai, Filho e Espírito Santo)", 
-                    "Apenas o crente e sua vontade",
-                    "Apenas Jesus Cristo"
+                    "São promessas de bênçãos terrenas",
+                    "São espirituais e contraculturais, refletindo os valores do Reino de Deus",
+                    "São regras para a vida em comunidade",
+                    "São parábolas sobre o fim dos tempos"
                 ],
                 correct: 1,
-                explanation: "A lição ensina que a Trindade está envolvida no processo da santificação: o Pai, o Filho e o Espírito Santo.",
+                explanation: "A natureza das Bem-Aventuranças é espiritual e contracultural, pois reflete os valores do Reino de Deus em oposição às prioridades do mundo (página 3).",
                 difficulty: "medium"
             },
             {
-                question: "O que significa santificação, de acordo com a lição?",
+                question: "O que as Bem-Aventuranças redefinem à luz do Reino de Deus?",
                 options: [
-                    "Tornar-se perfeito imediatamente",
-                    "Separar-se para Deus e purificação", 
-                    "Conhecer toda a Bíblia de cor",
-                    "Fazer muitas boas obras"
+                    "O conceito de felicidade e sucesso",
+                    "A lei do Antigo Testamento",
+                    "O papel da igreja",
+                    "A relação entre mestre e discípulo"
                 ],
-                correct: 1,
-                explanation: "A santificação significa separação para Deus e purificação, envolvendo limpeza do pecado e dedicação a Deus.",
+                correct: 0,
+                explanation: "As Bem-Aventuranças redefinem o conceito de felicidade e sucesso à luz do Reino de Deus (página 2).",
                 difficulty: "medium"
             },
             {
-                question: "Como o Espírito Santo atua no processo de santificação?",
+                question: "Segundo o Bispo Abner Ferreira, o que acontece quando nos alegramos no Senhor?",
                 options: [
-                    "Apenas dando dons espirituais",
-                    "Ajudando-nos contra o pecado e a fazer a vontade de Deus", 
-                    "Apenas nos momentos de culto",
-                    "Apenas nos convencendo do pecado"
+                    "As circunstâncias são mudadas e encontramos a alegria de ficar livres do pecado",
+                    "Somos recompensados com bênçãos materiais",
+                    "Nos tornamos imunes aos problemas",
+                    "Conseguimos entender todos os mistérios da Bíblia"
                 ],
-                correct: 1,
-                explanation: "O Espírito Santo atua no processo de santificação nos ajudando contra o pecado e a fazer a vontade de Deus.",
+                correct: 0,
+                explanation: "Quando nos alegramos no Senhor, as circunstâncias são mudadas. Quando passamos a caminhar com Cristo, encontramos a alegria de ficar livres do pecado (página 2).",
                 difficulty: "medium"
             },
             {
-                question: "Qual é o papel da Palavra de Deus na santificação?",
+                question: "O que as Bem-Aventuranças apontam diretamente?",
                 options: [
-                    "É apenas um livro de histórias",
-                    "Ela nos santifica e purifica", 
-                    "Não tem papel na santificação",
-                    "Apenas nos dá conhecimento histórico"
+                    "Para a necessidade de se tornar um missionário",
+                    "Para o Reino de Deus, revelando os valores e prioridades do Governo Divino",
+                    "Para a segunda vinda de Cristo",
+                    "Para a vida eterna"
                 ],
                 correct: 1,
-                explanation: "A Palavra de Deus é um agente na santificação, nos purificando e nos levando a viver conforme a vontade de Deus (João 17:17).",
+                explanation: "As Bem-Aventuranças apontam diretamente para o Reino de Deus ao revelarem os valores e as prioridades do Governo Divino (página 3).",
                 difficulty: "medium"
             },
             {
-                question: "O que a santificação representa para aquele que nasceu de novo?",
+                question: "Como é a didática de Jesus no Sermão da Montanha?",
                 options: [
-                    "Uma obrigação pesada e legalista",
-                    "Uma nova maneira de viver", 
-                    "Um conjunto de regras opressivas",
-                    "Algo apenas para líderes religiosos"
+                    "Complexa e cheia de termos técnicos",
+                    "Marcada por autoridade, simplicidade e profundidade espiritual",
+                    "Voltada apenas para os intelectuais",
+                    "Baseada em milagres e sinais"
                 ],
                 correct: 1,
-                explanation: "Para quem nasceu de novo, a santificação representa uma nova maneira de viver, separada das práticas mundanas.",
+                explanation: "A didática de Jesus no Sermão da Montanha é marcada por autoridade, simplicidade e profundidade espiritual (página 3).",
                 difficulty: "medium"
             },
             
-            // PERGUNTAS DIFÍCEIS (11-15)
+            // PERGUNTAS DIFÍCEIS
             {
-                question: "O que o Bispo Abner Ferreira comenta sobre os meios da santificação?",
+                question: "Segundo a lição, o que a mensagem do Sermão da Montanha não é?",
                 options: [
-                    "Que a santificação é alcançada apenas pelo esforço humano",
-                    "Que a Trindade, a Palavra de Deus e o sangue de Jesus são meios da santificação", 
-                    "Que a santificação é apenas uma experiência emocional",
-                    "Que não há meios específicos para a santificação"
+                    "Apenas um ideal elevado, mas uma orientação prática",
+                    "Apenas uma orientação prática, mas um ideal elevado",
+                    "Apenas um discurso moralista",
+                    "Apenas um conjunto de regras"
                 ],
-                explanation: "O Bispo Abner Ferreira destaca que a Trindade, a Palavra de Deus e o sangue de Jesus são meios que Deus provê para a santificação do Seu povo.",
-                correct: 1,
-                difficulty: "hard"
-            },
-            {
-                question: "O que o Pastor Reginaldo S. Xavier diz sobre santificação?",
-                options: [
-                    "Que é também disciplinar as ações da carne na vida do novo homem", 
-                    "Que é apenas para os ministros ordenados",
-                    "Que é uma experiência mística isolada",
-                    "Que não tem relação com a conduta diária"
-                ],
-                explanation: "O Pastor Reginaldo S. Xavier afirma que a santificação é também disciplinar as ações da carne na vida do novo homem (Romanos 6:6).",
                 correct: 0,
+                explanation: "A mensagem do Sermão da Montanha não é apenas um ideal elevado, mas uma orientação prática que nos capacita a refletir Seu caráter (página 4).",
                 difficulty: "hard"
             },
             {
-                question: "O que o Bispo Oldes do Carmo afirma sobre o Espírito Santo e a santificação?",
+                question: "O que a lição conclui sobre o Sermão da Montanha?",
                 options: [
-                    "Que o Espírito Santo não se importa com a santificação",
-                    "Que o Espírito Santo está preparando um povo santo para as bodas do Cordeiro", 
-                    "Que o Espírito Santo só age no Antigo Testamento",
-                    "Que o Espírito Santo não habita no crente"
+                    "É um discurso que deve ser estudado apenas por pastores",
+                    "É uma mensagem que capacita a refletir o caráter de Cristo e promover reconciliação e esperança",
+                    "É um sermão que foi superado pelo Novo Testamento",
+                    "É a base da teologia sistemática"
                 ],
-                explanation: "O Bispo Oldes do Carmo afirma que o Espírito Santo está preparando um povo santo, para as bodas do Cordeiro (Apocalipse 19:7).",
                 correct: 1,
-                difficulty: "hard"
-            },
-            {
-                question: "Como a lição descreve a constante santificação?",
-                options: [
-                    "Como um evento único que acontece na conversão",
-                    "Como um processo contínuo e dinâmico de crescimento em semelhança a Cristo", 
-                    "Como algo que se alcança apenas após a morte",
-                    "Como uma experiência emocional ocasional"
-                ],
-                explanation: "A lição descreve a constante santificação como um processo contínuo e dinâmico, pelo qual o cristão cresce em semelhança a Cristo.",
-                correct: 1,
-                difficulty: "hard"
-            },
-            {
-                question: "O que o Bispo Primaz Manoel Ferreira diz sobre santificação?",
-                options: [
-                    "Que é sinônimo de perfeição imediata",
-                    "Que faz parte da nova maneira de viver daquele que nasceu de novo", 
-                    "Que é apenas para os apóstolos",
-                    "Que não é mais necessária na graça"
-                ],
-                explanation: "O Bispo Primaz Manoel Ferreira afirma: 'A santificação faz parte da nova maneira de viver daquele que nasceu de novo'.",
-                correct: 1,
+                explanation: "A lição conclui que o Sermão da Montanha é uma mensagem que nos capacita a refletir Seu caráter e promover reconciliação e esperança em um mundo decaído (página 4).",
                 difficulty: "hard"
             }
         ];
+
+        // =============================================
+        // FUNÇÃO PARA EMBARALHAR OPÇÕES DE RESPOSTA
+        // =============================================
+        function shuffleQuestions() {
+            allQuestions.forEach(question => {
+                const originalCorrect = question.options[question.correct];
+                const indices = [0, 1, 2, 3];
+                
+                for (let i = indices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [indices[i], indices[j]] = [indices[j], indices[i]];
+                }
+                
+                const shuffledOptions = indices.map(i => question.options[i]);
+                const newCorrectIndex = shuffledOptions.indexOf(originalCorrect);
+                
+                question.options = shuffledOptions;
+                question.correct = newCorrectIndex;
+            });
+            
+            for (let i = allQuestions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+            }
+        }
 
         // =============================================
         // VARIÁVEIS GLOBAIS
@@ -1233,19 +1697,18 @@
         // INICIALIZAÇÃO
         // =============================================
         document.addEventListener('DOMContentLoaded', function() {
-            // Configurar eventos dos botões
+            shuffleQuestions();
+            
             document.getElementById('start-btn').addEventListener('click', startQuizWithAnimation);
             document.getElementById('prev-btn').addEventListener('click', showPreviousQuestion);
             document.getElementById('next-btn').addEventListener('click', showNextQuestion);
             document.getElementById('restart-btn').addEventListener('click', restartQuiz);
             
-            // Inicializar array de respostas
             userAnswers = new Array(allQuestions.length).fill(null);
             
-            // Configurar imagem da logo
             const logoImg = document.getElementById('logo-img');
             logoImg.onerror = function() {
-                logoImg.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%234361ee"/><text x="50" y="60" text-anchor="middle" fill="white" font-size="40" font-family="Arial">EBD</text></svg>';
+                logoImg.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L80,80 L50,60 L20,80 Z" fill="%235D3FD3"/><circle cx="50" cy="30" r="10" fill="%23FF7A5A"/></svg>';
             };
         });
 
@@ -1253,11 +1716,9 @@
         // FUNÇÕES DO QUIZ
         // =============================================
         function startQuizWithAnimation() {
-            // Mostrar animação inicial
             const startAnimation = document.getElementById('quiz-start-animation');
             startAnimation.classList.add('active');
             
-            // Contagem regressiva
             let count = 3;
             const countdownElement = document.getElementById('countdown');
             
@@ -1273,32 +1734,26 @@
         }
 
         function startQuiz() {
-            // Esconder animação inicial
             document.getElementById('quiz-start-animation').classList.remove('active');
-            
-            // Esconder elementos iniciais e mostrar quiz
             document.querySelector('.modern-header').style.display = 'none';
             document.querySelector('.content-section').style.display = 'none';
             document.getElementById('quiz-section').style.display = 'block';
             document.getElementById('results').style.display = 'none';
             
-            // Resetar variáveis
             quizStarted = true;
             currentQuestionIndex = 0;
             userAnswers = new Array(allQuestions.length).fill(null);
             
-            // Mostrar primeira pergunta
             showQuestion(currentQuestionIndex);
         }
 
         function showQuestion(index) {
             const question = allQuestions[index];
-            const quizContainer = document.getElementById('quiz-container');
+            const questionContainer = document.getElementById('question-container');
             
-            // Atualizar barra de progresso
-            updateProgressBar();
+            // Atualizar progresso
+            updateProgress();
             
-            // Criar HTML da pergunta
             let optionsHTML = '';
             const letters = ['A', 'B', 'C', 'D'];
             
@@ -1326,7 +1781,7 @@
                 `;
             });
             
-            quizContainer.innerHTML = `
+            questionContainer.innerHTML = `
                 <div class="question fade-in">
                     <div class="question-header">
                         <span class="question-difficulty difficulty-${question.difficulty}">
@@ -1340,7 +1795,6 @@
                 </div>
             `;
             
-            // Adicionar eventos às opções
             document.querySelectorAll('.option').forEach(option => {
                 option.addEventListener('click', function() {
                     if (!quizStarted) return;
@@ -1350,15 +1804,24 @@
                 });
             });
             
-            // Atualizar botões de navegação
             updateNavigationButtons();
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
+            const answeredCount = userAnswers.filter(answer => answer !== null).length;
+            
+            // Atualizar elementos
+            document.getElementById('current-question').textContent = `${currentQuestionIndex + 1}/${allQuestions.length}`;
+            document.getElementById('answered-count').textContent = `${answeredCount}/${allQuestions.length}`;
+            document.getElementById('progress-percentage').textContent = `${Math.round(progress)}%`;
+            document.getElementById('quiz-progress').style.width = `${progress}%`;
         }
 
         function selectOption(optionIndex) {
             userAnswers[currentQuestionIndex] = optionIndex;
             const question = allQuestions[currentQuestionIndex];
             
-            // Atualizar visual das opções
             const options = document.querySelectorAll('.option');
             options.forEach((option, i) => {
                 option.classList.remove('selected', 'correct', 'incorrect', 'correct-answer');
@@ -1372,13 +1835,13 @@
                     }
                 }
                 
-                // Mostrar resposta correta se o usuário errou
                 if (i === question.correct && optionIndex !== question.correct) {
                     option.classList.add('correct-answer');
                 }
             });
             
-            // Atualizar botões de navegação
+            // Atualizar progresso após resposta
+            updateProgress();
             updateNavigationButtons();
         }
 
@@ -1398,12 +1861,6 @@
             }
         }
 
-        function updateProgressBar() {
-            const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
-            document.getElementById('quiz-progress').style.width = `${progress}%`;
-            document.getElementById('progress-text').textContent = `Pergunta ${currentQuestionIndex + 1} de ${allQuestions.length}`;
-        }
-
         function updateNavigationButtons() {
             document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
             
@@ -1414,7 +1871,6 @@
                 nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
             }
             
-            // Habilitar próximo apenas se uma opção foi selecionada
             nextButton.disabled = userAnswers[currentQuestionIndex] === null;
         }
 
@@ -1426,16 +1882,15 @@
             container.classList.add('active');
             container.innerHTML = '';
             
-            const colors = ['#4361ee', '#7209b7', '#f72585', '#4cc9f0', '#f8961e', '#f94144'];
+            const colors = ['#5D3FD3', '#FF7A5A', '#00C9B7', '#2ECC71', '#FF9F43', '#FF6B6B'];
             const confettiCount = Math.min(100, Math.floor(scorePercentage * 100));
             
             for (let i = 0; i < confettiCount; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 
-                // Configurações aleatórias
                 const left = Math.random() * 100;
-                const size = Math.random() * 10 + 5;
+                const size = Math.random() * 12 + 8;
                 const color = colors[Math.floor(Math.random() * colors.length)];
                 const delay = Math.random() * 2;
                 const duration = Math.random() * 2 + 2;
@@ -1451,7 +1906,6 @@
                 container.appendChild(confetti);
             }
             
-            // Remover confetes após 5 segundos
             setTimeout(() => {
                 container.classList.remove('active');
                 container.innerHTML = '';
@@ -1462,18 +1916,15 @@
             document.getElementById('quiz-section').style.display = 'none';
             document.getElementById('results').style.display = 'block';
             
-            // Calcular pontuação
             let score = 0;
             let correctEasy = 0, correctMedium = 0, correctHard = 0;
             let totalEasy = 0, totalMedium = 0, totalHard = 0;
             
             allQuestions.forEach((question, index) => {
-                // Contar totais por dificuldade
                 if (question.difficulty === 'easy') totalEasy++;
                 if (question.difficulty === 'medium') totalMedium++;
                 if (question.difficulty === 'hard') totalHard++;
                 
-                // Verificar resposta correta
                 if (userAnswers[index] === question.correct) {
                     score++;
                     
@@ -1485,81 +1936,64 @@
             
             const scorePercentage = score / allQuestions.length;
             
-            // Atualizar resultados na tela
             document.getElementById('score').textContent = `${score}/${allQuestions.length}`;
             document.getElementById('correct-easy').textContent = `${correctEasy}/${totalEasy}`;
             document.getElementById('correct-medium').textContent = `${correctMedium}/${totalMedium}`;
             document.getElementById('correct-hard').textContent = `${correctHard}/${totalHard}`;
             
-            // Configurar mensagem e animações baseadas na pontuação
             const trophyIcon = document.getElementById('trophy-icon');
             const messageElement = document.getElementById('message');
             
             let message = '';
-            let animationType = '';
             
             if (score === allQuestions.length) {
-                // PERFEITO
-                message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você acertou todas as questões! Sua compreensão sobre a santificação é excepcional. Continue vivendo em santidade!';
+                message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você dominou completamente a Lição 2 sobre as Bem-Aventuranças! Continue estudando a Palavra para aprofundar seu conhecimento sobre a verdadeira felicidade em Cristo!';
                 trophyIcon.className = 'fas fa-crown trophy-animation';
                 createConfetti(1);
-                animationType = 'perfect';
             } else if (scorePercentage >= 0.8) {
-                // EXCELENTE
-                message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você demonstrou um conhecimento profundo sobre o processo da santificação. Continue buscando a santificação em sua vida!';
+                message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você demonstrou um ótimo entendimento da Lição 2. Continue praticando os princípios das Bem-Aventuranças em sua vida diária!';
                 trophyIcon.className = 'fas fa-trophy trophy-animation';
                 createConfetti(scorePercentage);
-                animationType = 'excellent';
             } else if (scorePercentage >= 0.6) {
-                // MUITO BOM
-                message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você tem um bom entendimento da lição sobre santificação. Continue estudando a Palavra e buscando santidade!';
+                message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você compreendeu bem os principais pontos da Lição 2. Revise os pontos em que teve dúvida para fortalecer seu conhecimento bíblico.';
                 trophyIcon.className = 'fas fa-award';
                 createConfetti(scorePercentage * 0.7);
-                animationType = 'good';
             } else if (scorePercentage >= 0.5) {
-                // BOM
-                message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você acertou a maioria das questões. Revise os pontos em que teve dificuldade e continue buscando santificação.';
+                message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você acertou a maioria das questões sobre a Lição 2. Reveja a lição para compreender melhor os ensinamentos sobre as Bem-Aventuranças.';
                 trophyIcon.className = 'fas fa-medal';
                 createConfetti(scorePercentage * 0.5);
-                animationType = 'average';
             } else {
-                // CONTINUE ESTUDANDO
-                message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> A santificação é essencial para ver a Deus (Hb 12:14). Reveja a lição e busque viver em santidade.';
+                message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> Revise a Lição 2 para compreender melhor as Bem-Aventuranças. Lembre-se: a verdadeira felicidade não depende de recompensas terrenas, mas de vivermos segundo os princípios do Reino de Deus.';
                 trophyIcon.className = 'fas fa-book';
-                animationType = 'study';
             }
             
             messageElement.innerHTML = message;
             
-            // Adicionar animação de entrada aos elementos
             const resultElements = document.querySelectorAll('#results > *');
             resultElements.forEach((element, index) => {
                 element.classList.add('fade-in');
                 element.style.animationDelay = `${index * 0.2}s`;
             });
             
-            // Rolagem suave para os resultados
             setTimeout(() => {
                 document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
             }, 500);
         }
 
         function restartQuiz() {
-            // Resetar variáveis
+            shuffleQuestions();
+            
             currentQuestionIndex = 0;
             userAnswers = new Array(allQuestions.length).fill(null);
             quizStarted = false;
             
-            // Esconder resultados e confetes
             document.getElementById('results').style.display = 'none';
             document.getElementById('confetti-container').classList.remove('active');
             document.getElementById('confetti-container').innerHTML = '';
             
-            // Mostrar página inicial
             document.querySelector('.modern-header').style.display = 'block';
             document.querySelector('.content-section').style.display = 'flex';
             
-            // Rolagem para o topo
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
