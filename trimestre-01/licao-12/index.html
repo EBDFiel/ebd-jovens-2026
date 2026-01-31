@@ -1,52 +1,1812 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz em Preparação</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(135deg, #5D3FD3 0%, #FF7A5A 100%);
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .message {
-            background: rgba(255,255,255,0.9);
-            padding: 40px;
-            border-radius: 20px;
-            color: #333;
-            max-width: 500px;
-        }
-        h1 {
-            color: #5D3FD3;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background: #5D3FD3;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz da EBD Jovem | Lição 12 - Esmola, Oração e Jejum são Práticas Espirituais</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== VARIÁVEIS E RESET ===== */
+:root {
+  --primary: #5D3FD3;
+  --primary-dark: #4A2FAB;
+  --secondary: #FF7A5A;
+  --accent: #00C9B7;
+  --success: #2ECC71;
+  --warning: #FF9F43;
+  --danger: #FF6B6B;
+  --light: #F8FAFF;
+  --dark: #1E1B4B;
+  --text: #2D3748;
+  --gray: #718096;
+  --shadow: 0 10px 30px rgba(93, 63, 211, 0.1);
+  --shadow-lg: 0 15px 50px rgba(93, 63, 211, 0.15);
+  --gradient: linear-gradient(135deg, #5D3FD3 0%, #FF7A5A 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF7A5A 0%, #FFC145 100%);
+  --instagram: #E1306C;
+  --youth-bg: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--youth-bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+  background-image: radial-gradient(circle at 10% 20%, rgba(93, 63, 211, 0.05) 0%, transparent 20%),
+                    radial-gradient(circle at 90% 80%, rgba(255, 122, 90, 0.05) 0%, transparent 20%);
+}
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  max-width: 100%;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+  border: 1px solid rgba(93, 63, 211, 0.1);
+}
+/* ===== ANIMAÇÃO INICIAL ===== */
+.quiz-start-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.quiz-start-animation.active {
+  display: flex;
+}
+.animation-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite, starPulse 2s infinite;
+}
+.animation-text {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  animation: slideInLeft 1s ease forwards;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.animation-subtext {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  animation: slideInRight 1s ease forwards;
+  animation-delay: 0.3s;
+  max-width: 80%;
+}
+.countdown {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-top: 30px;
+  animation: pulse 1s infinite;
+  background: rgba(255,255,255,0.2);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 3px solid rgba(255,255,255,0.3);
+}
+/* ===== HEADER MODERNO - ESTILO JOVEM ===== */
+.modern-header {
+  background: var(--gradient);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.3) 2px, transparent 2px);
+  background-size: 50px 50px;
+}
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+}
+.logo-text {
+  text-align: center;
+}
+.logo-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-family: 'Montserrat', sans-serif;
+}
+.logo-text .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 400;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+/* ===== NOVA SEÇÃO: INFORMAÇÕES DA LIÇÃO ===== */
+.lesson-header-section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px 0 30px 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.lesson-title-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.lesson-number {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.lesson-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.verse-of-day {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  text-align: center;
+  border-left: 4px solid rgba(255, 255, 255, 0.4);
+}
+.verse-text {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 10px;
+  font-style: italic;
+  line-height: 1.5;
+}
+.verse-reference {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+.lesson-objectives {
+  margin: 25px 0;
+}
+.objectives-title {
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.objectives-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.objective-item {
+  color: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+.objective-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+.objective-item i {
+  color: var(--success);
+  font-size: 1.3rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.objective-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.welcome-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  margin: 25px 0;
+  border: 1px solid rgba(255,255,255,0.3);
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.welcome-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+.welcome-card p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.15);
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+.feature:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
+}
+/* ===== SEÇÃO DE CONTEÚDO ===== */
+.content-section {
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.about-card, .details-card {
+  background: var(--light);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(93, 63, 211, 0.1);
+  transition: transform 0.3s ease;
+}
+.about-card:hover, .details-card:hover {
+  transform: translateY(-5px);
+}
+.card-title {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+.card-content {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.card-content ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.card-content li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+.card-content li:hover {
+  background: rgba(93, 63, 211, 0.05);
+}
+.card-content li i {
+  color: var(--primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+.highlight {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  padding: 2px 5px;
+}
+.truth-applied {
+  background: linear-gradient(135deg, rgba(93, 63, 211, 0.1), rgba(255, 122, 90, 0.1));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  border-left: 4px solid var(--primary);
+}
+.truth-applied .label {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.truth-applied .text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.5;
+}
+.prayer-moment {
+  background: linear-gradient(135deg, rgba(0, 201, 183, 0.1), rgba(93, 63, 211, 0.1));
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  border-left: 4px solid var(--accent);
+}
+.prayer-moment .label {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.prayer-moment .text {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+/* ===== BOTÃO INICIAR ===== */
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.start-btn {
+  padding: 18px 40px;
+  border: none;
+  border-radius: 50px;
+  background: var(--secondary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(255, 122, 90, 0.4);
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+.start-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 122, 90, 0.5);
+}
+.start-btn:hover::before {
+  left: 100%;
+}
+/* ===== SEÇÃO DO QUIZ ===== */
+.quiz-section {
+  display: none;
+  padding: 25px 20px;
+}
+.question-container {
+  margin-bottom: 30px;
+}
+.question {
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+.question::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--gradient);
+  opacity: 0.05;
+  border-radius: 0 0 0 100%;
+}
+.question-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+.question-difficulty {
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.difficulty-easy { background: var(--success); }
+.difficulty-medium { background: var(--warning); }
+.difficulty-hard { background: var(--danger); }
+.question-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+}
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.option {
+  padding: 18px 20px;
+  background: var(--light);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(93, 63, 211, 0.15);
+  border-color: var(--primary);
+}
+.option.selected.correct {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+}
+.option.selected.incorrect {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+.option.correct-answer {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+  animation: pulse 0.6s ease;
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+}
+.option-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(93, 63, 211, 0.1);
+  border-radius: 50%;
+  margin-right: 15px;
+  font-weight: 800;
+  flex-shrink: 0;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+.option.selected .option-letter,
+.option.correct-answer .option-letter {
+  background: rgba(255,255,255,0.3);
+  color: white;
+}
+.feedback-icon {
+  margin-left: auto;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+.option.selected.correct .feedback-icon,
+.option.correct-answer .feedback-icon {
+  opacity: 1;
+}
+.option.selected.incorrect .feedback-icon {
+  opacity: 1;
+}
+.option.locked {
+  cursor: not-allowed;
+}
+.option.locked:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+/* ===== SEÇÃO DE PROGRESSO ===== */
+.progress-section {
+  background: var(--light);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px 0;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(93, 63, 211, 0.1);
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 100px;
+}
+.progress-label {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+.progress-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+}
+.progress-bar-container {
+  margin-top: 15px;
+}
+.progress-bar {
+  height: 12px;
+  background: #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+.progress {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  position: relative;
+}
+.progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.3) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.3) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 30px 30px;
+  animation: move 1s linear infinite;
+}
+@keyframes move {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 0; }
+}
+/* ===== NAVEGAÇÃO ===== */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+button {
+  padding: 16px 25px;
+  border: none;
+  border-radius: 50px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  flex: 1;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(93, 63, 211, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(93, 63, 211, 0.4);
+}
+button:hover::before {
+  left: 100%;
+}
+button:disabled {
+  background: #CBD5E0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+button:disabled::before {
+  display: none;
+}
+button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+.btn-next {
+  background: var(--secondary);
+  box-shadow: 0 8px 20px rgba(255, 122, 90, 0.3);
+}
+.btn-next:hover {
+  box-shadow: 0 12px 25px rgba(255, 122, 90, 0.4);
+}
+/* ===== RESULTADOS ===== */
+.results {
+  text-align: center;
+  padding: 40px 25px;
+  display: none;
+}
+.results-header {
+  margin-bottom: 30px;
+}
+.results-header h2 {
+  font-size: 2rem;
+  color: var(--dark);
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+}
+.score {
+  font-size: 4rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 20px 0;
+  text-shadow: 0 5px 15px rgba(93, 63, 211, 0.2);
+}
+.performance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin: 35px 0;
+}
+.performance-item {
+  text-align: center;
+  padding: 25px 20px;
+  border-radius: 20px;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(93, 63, 211, 0.1);
+  transition: transform 0.3s ease;
+}
+.performance-item:hover {
+  transform: translateY(-5px);
+}
+.performance-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 10px 0;
+}
+.performance-easy { color: var(--success); }
+.performance-medium { color: var(--warning); }
+.performance-hard { color: var(--danger); }
+.message {
+  font-size: 1.2rem;
+  margin: 30px 0;
+  padding: 25px;
+  border-radius: 20px;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  line-height: 1.6;
+  border: 1px solid rgba(93, 63, 211, 0.1);
+}
+/* ===== ANIMAÇÕES FINAIS ===== */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+  display: none;
+}
+.confetti-container.active {
+  display: block;
+}
+.confetti {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  animation: confettiRain 2s ease forwards;
+}
+.trophy-animation {
+  animation: trophyGlow 2s infinite;
+}
+.star-animation {
+  animation: starPulse 1.5s infinite;
+}
+/* ===== INFORMAÇÕES DA EBD FIEL ===== */
+.church-info {
+  text-align: center;
+  padding: 25px 20px;
+  background: var(--light);
+  border-top: 1px solid rgba(93, 63, 211, 0.1);
+}
+.church-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+.church-location {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.instagram-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.instagram-text {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.instagram-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background: var(--instagram);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(225, 48, 108, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.instagram-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+.instagram-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(225, 48, 108, 0.4);
+}
+.instagram-link:hover::before {
+  left: 100%;
+}
+.instagram-icon {
+  font-size: 1.3rem;
+}
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes confettiRain {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
+@keyframes trophyGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); }
+  50% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9)); }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+/* ===== RESPONSIVO ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    border-radius: 20px;
+  }
+  .modern-header {
+    padding: 25px 15px;
+  }
+  .logo-text h1 {
+    font-size: 2rem;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  .lesson-name {
+    font-size: 1.4rem;
+  }
+  .verse-text {
+    font-size: 1rem;
+  }
+  .welcome-card {
+    padding: 20px;
+  }
+  .content-section {
+    padding: 30px 20px;
+  }
+  .about-card, .details-card {
+    padding: 25px 20px;
+  }
+  .quiz-section {
+    padding: 20px 15px;
+  }
+  .question {
+    padding: 20px;
+  }
+  .question-text {
+    font-size: 1.2rem;
+  }
+  .option {
+    padding: 16px 15px;
+  }
+  .navigation {
+    flex-direction: column-reverse;
+  }
+  button {
+    width: 100%;
+  }
+  .results {
+    padding: 30px 20px;
+  }
+  .score {
+    font-size: 3.5rem;
+  }
+  .animation-text {
+    font-size: 1.8rem;
+  }
+  .animation-icon {
+    font-size: 3.5rem;
+  }
+  .countdown {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+  .progress-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .progress-item {
+    min-width: 100%;
+  }
+  .progress-value {
+    font-size: 1.3rem;
+  }
+  .objective-item {
+    padding: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+  .logo-container {
+    flex-direction: row;
+    text-align: left;
+    gap: 25px;
+  }
+  .logo-text {
+    text-align: left;
+  }
+  .features {
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+  .performance {
+    flex-direction: row;
+  }
+  .navigation {
+    flex-direction: row-reverse;
+  }
+  .instagram-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+  .progress-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .progress-item {
+    min-width: auto;
+  }
+  .objective-item {
+    padding: 15px 20px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
+  .content-section {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+  .logo-text h1 {
+    font-size: 2.8rem;
+  }
+  .lesson-name {
+    font-size: 2rem;
+  }
+}
+</style>
 </head>
 <body>
-    <div class="message">
-        <h1>⏳ Quiz em Preparação</h1>
-        <p><strong>Lição 9: Bem-Aventurados os Pacificadores</strong></p>
-        <p>Este quiz estará disponível em breve.</p>
-        <p>Volte em: <strong>01/03/2026</strong></p>
-        <a href="../../index.html" class="btn">← Voltar para a Página Principal</a>
+<!-- ANIMAÇÃO INICIAL -->
+<div class="quiz-start-animation" id="quiz-start-animation">
+  <div class="animation-icon">
+    <i class="fas fa-pray"></i>
+  </div>
+  <div class="animation-text">Quiz da EBD Jovem</div>
+  <div class="animation-subtext">1º Trimestre 2026 - Lição 12</div>
+  <div class="countdown" id="countdown">3</div>
+</div>
+
+<!-- CONFETES -->
+<div class="confetti-container" id="confetti-container"></div>
+
+<div class="container fade-in">
+  <!-- HEADER -->
+  <header class="modern-header">
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="https://i.imgur.com/vsNu5IC.png" alt="Logo Sermão da Montanha" class="logo-img" id="logo-img">
+        </div>
+        <div class="logo-text">
+          <h1>Quiz da EBD Jovem</h1>
+          <div class="subtitle">1º Trimestre 2026</div>
+        </div>
+      </div>
+      
+      <!-- INFORMAÇÕES DA LIÇÃO -->
+      <div class="lesson-header-section">
+        <div class="lesson-title-container">
+          <div class="lesson-number">
+            <i class="fas fa-book-open"></i> Lição 12
+          </div>
+          <div class="lesson-name">ESMOLA, ORAÇÃO E JEJUM SÃO PRÁTICAS ESPIRITUAIS</div>
+        </div>
+        <div class="verse-of-day">
+          <div class="verse-text">"Guardai-vos de fazer a vossa esmola diante dos homens, para serdes vistos por eles; aliás, não tereis galardão junto de vosso Pai, que está nos céus"</div>
+          <div class="verse-reference">Mateus 6:1</div>
+        </div>
+        <div class="lesson-objectives">
+          <div class="objectives-title">
+            <i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO
+          </div>
+          <ul class="objectives-list">
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Reconhecer que a esmola nos liberta da avareza</span>
+            </li>
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Ressaltar que a oração nos conecta com Deus</span>
+            </li>
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Identificar os ensinamentos de Jesus a respeito do jejum</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="welcome-card">
+        <h2><i class="fas fa-pray"></i> Teste seu conhecimento bíblico!</h2>
+        <p>Revise as três práticas espirituais ensinadas por Jesus no Sermão da Montanha: esmola, oração e jejum.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-star" style="color: #5D3FD3;"></i>
+          <span>12 Perguntas</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-bolt" style="color: #FF7A5A;"></i>
+          <span>Baseado na Lição 12</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-pray" style="color: #00C9B7;"></i>
+          <span>Design Jovem</span>
+        </div>
+      </div>
     </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <section class="content-section">
+    <div class="about-card">
+      <h2 class="card-title"><i class="fas fa-lightbulb"></i> VERDADE APLICADA</h2>
+      <div class="card-content">
+        <div class="truth-applied">
+          <div class="label">Verdade Aplicada</div>
+          <div class="text">Esmola, oração e jejum são disciplinas espirituais que não devem ser praticadas para obter a admiração alheia, mas para agradar a Deus.</div>
+        </div>
+        <p style="margin-top: 20px;">No Sermão da Montanha, Jesus fez advertências sobre três aspectos da vida cristã: dar esmolas (não para sermos glorificados pelos homens), orar em secreto e sem vãs repetições, e jejuar com discrição para nos conectarmos a Deus.</p>
+        <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(255, 122, 90, 0.1), rgba(93, 63, 211, 0.1)); border-radius: 12px; border-left: 4px solid var(--secondary);">
+          <strong><i class="fas fa-quote-left"></i> Ponto-Chave:</strong><br>
+          "Esmolar, orar e jejuar são práticas relevantes que fazem parte da vida cristã."
+        </div>
+      </div>
+    </div>
+    <div class="details-card">
+      <h2 class="card-title"><i class="fas fa-graduation-cap"></i> O QUE VOCÊ VAI REVISAR</h2>
+      <div class="card-content">
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Dar esmola como atitude caridosa que agrada a Deus</li>
+          <li><i class="fas fa-check-circle"></i> A oração como disciplina espiritual que gera intimidade com Deus</li>
+          <li><i class="fas fa-check-circle"></i> O jejum como prática espiritual que fortalece a fé</li>
+          <li><i class="fas fa-check-circle"></i> Os ensinamentos de Jesus sobre essas práticas</li>
+          <li><i class="fas fa-check-circle"></i> A importância da discrição e humildade nestas práticas</li>
+        </ul>
+        <div class="prayer-moment" style="margin-top: 25px;">
+          <div class="label">Momento de Oração</div>
+          <div class="text">Ore para que dar esmola, orar e o jejuar façam parte da vida da Igreja.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- BOTÃO INICIAR NO FINAL -->
+    <div class="cta-section">
+      <button class="start-btn" id="start-btn">
+        <i class="fas fa-play-circle"></i> Iniciar Quiz
+      </button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <div class="quiz-section" id="quiz-section">
+    <!-- PERGUNTA ATUAL -->
+    <div class="question-container" id="question-container">
+      <!-- A pergunta será inserida aqui via JavaScript -->
+    </div>
+    
+    <!-- SEÇÃO DE PROGRESSO -->
+    <div class="progress-section" id="progress-section">
+      <div class="progress-info">
+        <div class="progress-item">
+          <div class="progress-label">Questão Atual</div>
+          <div class="progress-value" id="current-question">1/12</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Respondidas</div>
+          <div class="progress-value" id="answered-count">0/12</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Progresso</div>
+          <div class="progress-value" id="progress-percentage">0%</div>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="progress" id="quiz-progress"></div>
+        </div>
+      </div>
+      
+      <!-- BOTÕES DE NAVEGAÇÃO -->
+      <div class="navigation">
+        <button id="prev-btn" disabled>
+          <i class="fas fa-arrow-left"></i> Anterior
+        </button>
+        <button id="next-btn" class="btn-next">
+          Próxima <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTADOS -->
+  <div class="results" id="results">
+    <div class="results-header">
+      <h2><i class="fas fa-trophy" id="trophy-icon"></i> Resultado Final</h2>
+    </div>
+    <div class="score" id="score">0/0</div>
+    <div class="performance" id="performance">
+      <div class="performance-item">
+        <div class="performance-value performance-easy" id="correct-easy">0</div>
+        <div>Fáceis</div>
+      </div>
+      <div class="performance-item">
+        <div class="performance-value performance-medium" id="correct-medium">0</div>
+        <div>Médias</div>
+      </div>
+      <div class="performance-item">
+        <div class="performance-value performance-hard" id="correct-hard">0</div>
+        <div>Difíceis</div>
+      </div>
+    </div>
+    <div class="message" id="message"></div>
+    <button id="restart-btn" style="background: var(--accent);">
+      <i class="fas fa-redo"></i> Refazer Quiz
+    </button>
+  </div>
+
+  <!-- INFORMAÇÕES DA EBD FIEL -->
+  <div class="church-info">
+    <div class="church-name">EBD Fiel</div>
+    <div class="church-location">Fiel à Palavra!</div>
+    <div class="instagram-section">
+      <div class="instagram-text">Siga-nos no Instagram:</div>
+      <a href="https://www.instagram.com/ebdfiel/" target="_blank" class="instagram-link">
+        <i class="fab fa-instagram instagram-icon"></i>
+        @ebdfiel
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// =============================================
+// BANCO DE PERGUNTAS - LIÇÃO 12: ESMOLA, ORAÇÃO E JEJUM SÃO PRÁTICAS ESPIRITUAIS
+// =============================================
+const allQuestions = [
+  // PERGUNTAS FÁCEIS
+  {
+    question: "Qual é o versículo do dia da Lição 12?",
+    options: [
+      "Mateus 6:1 — 'Guardai-vos de fazer a vossa esmola diante dos homens, para serdes vistos por eles; aliás, não tereis galardão junto de vosso Pai, que está nos céus'",
+      "Mateus 5:10 — 'Bem-aventurados os que sofrem perseguição por causa da justiça, porque deles é o reino dos céus'",
+      "Mateus 5:8 — 'Bem-aventurados os limpos de coração, porque eles verão a Deus'",
+      "Mateus 6:9 — 'Portanto, vós orareis assim: Pai nosso, que estás nos céus, santificado seja o teu nome'"
+    ],
+    correct: 0,
+    explanation: "O versículo do dia é Mateus 6:1.",
+    difficulty: "easy"
+  },
+  {
+    question: "Qual é a VERDADE APLICADA desta lição?",
+    options: [
+      "Esmola, oração e jejum devem ser praticados apenas por líderes religiosos",
+      "Esmola, oração e jejum são disciplinas espirituais que não devem ser praticadas para obter a admiração alheia, mas para agradar a Deus",
+      "Essas práticas são opcionais na vida cristã",
+      "Devemos praticá-las publicamente para inspirar outras pessoas"
+    ],
+    correct: 1,
+    explanation: "A verdade aplicada é: 'Esmola, oração e jejum são disciplinas espirituais que não devem ser praticadas para obter a admiração alheia, mas para agradar a Deus.'",
+    difficulty: "easy"
+  },
+  {
+    question: "Qual é um dos objetivos da Lição 12?",
+    options: [
+      "Ensinar técnicas avançadas de meditação",
+      "Mostrar como obter riquezas através da esmola",
+      "Reconhecer que a esmola nos liberta da avareza",
+      "Promover o jejum como forma de emagrecimento"
+    ],
+    correct: 2,
+    explanation: "Um dos objetivos da lição é: 'Reconhecer que a esmola nos liberta da avareza.'",
+    difficulty: "easy"
+  },
+  {
+    question: "Segundo a lição, qual é o MOMENTO DE ORAÇÃO proposto?",
+    options: [
+      "Ore para que nunca precisemos dar esmolas",
+      "Ore para que dar esmola, orar e o jejuar façam parte da vida da Igreja",
+      "Peça a Deus riquezas para podermos ajudar mais",
+      "Suplique para que o jejum seja abolido da prática cristã"
+    ],
+    correct: 1,
+    explanation: "O momento de oração é: 'Ore para que dar esmola, orar e o jejuar façam parte da vida da Igreja.'",
+    difficulty: "easy"
+  },
+  
+  // PERGUNTAS MÉDIAS
+  {
+    question: "O que a lição diz sobre dar esmola?",
+    options: [
+      "É uma prática ultrapassada que não se aplica aos dias de hoje",
+      "É um ato de solidariedade que nos ajuda a ficar livres da avareza e da ganância",
+      "Deve ser feito apenas para parentes e amigos próximos",
+      "Só é válido quando feito publicamente"
+    ],
+    correct: 1,
+    explanation: "A lição afirma que 'dar esmola é um ato de solidariedade' e que 'esmolar nos ajuda a ficar livres da avareza e da ganância'.",
+    difficulty: "medium"
+  },
+  {
+    question: "O que Jesus ensina sobre a oração no Sermão da Montanha?",
+    options: [
+      "Devemos orar apenas em templos e igrejas",
+      "A oração deve ser feita com muitas palavras e repetições",
+      "Devemos orar em secreto e sem vãs repetições",
+      "A oração pública é mais eficaz que a privada"
+    ],
+    correct: 2,
+    explanation: "Jesus ensina a 'orar em secreto e sem vãs repetições' (Mt 6.7,8).",
+    difficulty: "medium"
+  },
+  {
+    question: "Qual é o ponto-chave da lição?",
+    options: [
+      "Esmolar, orar e jejuar são práticas ultrapassadas",
+      "Esmolar, orar e jejuar são práticas relevantes que fazem parte da vida cristã",
+      "Essas práticas devem ser realizadas apenas por monges e freiras",
+      "São práticas que garantem sucesso material"
+    ],
+    correct: 1,
+    explanation: "O ponto-chave é: 'Esmolar, orar e jejuar são práticas relevantes que fazem parte da vida cristã.'",
+    difficulty: "medium"
+  },
+  {
+    question: "O que a lição afirma sobre o jejum?",
+    options: [
+      "É uma prática que deve ser abandonada pelos cristãos modernos",
+      "É uma disciplina espiritual que não deve ser deixada de lado",
+      "Serve apenas para demonstrar espiritualidade superior",
+      "É necessário jejuar apenas uma vez por ano"
+    ],
+    correct: 1,
+    explanation: "A lição afirma que 'o jejum é uma disciplina espiritual que não deve ser deixada de lado' (Mt 17.21).",
+    difficulty: "medium"
+  },
+  
+  // PERGUNTAS DIFÍCEIS
+  {
+    question: "O que John Stott comenta sobre dar esmolas?",
+    options: [
+      "Jesus obviamente esperava que os Seus discípulos fossem doadores generosos. Suas palavras condenam a egoísta sovinice de muitos",
+      "Dar esmolas é uma forma de garantir o favor divino",
+      "Os discípulos não precisavam se preocupar com esmolas",
+      "A esmola é uma prática pagã que deve ser evitada"
+    ],
+    correct: 0,
+    explanation: "John Stott comenta: 'Jesus obviamente esperava que os Seus discípulos fossem doadores generosos. Suas palavras condenam a egoísta sovinice de muitos.'",
+    difficulty: "hard"
+  },
+  {
+    question: "O que a lição diz sobre a oração gerar intimidade com Deus?",
+    options: [
+      "A oração é um encontro reservado que cada cristão pode ter com o nosso Deus",
+      "A oração deve ser sempre pública para testemunhar",
+      "A intimidade com Deus vem apenas através do estudo bíblico",
+      "A oração em grupo é mais eficaz para gerar intimidade"
+    ],
+    correct: 0,
+    explanation: "A lição afirma que 'a oração é um encontro reservado que cada cristão pode ter com o nosso Deus'.",
+    difficulty: "hard"
+  },
+  {
+    question: "O que Jesus ensinou sobre a prática do jejum?",
+    options: [
+      "Que não deve ser praticado pelos cristãos",
+      "Que deve ser feito com discrição, sem o intuito de sermos notados pelos outros",
+      "Que apenas os fariseus deveriam jejuar",
+      "Que o jejum deve ser sempre de 40 dias"
+    ],
+    correct: 1,
+    explanation: "Jesus ensinou que o jejum 'deve ser feito com discrição, sem o intuito de sermos notados pelos outros' (Mt 6.16-18).",
+    difficulty: "hard"
+  },
+  {
+    question: "O que o Bispo Abner Ferreira observa sobre o jejum?",
+    options: [
+      "É uma prática sem valor espiritual nos dias de hoje",
+      "Quando jejumos, nosso espírito se fortalece, e nós nos tornamos mais sensíveis para ouvir e discernir a Voz de Deus",
+      "O jejum é prejudicial à saúde e deve ser evitado",
+      "Apenas pastores e bispos devem jejuar"
+    ],
+    correct: 1,
+    explanation: "O Bispo Abner Ferreira observa: 'Quando jejumos, nosso espírito se fortalece, e nós nos tornamos mais sensíveis para ouvir e discernir a Voz de Deus.'",
+    difficulty: "hard"
+  }
+];
+
+// =============================================
+// FUNÇÃO PARA EMBARALHAR OPÇÕES DE RESPOSTA E ORDENAR PERGUNTAS
+// =============================================
+function shuffleQuestions() {
+  // Embaralhar opções e redistribuir respostas corretas
+  allQuestions.forEach(question => {
+    const originalCorrect = question.options[question.correct];
+    const indices = [0, 1, 2, 3];
+    
+    // Embaralhar índices usando algoritmo Fisher-Yates
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    
+    const shuffledOptions = indices.map(i => question.options[i]);
+    const newCorrectIndex = shuffledOptions.indexOf(originalCorrect);
+    
+    question.options = shuffledOptions;
+    question.correct = newCorrectIndex;
+  });
+  
+  // Embaralhar ordem das perguntas
+  for (let i = allQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+  }
+}
+
+// =============================================
+// VARIÁVEIS GLOBAIS
+// =============================================
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let quizStarted = false;
+
+// =============================================
+// INICIALIZAÇÃO
+// =============================================
+document.addEventListener('DOMContentLoaded', function() {
+  shuffleQuestions();
+  
+  document.getElementById('start-btn').addEventListener('click', startQuizWithAnimation);
+  document.getElementById('prev-btn').addEventListener('click', showPreviousQuestion);
+  document.getElementById('next-btn').addEventListener('click', showNextQuestion);
+  document.getElementById('restart-btn').addEventListener('click', restartQuiz);
+  
+  userAnswers = new Array(allQuestions.length).fill(null);
+  
+  const logoImg = document.getElementById('logo-img');
+  logoImg.onerror = function() {
+    logoImg.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L80,80 L50,60 L20,80 Z" fill="%235D3FD3"/><circle cx="50" cy="30" r="10" fill="%23FF7A5A"/></svg>';
+  };
+});
+
+// =============================================
+// FUNÇÕES DO QUIZ
+// =============================================
+function startQuizWithAnimation() {
+  const startAnimation = document.getElementById('quiz-start-animation');
+  startAnimation.classList.add('active');
+  
+  let count = 3;
+  const countdownElement = document.getElementById('countdown');
+  
+  const countdownInterval = setInterval(() => {
+    countdownElement.textContent = count;
+    count--;
+    
+    if (count < 0) {
+      clearInterval(countdownInterval);
+      startQuiz();
+    }
+  }, 1000);
+}
+
+function startQuiz() {
+  document.getElementById('quiz-start-animation').classList.remove('active');
+  document.querySelector('.modern-header').style.display = 'none';
+  document.querySelector('.content-section').style.display = 'none';
+  document.getElementById('quiz-section').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  
+  quizStarted = true;
+  currentQuestionIndex = 0;
+  userAnswers = new Array(allQuestions.length).fill(null);
+  
+  showQuestion(currentQuestionIndex);
+}
+
+function showQuestion(index) {
+  const question = allQuestions[index];
+  const questionContainer = document.getElementById('question-container');
+  
+  // Atualizar progresso
+  updateProgress();
+  
+  let optionsHTML = '';
+  const letters = ['A', 'B', 'C', 'D'];
+  
+  question.options.forEach((option, i) => {
+    const isSelected = userAnswers[index] === i;
+    let optionClass = 'option';
+    
+    if (isSelected) {
+      optionClass += ' selected';
+      if (i === question.correct) {
+        optionClass += ' correct';
+      } else {
+        optionClass += ' incorrect';
+      }
+    }
+    
+    optionsHTML += `
+      <div class="${optionClass}" data-index="${i}">
+        <span class="option-letter">${letters[i]}</span>
+        <span class="option-text">${option}</span>
+        <span class="feedback-icon">
+          ${isSelected ? (i === question.correct ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times"></i>') : ''}
+        </span>
+      </div>
+    `;
+  });
+  
+  questionContainer.innerHTML = `
+    <div class="question fade-in">
+      <div class="question-header">
+        <span class="question-difficulty difficulty-${question.difficulty}">
+          ${question.difficulty === 'easy' ? 'Fácil' : question.difficulty === 'medium' ? 'Médio' : 'Difícil'}
+        </span>
+        <div class="question-text">${question.question}</div>
+      </div>
+      <div class="options">
+        ${optionsHTML}
+      </div>
+    </div>
+  `;
+  
+  document.querySelectorAll('.option').forEach(option => {
+    option.addEventListener('click', function() {
+      if (!quizStarted) return;
+      const selectedIndex = parseInt(this.getAttribute('data-index'));
+      selectOption(selectedIndex);
+    });
+  });
+  
+  updateNavigationButtons();
+}
+
+function updateProgress() {
+  const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
+  const answeredCount = userAnswers.filter(answer => answer !== null).length;
+  
+  document.getElementById('current-question').textContent = `${currentQuestionIndex + 1}/${allQuestions.length}`;
+  document.getElementById('answered-count').textContent = `${answeredCount}/${allQuestions.length}`;
+  document.getElementById('progress-percentage').textContent = `${Math.round(progress)}%`;
+  document.getElementById('quiz-progress').style.width = `${progress}%`;
+}
+
+function selectOption(optionIndex) {
+  userAnswers[currentQuestionIndex] = optionIndex;
+  const question = allQuestions[currentQuestionIndex];
+  
+  const options = document.querySelectorAll('.option');
+  options.forEach((option, i) => {
+    option.classList.remove('selected', 'correct', 'incorrect', 'correct-answer');
+    
+    if (i === optionIndex) {
+      option.classList.add('selected');
+      if (i === question.correct) {
+        option.classList.add('correct');
+      } else {
+        option.classList.add('incorrect');
+      }
+    }
+    
+    if (i === question.correct && optionIndex !== question.correct) {
+      option.classList.add('correct-answer');
+    }
+  });
+  
+  updateProgress();
+  updateNavigationButtons();
+}
+
+function showNextQuestion() {
+  if (currentQuestionIndex < allQuestions.length - 1) {
+    currentQuestionIndex++;
+    showQuestion(currentQuestionIndex);
+  } else {
+    showResults();
+  }
+}
+
+function showPreviousQuestion() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    showQuestion(currentQuestionIndex);
+  }
+}
+
+function updateNavigationButtons() {
+  document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
+  
+  const nextButton = document.getElementById('next-btn');
+  if (currentQuestionIndex === allQuestions.length - 1) {
+    nextButton.innerHTML = 'Ver Resultados <i class="fas fa-chart-bar"></i>';
+  } else {
+    nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
+  }
+  
+  nextButton.disabled = userAnswers[currentQuestionIndex] === null;
+}
+
+// =============================================
+// ANIMAÇÕES FINAIS
+// =============================================
+function createConfetti(scorePercentage) {
+  const container = document.getElementById('confetti-container');
+  container.classList.add('active');
+  container.innerHTML = '';
+  
+  const colors = ['#5D3FD3', '#FF7A5A', '#00C9B7', '#2ECC71', '#FF9F43', '#FF6B6B'];
+  const confettiCount = Math.min(100, Math.floor(scorePercentage * 100));
+  
+  for (let i = 0; i < confettiCount; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    
+    const left = Math.random() * 100;
+    const size = Math.random() * 12 + 8;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const delay = Math.random() * 2;
+    const duration = Math.random() * 2 + 2;
+    
+    confetti.style.left = `${left}%`;
+    confetti.style.width = `${size}px`;
+    confetti.style.height = `${size}px`;
+    confetti.style.backgroundColor = color;
+    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+    confetti.style.animationDelay = `${delay}s`;
+    confetti.style.animationDuration = `${duration}s`;
+    
+    container.appendChild(confetti);
+  }
+  
+  setTimeout(() => {
+    container.classList.remove('active');
+    container.innerHTML = '';
+  }, 5000);
+}
+
+function showResults() {
+  document.getElementById('quiz-section').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+  
+  let score = 0;
+  let correctEasy = 0, correctMedium = 0, correctHard = 0;
+  let totalEasy = 0, totalMedium = 0, totalHard = 0;
+  
+  allQuestions.forEach((question, index) => {
+    if (question.difficulty === 'easy') totalEasy++;
+    if (question.difficulty === 'medium') totalMedium++;
+    if (question.difficulty === 'hard') totalHard++;
+    
+    if (userAnswers[index] === question.correct) {
+      score++;
+      if (question.difficulty === 'easy') correctEasy++;
+      if (question.difficulty === 'medium') correctMedium++;
+      if (question.difficulty === 'hard') correctHard++;
+    }
+  });
+  
+  const scorePercentage = score / allQuestions.length;
+  
+  document.getElementById('score').textContent = `${score}/${allQuestions.length}`;
+  document.getElementById('correct-easy').textContent = `${correctEasy}/${totalEasy}`;
+  document.getElementById('correct-medium').textContent = `${correctMedium}/${totalMedium}`;
+  document.getElementById('correct-hard').textContent = `${correctHard}/${totalHard}`;
+  
+  const trophyIcon = document.getElementById('trophy-icon');
+  const messageElement = document.getElementById('message');
+  let message = '';
+  
+  if (score === allQuestions.length) {
+    message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você compreendeu profundamente as práticas espirituais ensinadas por Jesus!';
+    trophyIcon.className = 'fas fa-crown trophy-animation';
+    createConfetti(1);
+  } else if (scorePercentage >= 0.8) {
+    message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você entendeu bem como esmola, oração e jejum devem ser praticados para agradar a Deus!';
+    trophyIcon.className = 'fas fa-trophy trophy-animation';
+    createConfetti(scorePercentage);
+  } else if (scorePercentage >= 0.6) {
+    message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você compreende as práticas espirituais ensinadas por Jesus. Continue estudando!';
+    trophyIcon.className = 'fas fa-award';
+    createConfetti(scorePercentage * 0.7);
+  } else if (scorePercentage >= 0.5) {
+    message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você está no caminho. Aprofunde seu entendimento sobre esmola, oração e jejum.';
+    trophyIcon.className = 'fas fa-medal';
+    createConfetti(scorePercentage * 0.5);
+  } else {
+    message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> Revise a lição para compreender como esmola, oração e jejum são práticas espirituais importantes.';
+    trophyIcon.className = 'fas fa-book';
+  }
+  
+  messageElement.innerHTML = message;
+  
+  const resultElements = document.querySelectorAll('#results > *');
+  resultElements.forEach((element, index) => {
+    element.classList.add('fade-in');
+    element.style.animationDelay = `${index * 0.2}s`;
+  });
+  
+  setTimeout(() => {
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }, 500);
+}
+
+function restartQuiz() {
+  shuffleQuestions();
+  currentQuestionIndex = 0;
+  userAnswers = new Array(allQuestions.length).fill(null);
+  quizStarted = false;
+  
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('confetti-container').classList.remove('active');
+  document.getElementById('confetti-container').innerHTML = '';
+  
+  document.querySelector('.modern-header').style.display = 'block';
+  document.querySelector('.content-section').style.display = 'flex';
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
