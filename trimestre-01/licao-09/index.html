@@ -33,7 +33,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: var(--youth-bg);
   color: var(--text);
@@ -62,8 +64,10 @@ body {
 /* ===== ANIMAÇÃO INICIAL ===== */
 .quiz-start-animation {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: var(--gradient);
   display: none;
   flex-direction: column;
@@ -74,7 +78,9 @@ body {
   text-align: center;
   padding: 20px;
 }
-.quiz-start-animation.active { display: flex; }
+.quiz-start-animation.active {
+  display: flex;
+}
 .animation-icon {
   font-size: 5rem;
   margin-bottom: 20px;
@@ -120,8 +126,10 @@ body {
 }
 .header-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.1;
   background-image:
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 2px, transparent 2px),
@@ -161,7 +169,9 @@ body {
   object-fit: contain;
   border-radius: 0;
 }
-.logo-text { text-align: center; }
+.logo-text {
+  text-align: center;
+}
 .logo-text h1 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -191,7 +201,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
-.lesson-title-container { text-align: center; margin-bottom: 25px; }
+.lesson-title-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
 .lesson-number {
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
@@ -235,7 +248,9 @@ body {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
 }
-.lesson-objectives { margin: 25px 0; }
+.lesson-objectives {
+  margin: 25px 0;
+}
 .objectives-title {
   font-size: 1.1rem;
   color: white;
@@ -264,9 +279,22 @@ body {
   gap: 12px;
   transition: all 0.3s ease;
 }
-.objective-item:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
-.objective-item i { color: var(--success); font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
-.objective-text { flex: 1; text-align: left; font-size: 1rem; line-height: 1.4; }
+.objective-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+.objective-item i {
+  color: var(--success);
+  font-size: 1.3rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.objective-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 .welcome-card {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(10px);
@@ -285,7 +313,11 @@ body {
   gap: 12px;
   font-weight: 700;
 }
-.welcome-card p { font-size: 1.05rem; opacity: 0.95; line-height: 1.6; }
+.welcome-card p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -309,7 +341,10 @@ body {
   border: 1px solid rgba(255,255,255,0.2);
   transition: all 0.3s ease;
 }
-.feature:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+.feature:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
+}
 /* ===== SEÇÃO DE CONTEÚDO ===== */
 .content-section {
   padding: 35px 25px;
@@ -325,7 +360,9 @@ body {
   border: 1px solid rgba(93, 63, 211, 0.1);
   transition: transform 0.3s ease;
 }
-.about-card:hover, .details-card:hover { transform: translateY(-5px); }
+.about-card:hover, .details-card:hover {
+  transform: translateY(-5px);
+}
 .card-title {
   font-size: 1.5rem;
   color: var(--primary);
@@ -336,8 +373,15 @@ body {
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
 }
-.card-content { font-size: 1rem; color: var(--text); line-height: 1.7; }
-.card-content ul { list-style: none; margin-top: 20px; }
+.card-content {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.card-content ul {
+  list-style: none;
+  margin-top: 20px;
+}
 .card-content li {
   margin-bottom: 15px;
   display: flex;
@@ -347,8 +391,23 @@ body {
   border-radius: 10px;
   transition: background 0.3s ease;
 }
-.card-content li:hover { background: rgba(93, 63, 211, 0.05); }
-.card-content li i { color: var(--primary); margin-top: 3px; flex-shrink: 0; font-size: 1.2rem; }
+.card-content li:hover {
+  background: rgba(93, 63, 211, 0.05);
+}
+.card-content li i {
+  color: var(--primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+.highlight {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  padding: 2px 5px;
+}
 .truth-applied {
   background: linear-gradient(135deg, rgba(93, 63, 211, 0.1), rgba(255, 122, 90, 0.1));
   padding: 20px;
@@ -385,7 +444,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.prayer-moment .text { font-size: 1rem; color: var(--text); line-height: 1.5; }
+.prayer-moment .text {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
 /* ===== BOTÃO INICIAR ===== */
 .cta-section {
   display: flex;
@@ -418,17 +481,29 @@ body {
 .start-btn::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
   transition: left 0.7s ease;
   z-index: -1;
 }
-.start-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 30px rgba(255, 122, 90, 0.5); }
-.start-btn:hover::before { left: 100%; }
+.start-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 122, 90, 0.5);
+}
+.start-btn:hover::before {
+  left: 100%;
+}
 /* ===== SEÇÃO DO QUIZ ===== */
-.quiz-section { display: none; padding: 25px 20px; }
-.question-container { margin-bottom: 30px; }
+.quiz-section {
+  display: none;
+  padding: 25px 20px;
+}
+.question-container {
+  margin-bottom: 30px;
+}
 .question {
   padding: 25px;
   border-radius: 20px;
@@ -441,13 +516,20 @@ body {
 .question::before {
   content: '';
   position: absolute;
-  top: 0; right: 0;
-  width: 80px; height: 80px;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
   background: var(--gradient);
   opacity: 0.05;
   border-radius: 0 0 0 100%;
 }
-.question-header { display: flex; flex-direction: column; gap: 18px; margin-bottom: 25px; }
+.question-header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
 .question-difficulty {
   padding: 10px 18px;
   border-radius: 20px;
@@ -467,7 +549,11 @@ body {
   line-height: 1.4;
   font-family: 'Montserrat', sans-serif;
 }
-.options { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
 .option {
   padding: 18px 20px;
   background: var(--light);
@@ -480,7 +566,11 @@ body {
   position: relative;
   overflow: hidden;
 }
-.option:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(93, 63, 211, 0.15); border-color: var(--primary); }
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(93, 63, 211, 0.15);
+  border-color: var(--primary);
+}
 .option.selected.correct {
   background: var(--success);
   color: white;
@@ -506,7 +596,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   background: rgba(93, 63, 211, 0.1);
   border-radius: 50%;
   margin-right: 15px;
@@ -528,10 +619,20 @@ body {
   flex-shrink: 0;
 }
 .option.selected.correct .feedback-icon,
-.option.correct-answer .feedback-icon { opacity: 1; }
-.option.selected.incorrect .feedback-icon { opacity: 1; }
-.option.locked { cursor: not-allowed; }
-.option.locked:hover { transform: none; box-shadow: none; border-color: transparent; }
+.option.correct-answer .feedback-icon {
+  opacity: 1;
+}
+.option.selected.incorrect .feedback-icon {
+  opacity: 1;
+}
+.option.locked {
+  cursor: not-allowed;
+}
+.option.locked:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
 /* ===== SEÇÃO DE PROGRESSO ===== */
 .progress-section {
   background: var(--light);
@@ -569,7 +670,9 @@ body {
   color: var(--primary);
   text-align: center;
 }
-.progress-bar-container { margin-top: 15px; }
+.progress-bar-container {
+  margin-top: 15px;
+}
 .progress-bar {
   height: 12px;
   background: #E2E8F0;
@@ -588,7 +691,10 @@ body {
 .progress::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-image: linear-gradient(
     -45deg,
     rgba(255, 255, 255, 0.3) 25%,
@@ -602,9 +708,16 @@ body {
   background-size: 30px 30px;
   animation: move 1s linear infinite;
 }
-@keyframes move { 0% { background-position: 0 0; } 100% { background-position: 30px 0; } }
+@keyframes move {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 0; }
+}
 /* ===== NAVEGAÇÃO ===== */
-.navigation { display: flex; justify-content: space-between; gap: 15px; }
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
 button {
   padding: 16px 25px;
   border: none;
@@ -628,24 +741,50 @@ button {
 button::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   transition: left 0.7s ease;
   z-index: -1;
 }
-button:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(93, 63, 211, 0.4); }
-button:hover::before { left: 100%; }
-button:disabled { background: #CBD5E0; cursor: not-allowed; transform: none; box-shadow: none; }
-button:disabled::before { display: none; }
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(93, 63, 211, 0.4);
+}
+button:hover::before {
+  left: 100%;
+}
+button:disabled {
+  background: #CBD5E0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+button:disabled::before {
+  display: none;
+}
+button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
 .btn-next {
   background: var(--secondary);
   box-shadow: 0 8px 20px rgba(255, 122, 90, 0.3);
 }
-.btn-next:hover { box-shadow: 0 12px 25px rgba(255, 122, 90, 0.4); }
+.btn-next:hover {
+  box-shadow: 0 12px 25px rgba(255, 122, 90, 0.4);
+}
 /* ===== RESULTADOS ===== */
-.results { text-align: center; padding: 40px 25px; display: none; }
-.results-header { margin-bottom: 30px; }
+.results {
+  text-align: center;
+  padding: 40px 25px;
+  display: none;
+}
+.results-header {
+  margin-bottom: 30px;
+}
 .results-header h2 {
   font-size: 2rem;
   color: var(--dark);
@@ -678,8 +817,14 @@ button:disabled::before { display: none; }
   border: 1px solid rgba(93, 63, 211, 0.1);
   transition: transform 0.3s ease;
 }
-.performance-item:hover { transform: translateY(-5px); }
-.performance-value { font-size: 2.5rem; font-weight: 800; margin: 10px 0; }
+.performance-item:hover {
+  transform: translateY(-5px);
+}
+.performance-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 10px 0;
+}
 .performance-easy { color: var(--success); }
 .performance-medium { color: var(--warning); }
 .performance-hard { color: var(--danger); }
@@ -696,22 +841,31 @@ button:disabled::before { display: none; }
 /* ===== ANIMAÇÕES FINAIS ===== */
 .confetti-container {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 999;
   overflow: hidden;
   display: none;
 }
-.confetti-container.active { display: block; }
+.confetti-container.active {
+  display: block;
+}
 .confetti {
   position: absolute;
-  width: 12px; height: 12px;
+  width: 12px;
+  height: 12px;
   opacity: 0;
   animation: confettiRain 2s ease forwards;
 }
-.trophy-animation { animation: trophyGlow 2s infinite; }
-.star-animation { animation: starPulse 1.5s infinite; }
+.trophy-animation {
+  animation: trophyGlow 2s infinite;
+}
+.star-animation {
+  animation: starPulse 1.5s infinite;
+}
 /* ===== INFORMAÇÕES DA EBD FIEL ===== */
 .church-info {
   text-align: center;
@@ -726,7 +880,12 @@ button:disabled::before { display: none; }
   margin-bottom: 8px;
   font-family: 'Montserrat', sans-serif;
 }
-.church-location { color: var(--text); opacity: 0.8; font-size: 1rem; margin-bottom: 20px; }
+.church-location {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
 .instagram-section {
   display: flex;
   flex-direction: column;
@@ -734,7 +893,11 @@ button:disabled::before { display: none; }
   gap: 15px;
   margin-top: 15px;
 }
-.instagram-text { font-size: 1rem; color: var(--text); font-weight: 500; }
+.instagram-text {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 500;
+}
 .instagram-link {
   display: flex;
   align-items: center;
@@ -754,86 +917,208 @@ button:disabled::before { display: none; }
 .instagram-link::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   transition: left 0.7s ease;
   z-index: -1;
 }
-.instagram-link:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(225, 48, 108, 0.4); }
-.instagram-link:hover::before { left: 100%; }
-.instagram-icon { font-size: 1.3rem; }
+.instagram-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(225, 48, 108, 0.4);
+}
+.instagram-link:hover::before {
+  left: 100%;
+}
+.instagram-icon {
+  font-size: 1.3rem;
+}
 /* ===== ANIMAÇÕES ===== */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-15px); }
   60% { transform: translateY(-7px); }
 }
-@keyframes slideInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes confettiRain { 0% { transform: translateY(-100px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
-@keyframes starPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.8; } }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes confettiRain {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
 @keyframes trophyGlow {
   0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7)); }
   50% { filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.9)); }
 }
-.fade-in { animation: fadeIn 0.5s ease forwards; }
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
 /* ===== RESPONSIVO ===== */
 @media (max-width: 480px) {
-  body { padding: 10px; }
-  .container { border-radius: 20px; }
-  .modern-header { padding: 25px 15px; }
-  .logo-text h1 { font-size: 2rem; }
-  .logo { width: 120px; height: 120px; }
-  .lesson-name { font-size: 1.4rem; }
-  .verse-text { font-size: 1rem; }
-  .welcome-card { padding: 20px; }
-  .content-section { padding: 30px 20px; }
-  .about-card, .details-card { padding: 25px 20px; }
-  .quiz-section { padding: 20px 15px; }
-  .question { padding: 20px; }
-  .question-text { font-size: 1.2rem; }
-  .option { padding: 16px 15px; }
-  .navigation { flex-direction: column-reverse; }
-  button { width: 100%; }
-  .results { padding: 30px 20px; }
-  .score { font-size: 3.5rem; }
-  .animation-text { font-size: 1.8rem; }
-  .animation-icon { font-size: 3.5rem; }
-  .countdown { font-size: 3rem; width: 80px; height: 80px; }
-  .progress-info { flex-direction: column; gap: 10px; }
-  .progress-item { min-width: 100%; }
-  .progress-value { font-size: 1.3rem; }
-  .objective-item { padding: 12px; }
+  body {
+    padding: 10px;
+  }
+  .container {
+    border-radius: 20px;
+  }
+  .modern-header {
+    padding: 25px 15px;
+  }
+  .logo-text h1 {
+    font-size: 2rem;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  .lesson-name {
+    font-size: 1.4rem;
+  }
+  .verse-text {
+    font-size: 1rem;
+  }
+  .welcome-card {
+    padding: 20px;
+  }
+  .content-section {
+    padding: 30px 20px;
+  }
+  .about-card, .details-card {
+    padding: 25px 20px;
+  }
+  .quiz-section {
+    padding: 20px 15px;
+  }
+  .question {
+    padding: 20px;
+  }
+  .question-text {
+    font-size: 1.2rem;
+  }
+  .option {
+    padding: 16px 15px;
+  }
+  .navigation {
+    flex-direction: column-reverse;
+  }
+  button {
+    width: 100%;
+  }
+  .results {
+    padding: 30px 20px;
+  }
+  .score {
+    font-size: 3.5rem;
+  }
+  .animation-text {
+    font-size: 1.8rem;
+  }
+  .animation-icon {
+    font-size: 3.5rem;
+  }
+  .countdown {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+  .progress-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .progress-item {
+    min-width: 100%;
+  }
+  .progress-value {
+    font-size: 1.3rem;
+  }
+  .objective-item {
+    padding: 12px;
+  }
 }
 @media (min-width: 768px) {
-  .container { max-width: 750px; }
-  .logo-container { flex-direction: row; text-align: left; gap: 25px; }
-  .logo-text { text-align: left; }
-  .features { flex-direction: row; max-width: 100%; flex-wrap: nowrap; }
-  .performance { flex-direction: row; }
-  .navigation { flex-direction: row-reverse; }
-  .instagram-section { flex-direction: row; justify-content: center; }
-  .options { grid-template-columns: 1fr 1fr; }
-  .progress-info { flex-direction: row; justify-content: space-between; }
-  .progress-item { min-width: auto; }
-  .objective-item { padding: 15px 20px; }
+  .container {
+    max-width: 750px;
+  }
+  .logo-container {
+    flex-direction: row;
+    text-align: left;
+    gap: 25px;
+  }
+  .logo-text {
+    text-align: left;
+  }
+  .features {
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+  .performance {
+    flex-direction: row;
+  }
+  .navigation {
+    flex-direction: row-reverse;
+  }
+  .instagram-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+  .progress-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .progress-item {
+    min-width: auto;
+  }
+  .objective-item {
+    padding: 15px 20px;
+  }
 }
 @media (min-width: 992px) {
-  .container { max-width: 900px; }
-  .content-section { grid-template-columns: 1fr 1fr; display: grid; }
-  .logo-text h1 { font-size: 2.8rem; }
-  .lesson-name { font-size: 2rem; }
+  .container {
+    max-width: 900px;
+  }
+  .content-section {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+  .logo-text h1 {
+    font-size: 2.8rem;
+  }
+  .lesson-name {
+    font-size: 2rem;
+  }
 }
 </style>
 </head>
 <body>
-
 <!-- ANIMAÇÃO INICIAL -->
 <div class="quiz-start-animation" id="quiz-start-animation">
-  <div class="animation-icon"><i class="fas fa-dove"></i></div>
+  <div class="animation-icon">
+    <i class="fas fa-peace"></i>
+  </div>
   <div class="animation-text">Quiz da EBD Jovem</div>
   <div class="animation-subtext">1º Trimestre 2026 - Lição 9</div>
   <div class="countdown" id="countdown">3</div>
@@ -860,27 +1145,41 @@ button:disabled::before { display: none; }
       <!-- INFORMAÇÕES DA LIÇÃO -->
       <div class="lesson-header-section">
         <div class="lesson-title-container">
-          <div class="lesson-number"><i class="fas fa-book-open"></i> Lição 9</div>
+          <div class="lesson-number">
+            <i class="fas fa-book-open"></i> Lição 9
+          </div>
           <div class="lesson-name">BEM-AVENTURADOS OS PACIFICADORES</div>
         </div>
+
         <div class="verse-of-day">
           <div class="verse-text">"Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus"</div>
           <div class="verse-reference">Mateus 5:9</div>
         </div>
 
         <div class="lesson-objectives">
-          <div class="objectives-title"><i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO</div>
+          <div class="objectives-title">
+            <i class="fas fa-bullseye"></i> OBJETIVOS DA LIÇÃO
+          </div>
           <ul class="objectives-list">
-            <li class="objective-item"><i class="fas fa-check-circle"></i><span class="objective-text">Identificar o significado bíblico de “pacificador”</span></li>
-            <li class="objective-item"><i class="fas fa-check-circle"></i><span class="objective-text">Reconhecer a bênção prometida aos pacificadores</span></li>
-            <li class="objective-item"><i class="fas fa-check-circle"></i><span class="objective-text">Ressaltar que Deus chama os cristãos para serem pacificadores no mundo</span></li>
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Identificar o significado bíblico de "pacificador"</span>
+            </li>
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Reconhecer a bênção prometida aos pacificadores</span>
+            </li>
+            <li class="objective-item">
+              <i class="fas fa-check-circle"></i>
+              <span class="objective-text">Ressaltar que Deus chama os cristãos para serem pacificadores no mundo</span>
+            </li>
           </ul>
         </div>
       </div>
 
       <div class="welcome-card">
-        <h2><i class="fas fa-handshake"></i> Teste seu conhecimento bíblico!</h2>
-        <p>Revise a bem-aventurança dos pacificadores e entenda como Deus nos chama a promover a paz, reconciliar pessoas e refletir o caráter de Cristo.</p>
+        <h2><i class="fas fa-peace"></i> Teste seu conhecimento bíblico!</h2>
+        <p>Revise a sétima bem-aventurança: aqueles que promovem a paz serão chamados filhos de Deus e receberão a bênção divina.</p>
       </div>
 
       <div class="features">
@@ -893,8 +1192,8 @@ button:disabled::before { display: none; }
           <span>Baseado na Lição 9</span>
         </div>
         <div class="feature">
-          <i class="fas fa-dove" style="color: #00C9B7;"></i>
-          <span>Paz & Reconciliação</span>
+          <i class="fas fa-heart" style="color: #00C9B7;"></i>
+          <span>Design Jovem</span>
         </div>
       </div>
     </div>
@@ -909,12 +1208,7 @@ button:disabled::before { display: none; }
           <div class="label">Verdade Aplicada</div>
           <div class="text">Em um mundo repleto de guerras e conflitos, os cristãos são chamados a serem pacificadores.</div>
         </div>
-
-        <p style="margin-top: 20px;">
-          A lição destaca que Deus usa Sua Igreja para pregar o Evangelho que promove a pacificação entre os homens,
-          e que evitar conflitos e violência faz parte da vida cristã, alcançando todos os ambientes do dia a dia.
-        </p>
-
+        <p style="margin-top: 20px;">A sétima bem-aventurança revela que os pacificadores refletem o caráter de Deus, pois Deus é o autor da paz. Eles promovem a reconciliação e constroem pontes em meio às discórdias.</p>
         <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(255, 122, 90, 0.1), rgba(93, 63, 211, 0.1)); border-radius: 12px; border-left: 4px solid var(--secondary);">
           <strong><i class="fas fa-quote-left"></i> Ponto-Chave:</strong><br>
           "Ser pacificador é uma responsabilidade de todos os cristãos, que devem se esforçar para promover a paz em todas as situações."
@@ -926,13 +1220,12 @@ button:disabled::before { display: none; }
       <h2 class="card-title"><i class="fas fa-graduation-cap"></i> O QUE VOCÊ VAI REVISAR</h2>
       <div class="card-content">
         <ul>
-          <li><i class="fas fa-check-circle"></i> O significado de “pacificador” e a ideia bíblica de paz</li>
-          <li><i class="fas fa-check-circle"></i> O pacificador se assemelha a Cristo, o Príncipe da Paz</li>
-          <li><i class="fas fa-check-circle"></i> Domínio próprio e vida cristã sem violência</li>
-          <li><i class="fas fa-check-circle"></i> O Espírito Santo e a paz como virtude/Fruto</li>
-          <li><i class="fas fa-check-circle"></i> A promessa: “serão chamados filhos de Deus”</li>
+          <li><i class="fas fa-check-circle"></i> O significado bíblico de "pacificador" (eirene em grego, shalom em hebraico)</li>
+          <li><i class="fas fa-check-circle"></i> Como o pacificador se assemelha a Cristo, o Príncipe da Paz</li>
+          <li><i class="fas fa-check-circle"></i> O domínio próprio que caracteriza o pacificador</li>
+          <li><i class="fas fa-check-circle"></i> A paz como virtude do Fruto do Espírito</li>
+          <li><i class="fas fa-check-circle"></i> A promessa: "serão chamados filhos de Deus"</li>
         </ul>
-
         <div class="prayer-moment" style="margin-top: 25px;">
           <div class="label">Momento de Oração</div>
           <div class="text">Ore para que sejamos pacificadores neste mundo violento e instável.</div>
@@ -950,8 +1243,12 @@ button:disabled::before { display: none; }
 
   <!-- QUIZ -->
   <div class="quiz-section" id="quiz-section">
-    <div class="question-container" id="question-container"></div>
+    <!-- PERGUNTA ATUAL -->
+    <div class="question-container" id="question-container">
+      <!-- A pergunta será inserida aqui via JavaScript -->
+    </div>
 
+    <!-- SEÇÃO DE PROGRESSO -->
     <div class="progress-section" id="progress-section">
       <div class="progress-info">
         <div class="progress-item">
@@ -967,16 +1264,20 @@ button:disabled::before { display: none; }
           <div class="progress-value" id="progress-percentage">0%</div>
         </div>
       </div>
-
       <div class="progress-bar-container">
         <div class="progress-bar">
           <div class="progress" id="quiz-progress"></div>
         </div>
       </div>
 
+      <!-- BOTÕES DE NAVEGAÇÃO -->
       <div class="navigation">
-        <button id="prev-btn" disabled><i class="fas fa-arrow-left"></i> Anterior</button>
-        <button id="next-btn" class="btn-next">Próxima <i class="fas fa-arrow-right"></i></button>
+        <button id="prev-btn" disabled>
+          <i class="fas fa-arrow-left"></i> Anterior
+        </button>
+        <button id="next-btn" class="btn-next">
+          Próxima <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -987,6 +1288,7 @@ button:disabled::before { display: none; }
       <h2><i class="fas fa-trophy" id="trophy-icon"></i> Resultado Final</h2>
     </div>
     <div class="score" id="score">0/0</div>
+    
     <div class="performance" id="performance">
       <div class="performance-item">
         <div class="performance-value performance-easy" id="correct-easy">0</div>
@@ -1001,7 +1303,9 @@ button:disabled::before { display: none; }
         <div>Difíceis</div>
       </div>
     </div>
+    
     <div class="message" id="message"></div>
+    
     <button id="restart-btn" style="background: var(--accent);">
       <i class="fas fa-redo"></i> Refazer Quiz
     </button>
@@ -1024,187 +1328,193 @@ button:disabled::before { display: none; }
 <script>
 // =============================================
 // BANCO DE PERGUNTAS - LIÇÃO 9: BEM-AVENTURADOS OS PACIFICADORES
-// (Conteúdo extraído da lição do PDF)
 // =============================================
 const allQuestions = [
-  // FÁCEIS (4)
+  // PERGUNTAS FÁCEIS
   {
-    question: "Qual é o versículo do dia da Lição 9?",
+    question: "Qual é o versículo da sétima bem-aventurança (Lição 9)?",
     options: [
+      "Mateus 5:4 — 'Bem-aventurados os que choram, porque eles serão consolados'",
       "Mateus 5:9 — 'Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus'",
-      "Mateus 5:7 — 'Bem-aventurados os misericordiosos, porque eles alcançarão misericórdia'",
-      "Mateus 5:8 — 'Bem-aventurados os limpos de coração, porque eles verão a Deus'",
-      "Mateus 5:6 — 'Bem-aventurados os que têm fome e sede de justiça, porque serão fartos'"
+      "Mateus 5:6 — 'Bem-aventurados os que têm fome e sede de justiça, porque eles serão fartos'",
+      "Mateus 5:8 — 'Bem-aventurados os limpos de coração, porque eles verão a Deus'"
     ],
-    correct: 0,
-    explanation: "O versículo do dia apresentado na lição é Mateus 5:9.",
+    correct: 1,
+    explanation: "O versículo da sétima bem-aventurança é Mateus 5:9: 'Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus'.",
     difficulty: "easy"
   },
   {
-    question: "Qual é a VERDADE APLICADA desta lição?",
+    question: "Qual é a VERDADE APLICADA da Lição 9?",
     options: [
-      "Em um mundo repleto de guerras e conflitos, os cristãos são chamados a serem pacificadores.",
-      "A paz é impossível e não deve ser buscada.",
-      "O cristão deve evitar qualquer contato com pessoas em conflito.",
-      "Ser pacificador é apenas um dom de poucos."
+      "Os pacificadores devem evitar qualquer tipo de conflito, mesmo que isso signifique omissão",
+      "Em um mundo repleto de guerras e conflitos, os cristãos são chamados a serem pacificadores",
+      "A paz é um conceito utópico que não pode ser alcançado na prática",
+      "Somente líderes religiosos têm a responsabilidade de promover a paz"
     ],
-    correct: 0,
-    explanation: "A lição afirma: 'Em um mundo repleto de guerras e conflitos, os cristãos são chamados a serem pacificadores.'",
+    correct: 1,
+    explanation: "A verdade aplicada é: 'Em um mundo repleto de guerras e conflitos, os cristãos são chamados a serem pacificadores.'",
     difficulty: "easy"
   },
   {
-    question: "Qual é o TEXTO DE REFERÊNCIA indicado na Lição 9?",
+    question: "Qual é o PONTO-CHAVE destacado na lição sobre os pacificadores?",
     options: [
-      "1 Pedro 3:11",
-      "Mateus 5:9",
-      "Salmos 145:7",
-      "2 Coríntios 5:18"
+      "'Ser pacificador é uma responsabilidade apenas dos pastores e líderes da igreja'",
+      "'Ser pacificador é uma responsabilidade de todos os cristãos, que devem se esforçar para promover a paz em todas as situações'",
+      "'A paz é um dom espiritual que apenas alguns cristãos recebem'",
+      "'Promover a paz significa sempre ceder, mesmo que a verdade seja comprometida'"
     ],
-    correct: 0,
-    explanation: "Na capa da lição, o texto de referência aparece como 1 Pedro 3:11.",
+    correct: 1,
+    explanation: "O ponto-chave é: 'Ser pacificador é uma responsabilidade de todos os cristãos, que devem se esforçar para promover a paz em todas as situações.'",
     difficulty: "easy"
   },
   {
     question: "Qual é o MOMENTO DE ORAÇÃO proposto na Lição 9?",
     options: [
-      "Ore para que sejamos pacificadores neste mundo violento e instável.",
-      "Ore para que nunca enfrentemos dificuldades.",
-      "Ore para que sempre tenhamos razão em discussões.",
-      "Ore para que os conflitos aumentem, para provar nossa fé."
+      "Ore para que Deus nos livre de todas as situações conflituosas",
+      "Ore para que tenhamos coragem de confrontar todos que pensam diferente",
+      "Ore para que sejamos pacificadores neste mundo violento e instável",
+      "Ore para que os conflitos do mundo não nos afetem emocionalmente"
     ],
-    correct: 0,
+    correct: 2,
     explanation: "O momento de oração é: 'Ore para que sejamos pacificadores neste mundo violento e instável.'",
     difficulty: "easy"
   },
-
-  // MÉDIAS (4)
+  // PERGUNTAS MÉDIAS
   {
-    question: "Segundo a lição, qual é o Ponto-Chave sobre ser pacificador?",
+    question: "Segundo a lição, qual é o significado da palavra grega 'eirene' e da palavra hebraica 'shalom'?",
     options: [
-      "Ser pacificador é uma responsabilidade de todos os cristãos, que devem se esforçar para promover a paz em todas as situações.",
-      "Ser pacificador é uma habilidade apenas social, sem ligação com a fé.",
-      "Ser pacificador significa evitar qualquer conversa difícil.",
-      "Ser pacificador é o mesmo que concordar com tudo."
+      "Ambas significam 'guerra santa'",
+      "Ambas significam 'paz', mas com conotações diferentes",
+      "Eirene significa 'conflito', shalom significa 'paz'",
+      "Ambas significam 'paz', sendo 'eirene' o termo grego e 'shalom' o termo hebraico"
     ],
-    correct: 0,
-    explanation: "O Ponto-Chave diz que ser pacificador é responsabilidade de todos os cristãos, promovendo a paz em todas as situações.",
+    correct: 3,
+    explanation: "No grego, 'eirene' significa 'paz', e em hebraico, 'shalom' também significa 'paz', sendo termos equivalentes nas respectivas línguas.",
     difficulty: "medium"
   },
   {
-    question: "De acordo com a lição, a palavra grega relacionada à paz é:",
+    question: "Por que o pacificador se assemelha a Cristo, segundo a lição?",
     options: [
-      "eirene",
-      "agape",
-      "logos",
-      "koinonia"
+      "Porque Cristo nunca se envolveu em nenhum conflito durante seu ministério",
+      "Porque Cristo é o Príncipe da Paz, e o pacificador reflete esse atributo divino",
+      "Porque Cristo ensinou que devemos evitar completamente qualquer discussão",
+      "Porque Cristo promoveu a paz através do silêncio e da passividade"
     ],
-    correct: 0,
-    explanation: "A lição afirma: 'No grego, eirene significa “paz”'.",
+    correct: 1,
+    explanation: "O pacificador se assemelha a Cristo porque Jesus é o Príncipe da Paz (Is 9.6), e o cristão que promove a paz reflete esse caráter de Cristo.",
     difficulty: "medium"
   },
   {
-    question: "A lição também menciona que, no hebraico, a ideia de paz é expressa por qual termo?",
+    question: "O que a paz de Cristo proporciona ao cristão, segundo Filipenses 4:7, conforme citado na lição?",
     options: [
-      "shalom",
-      "sabbath",
-      "manna",
-      "sinai"
+      "Proteção contra todas as doenças físicas",
+      "Riqueza material e prosperidade financeira",
+      "Equilíbrio e domínio próprio para solucionar conflitos",
+      "Imunidade contra críticas e perseguições"
     ],
-    correct: 0,
-    explanation: "A lição destaca que, no hebraico, a paz é 'shalom'.",
+    correct: 2,
+    explanation: "A paz de Cristo, que excede todo entendimento (Fp 4.7), proporciona equilíbrio e domínio próprio ao cristão para que ele solucione os conflitos da vida.",
     difficulty: "medium"
   },
   {
-    question: "Segundo a lição, evitar conflitos e violência faz parte da vida cristã e inclui manter a paz em quais ambientes?",
+    question: "Como o pacificador atua, segundo Hebreus 12:14 mencionado na lição?",
     options: [
-      "Família, círculo de amigos e ambiente de trabalho religioso",
-      "Somente dentro da igreja",
-      "Apenas em momentos de culto",
-      "Somente quando há concordância total"
+      "Evitando completamente qualquer pessoa com quem possa haver conflito",
+      "Procura estabelecer a paz com e entre todos",
+      "Concentrando-se apenas na paz interior, sem se preocupar com os outros",
+      "Esperando que os outros tomem a iniciativa de fazer as pazes"
     ],
-    correct: 0,
-    explanation: "A lição cita que isso envolve manter a paz em família, amigos e ambiente de trabalho religioso.",
+    correct: 1,
+    explanation: "O pacificador procura estabelecer a paz com e entre todos (Hb 12.14), promovendo reconciliação e harmonia.",
     difficulty: "medium"
   },
-
-  // DIFÍCEIS (4)
+  // PERGUNTAS DIFÍCEIS
   {
-    question: "Segundo a lição, por que o cristão que não se esforça pela paz não se assemelha a Cristo?",
+    question: "Segundo D.A. Carson, citado na lição, quem é o maior Pacificador e o que Ele faz?",
     options: [
-      "Porque Jesus Cristo é o Príncipe da Paz",
-      "Porque a paz é apenas um assunto político",
-      "Porque a paz depende somente de temperamento",
-      "Porque a paz é uma escolha opcional sem relação bíblica"
+      "Moisés, que estabeleceu a paz entre as tribos de Israel",
+      "O maior Pacificador é Jesus Cristo: o Príncipe da Paz. Ele estabelece a paz entre Deus e o homem ao remover o pecado, que é o motivo do afastamento",
+      "O apóstolo Paulo, que reconciliou judeus e gentios na igreja primitiva",
+      "Martin Luther King Jr., que promoveu a paz racial nos Estados Unidos"
     ],
-    correct: 0,
-    explanation: "A lição afirma que quem não se esforça pela paz não se assemelha a Jesus Cristo, o Príncipe da Paz.",
+    correct: 1,
+    explanation: "D.A. Carson afirma: 'O maior Pacificador é Jesus Cristo: o Príncipe da Paz. Ele estabelece a paz entre Deus e o homem ao remover o pecado, que é o motivo do afastamento.'",
     difficulty: "hard"
   },
   {
-    question: "O que a lição ensina sobre o pacificador e o domínio próprio?",
+    question: "Segundo a lição, como o Espírito Santo nos habilita a sermos pacificadores?",
     options: [
-      "A paz que Cristo proporciona purifica o coração e dá equilíbrio e domínio próprio para solucionar conflitos da vida",
-      "Domínio próprio é apenas evitar falar com as pessoas",
-      "Domínio próprio vem do medo de ser criticado",
-      "Domínio próprio é resultado de ganhar todas as discussões"
+      "Nos dando o dom de falar em línguas para comunicar a paz universalmente",
+      "A paz é uma das virtudes do Fruto do Espírito, e Sua presença em nós nos capacita a promover a paz",
+      "Nos protegendo magicamente de todas as situações conflituosas",
+      "Substituindo nossa personalidade por uma completamente pacífica"
     ],
-    correct: 0,
-    explanation: "A lição ensina que a paz de Cristo traz equilíbrio e domínio próprio, ajudando a solucionar conflitos.",
+    correct: 1,
+    explanation: "A paz é uma das virtudes do Fruto do Espírito (Gl 5.22), e a presença do Espírito Santo em nós nos habilita a promover a paz em qualquer lugar.",
     difficulty: "hard"
   },
   {
-    question: "De acordo com a lição, a paz é vista como uma ação de quem no coração dos crentes (Gálatas 5:22)?",
+    question: "Qual exemplo histórico de pacificador é mencionado na seção 'Complementando' da lição?",
     options: [
-      "Do Espírito Santo",
-      "Do esforço humano apenas",
-      "Da cultura do tempo",
-      "Do acaso"
+      "Mahatma Gandhi, que promoveu a não-violência na Índia",
+      "Nelson Mandela, que reconciliou a África do Sul pós-apartheid",
+      "Martin Luther King Jr., que buscou unir pessoas de todas as raças durante o Movimento dos Direitos Civis nos EUA",
+      "Madre Teresa, que promoveu a paz através do serviço aos pobres"
     ],
-    correct: 0,
-    explanation: "A lição relaciona a paz ao Fruto do Espírito e à ação do Espírito Santo no coração dos crentes.",
+    correct: 2,
+    explanation: "Martin Luther King Jr. é mencionado como exemplo de pacificador, revestido de coragem e compromisso com os princípios bíblicos de justiça e igualdade.",
     difficulty: "hard"
   },
   {
-    question: "Qual é a promessa destacada pela lição como única entre as bem-aventuranças?",
+    question: "Segundo 2 Coríntios 5.18-20, conforme citado no subsídio para o educador, qual é nossa designação como cristãos?",
     options: [
-      "‘Serão chamados filhos de Deus’",
-      "‘Herdarão a terra’",
-      "‘Serão consolados’",
-      "‘Verão a Deus’"
+      "Somos designados juízes dos conflitos alheios",
+      "Deus nos nomeou pacificadores seus, para levar os homens a terem paz com Deus",
+      "Somos chamados a evitar completamente os conflitos do mundo",
+      "Fomos designados apenas para promover a paz dentro da igreja"
     ],
-    correct: 0,
-    explanation: "A lição destaca que esta bem-aventurança promete: 'serão chamados filhos de Deus' (Mt 5:9).",
+    correct: 1,
+    explanation: "Em 2 Coríntios 5.18-20, Paulo ressalta que fomos feitos pacificadores, com a missão de levar os homens a terem paz com Deus.",
     difficulty: "hard"
   }
 ];
 
 // =============================================
-// FUNÇÃO PARA EMBARALHAR OPÇÕES DE RESPOSTA E ORDENAR PERGUNTAS
-// (Isso ajuda a evitar repetição de letras corretas em sequência.)
+// FUNÇÃO PARA EMBARALHAR OPÇÕES E REORDENAR PERGUNTAS
 // =============================================
 function shuffleQuestions() {
-  // Embaralhar opções e redistribuir respostas corretas
-  allQuestions.forEach(question => {
-    const originalCorrect = question.options[question.correct];
-    const indices = [0, 1, 2, 3];
-
-    // Fisher-Yates
-    for (let i = indices.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [indices[i], indices[j]] = [indices[j], indices[i]];
-    }
-
-    const shuffledOptions = indices.map(i => question.options[i]);
-    const newCorrectIndex = shuffledOptions.indexOf(originalCorrect);
-
-    question.options = shuffledOptions;
-    question.correct = newCorrectIndex;
-  });
-
-  // Embaralhar ordem das perguntas
+  // Primeiro, embaralhar a ordem das perguntas
   for (let i = allQuestions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+  }
+  
+  // Embaralhar opções de cada pergunta e redistribuir respostas corretas
+  allQuestions.forEach(question => {
+    const originalCorrect = question.options[question.correct];
+    const shuffledOptions = [...question.options];
+    
+    // Embaralhar usando o algoritmo Fisher-Yates
+    for (let i = shuffledOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+    }
+    
+    question.options = shuffledOptions;
+    question.correct = shuffledOptions.indexOf(originalCorrect);
+  });
+  
+  // Verificar e ajustar para evitar repetição de letras corretas consecutivas
+  for (let i = 1; i < allQuestions.length; i++) {
+    if (allQuestions[i].correct === allQuestions[i-1].correct) {
+      // Se a resposta correta atual é igual à anterior, trocar com a próxima pergunta
+      if (i < allQuestions.length - 1) {
+        [allQuestions[i], allQuestions[i+1]] = [allQuestions[i+1], allQuestions[i]];
+      } else {
+        // Se for a última pergunta, trocar com a primeira
+        [allQuestions[i], allQuestions[0]] = [allQuestions[0], allQuestions[i]];
+      }
+    }
   }
 }
 
@@ -1220,14 +1530,14 @@ let quizStarted = false;
 // =============================================
 document.addEventListener('DOMContentLoaded', function() {
   shuffleQuestions();
-
+  
   document.getElementById('start-btn').addEventListener('click', startQuizWithAnimation);
   document.getElementById('prev-btn').addEventListener('click', showPreviousQuestion);
   document.getElementById('next-btn').addEventListener('click', showNextQuestion);
   document.getElementById('restart-btn').addEventListener('click', restartQuiz);
-
+  
   userAnswers = new Array(allQuestions.length).fill(null);
-
+  
   const logoImg = document.getElementById('logo-img');
   logoImg.onerror = function() {
     logoImg.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L80,80 L50,60 L20,80 Z" fill="%235D3FD3"/><circle cx="50" cy="30" r="10" fill="%23FF7A5A"/></svg>';
@@ -1240,14 +1550,14 @@ document.addEventListener('DOMContentLoaded', function() {
 function startQuizWithAnimation() {
   const startAnimation = document.getElementById('quiz-start-animation');
   startAnimation.classList.add('active');
-
+  
   let count = 3;
   const countdownElement = document.getElementById('countdown');
-
+  
   const countdownInterval = setInterval(() => {
     countdownElement.textContent = count;
     count--;
-
+    
     if (count < 0) {
       clearInterval(countdownInterval);
       startQuiz();
@@ -1261,33 +1571,37 @@ function startQuiz() {
   document.querySelector('.content-section').style.display = 'none';
   document.getElementById('quiz-section').style.display = 'block';
   document.getElementById('results').style.display = 'none';
-
+  
   quizStarted = true;
   currentQuestionIndex = 0;
   userAnswers = new Array(allQuestions.length).fill(null);
-
+  
   showQuestion(currentQuestionIndex);
 }
 
 function showQuestion(index) {
   const question = allQuestions[index];
   const questionContainer = document.getElementById('question-container');
-
+  
+  // Atualizar progresso
   updateProgress();
-
+  
   let optionsHTML = '';
   const letters = ['A', 'B', 'C', 'D'];
-
+  
   question.options.forEach((option, i) => {
     const isSelected = userAnswers[index] === i;
     let optionClass = 'option';
-
+    
     if (isSelected) {
       optionClass += ' selected';
-      if (i === question.correct) optionClass += ' correct';
-      else optionClass += ' incorrect';
+      if (i === question.correct) {
+        optionClass += ' correct';
+      } else {
+        optionClass += ' incorrect';
+      }
     }
-
+    
     optionsHTML += `
       <div class="${optionClass}" data-index="${i}">
         <span class="option-letter">${letters[i]}</span>
@@ -1298,7 +1612,7 @@ function showQuestion(index) {
       </div>
     `;
   });
-
+  
   questionContainer.innerHTML = `
     <div class="question fade-in">
       <div class="question-header">
@@ -1307,14 +1621,12 @@ function showQuestion(index) {
         </span>
         <div class="question-text">${question.question}</div>
       </div>
-      <div class="options">${optionsHTML}</div>
-      <div style="margin-top:18px; padding:14px; border-radius:14px; background: rgba(93,63,211,0.06); border: 1px solid rgba(93,63,211,0.12); display:none;" id="explain-box">
-        <div style="font-weight:700; color: var(--primary); margin-bottom:6px;"><i class="fas fa-info-circle"></i> Explicação</div>
-        <div id="explain-text" style="color: var(--text);"></div>
+      <div class="options">
+        ${optionsHTML}
       </div>
     </div>
   `;
-
+  
   document.querySelectorAll('.option').forEach(option => {
     option.addEventListener('click', function() {
       if (!quizStarted) return;
@@ -1322,14 +1634,14 @@ function showQuestion(index) {
       selectOption(selectedIndex);
     });
   });
-
+  
   updateNavigationButtons();
 }
 
 function updateProgress() {
   const progress = ((currentQuestionIndex + 1) / allQuestions.length) * 100;
   const answeredCount = userAnswers.filter(answer => answer !== null).length;
-
+  
   document.getElementById('current-question').textContent = `${currentQuestionIndex + 1}/${allQuestions.length}`;
   document.getElementById('answered-count').textContent = `${answeredCount}/${allQuestions.length}`;
   document.getElementById('progress-percentage').textContent = `${Math.round(progress)}%`;
@@ -1339,30 +1651,25 @@ function updateProgress() {
 function selectOption(optionIndex) {
   userAnswers[currentQuestionIndex] = optionIndex;
   const question = allQuestions[currentQuestionIndex];
-
   const options = document.querySelectorAll('.option');
+  
   options.forEach((option, i) => {
     option.classList.remove('selected', 'correct', 'incorrect', 'correct-answer');
-
+    
     if (i === optionIndex) {
       option.classList.add('selected');
-      if (i === question.correct) option.classList.add('correct');
-      else option.classList.add('incorrect');
+      if (i === question.correct) {
+        option.classList.add('correct');
+      } else {
+        option.classList.add('incorrect');
+      }
     }
-
+    
     if (i === question.correct && optionIndex !== question.correct) {
       option.classList.add('correct-answer');
     }
   });
-
-  // Mostrar explicação após resposta
-  const explainBox = document.getElementById('explain-box');
-  const explainText = document.getElementById('explain-text');
-  if (explainBox && explainText) {
-    explainText.textContent = question.explanation;
-    explainBox.style.display = 'block';
-  }
-
+  
   updateProgress();
   updateNavigationButtons();
 }
@@ -1385,14 +1692,14 @@ function showPreviousQuestion() {
 
 function updateNavigationButtons() {
   document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
-
   const nextButton = document.getElementById('next-btn');
+  
   if (currentQuestionIndex === allQuestions.length - 1) {
     nextButton.innerHTML = 'Ver Resultados <i class="fas fa-chart-bar"></i>';
   } else {
     nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
   }
-
+  
   nextButton.disabled = userAnswers[currentQuestionIndex] === null;
 }
 
@@ -1403,20 +1710,20 @@ function createConfetti(scorePercentage) {
   const container = document.getElementById('confetti-container');
   container.classList.add('active');
   container.innerHTML = '';
-
+  
   const colors = ['#5D3FD3', '#FF7A5A', '#00C9B7', '#2ECC71', '#FF9F43', '#FF6B6B'];
   const confettiCount = Math.min(100, Math.floor(scorePercentage * 100));
-
+  
   for (let i = 0; i < confettiCount; i++) {
     const confetti = document.createElement('div');
     confetti.className = 'confetti';
-
+    
     const left = Math.random() * 100;
     const size = Math.random() * 12 + 8;
     const color = colors[Math.floor(Math.random() * colors.length)];
     const delay = Math.random() * 2;
     const duration = Math.random() * 2 + 2;
-
+    
     confetti.style.left = `${left}%`;
     confetti.style.width = `${size}px`;
     confetti.style.height = `${size}px`;
@@ -1424,10 +1731,10 @@ function createConfetti(scorePercentage) {
     confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
     confetti.style.animationDelay = `${delay}s`;
     confetti.style.animationDuration = `${duration}s`;
-
+    
     container.appendChild(confetti);
   }
-
+  
   setTimeout(() => {
     container.classList.remove('active');
     container.innerHTML = '';
@@ -1437,16 +1744,16 @@ function createConfetti(scorePercentage) {
 function showResults() {
   document.getElementById('quiz-section').style.display = 'none';
   document.getElementById('results').style.display = 'block';
-
+  
   let score = 0;
   let correctEasy = 0, correctMedium = 0, correctHard = 0;
   let totalEasy = 0, totalMedium = 0, totalHard = 0;
-
+  
   allQuestions.forEach((question, index) => {
     if (question.difficulty === 'easy') totalEasy++;
     if (question.difficulty === 'medium') totalMedium++;
     if (question.difficulty === 'hard') totalHard++;
-
+    
     if (userAnswers[index] === question.correct) {
       score++;
       if (question.difficulty === 'easy') correctEasy++;
@@ -1454,47 +1761,48 @@ function showResults() {
       if (question.difficulty === 'hard') correctHard++;
     }
   });
-
+  
   const scorePercentage = score / allQuestions.length;
-
+  
   document.getElementById('score').textContent = `${score}/${allQuestions.length}`;
   document.getElementById('correct-easy').textContent = `${correctEasy}/${totalEasy}`;
   document.getElementById('correct-medium').textContent = `${correctMedium}/${totalMedium}`;
   document.getElementById('correct-hard').textContent = `${correctHard}/${totalHard}`;
-
+  
   const trophyIcon = document.getElementById('trophy-icon');
   const messageElement = document.getElementById('message');
   let message = '';
-
+  
   if (score === allQuestions.length) {
-    message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você compreendeu profundamente o chamado bíblico para ser pacificador!';
+    message = '<i class="fas fa-crown star-animation"></i> <strong>PERFEITO!</strong> Você compreendeu profundamente o chamado para ser pacificador e refletir o caráter de Deus!';
     trophyIcon.className = 'fas fa-crown trophy-animation';
     createConfetti(1);
   } else if (scorePercentage >= 0.8) {
-    message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você entendeu muito bem a bem-aventurança dos pacificadores. Continue promovendo reconciliação!';
+    message = '<i class="fas fa-star star-animation"></i> <strong>EXCELENTE!</strong> Você entende bem o papel do pacificador na promoção da reconciliação. Continue sendo um agente de paz!';
     trophyIcon.className = 'fas fa-trophy trophy-animation';
     createConfetti(scorePercentage);
   } else if (scorePercentage >= 0.6) {
-    message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você tem uma boa base. Revise os pontos que faltaram para crescer ainda mais na paz de Cristo.';
+    message = '<i class="fas fa-thumbs-up"></i> <strong>MUITO BOM!</strong> Você captou os princípios básicos da bem-aventurança dos pacificadores. Aprofunde-se mais no tema!';
     trophyIcon.className = 'fas fa-award';
     createConfetti(scorePercentage * 0.7);
   } else if (scorePercentage >= 0.5) {
-    message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você está no caminho. Aprofunde seu estudo e pratique a paz em todas as situações.';
+    message = '<i class="fas fa-check-circle"></i> <strong>BOM TRABALHO!</strong> Você está no caminho para entender a missão do pacificador. Revise os pontos que errou!';
     trophyIcon.className = 'fas fa-medal';
     createConfetti(scorePercentage * 0.5);
   } else {
-    message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> Revise a lição e lembre-se: os pacificadores serão chamados filhos de Deus.';
+    message = '<i class="fas fa-book"></i> <strong>CONTINUE ESTUDANDO!</strong> Revise a lição para compreender que ser pacificador é refletir o caráter de Deus e promover Sua paz.';
     trophyIcon.className = 'fas fa-book';
   }
-
+  
   messageElement.innerHTML = message;
-
+  
+  // Animação de entrada para os elementos de resultado
   const resultElements = document.querySelectorAll('#results > *');
   resultElements.forEach((element, index) => {
     element.classList.add('fade-in');
     element.style.animationDelay = `${index * 0.2}s`;
   });
-
+  
   setTimeout(() => {
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
   }, 500);
@@ -1505,14 +1813,13 @@ function restartQuiz() {
   currentQuestionIndex = 0;
   userAnswers = new Array(allQuestions.length).fill(null);
   quizStarted = false;
-
+  
   document.getElementById('results').style.display = 'none';
   document.getElementById('confetti-container').classList.remove('active');
   document.getElementById('confetti-container').innerHTML = '';
-
   document.querySelector('.modern-header').style.display = 'block';
   document.querySelector('.content-section').style.display = 'flex';
-
+  
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
